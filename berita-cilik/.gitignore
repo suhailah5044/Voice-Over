@@ -1,0 +1,8 @@
+# Large/derived media (regenerate: tools/synth_music.py, ffmpeg cut, remove-background)
+assets/*.mp4
+assets/*.webm
+assets/*.wav
+assets/.tmp-*
+renders/
+.hyperframes/
+node_modules/

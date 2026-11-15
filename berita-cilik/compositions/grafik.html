@@ -1,0 +1,479 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      font-family: "Montserrat", sans-serif;
+      color: #fff;
+    }
+    /* ---------- top bar ---------- */
+    #gf-atas {
+      position: absolute;
+      left: 40px;
+      right: 40px;
+      top: 176px;
+      height: 96px;
+    }
+    #gf-bug {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 96px;
+      display: flex;
+      align-items: stretch;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+    #gf-bug-a {
+      background: linear-gradient(180deg, #1a4fd6, #0b2a7a);
+      padding: 0 26px;
+      display: flex;
+      align-items: center;
+      font-family: "Oswald", sans-serif;
+      font-weight: 700;
+      font-size: 52px;
+      letter-spacing: 0.05em;
+    }
+    #gf-bug-a b { color: #f5b800; margin-left: 12px; font-weight: 700; }
+    #gf-live {
+      background: #d7141a;
+      padding: 0 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: "Oswald", sans-serif;
+      font-weight: 700;
+      font-size: 40px;
+      letter-spacing: 0.08em;
+    }
+    #gf-dot { width: 18px; height: 18px; border-radius: 50%; background: #fff; }
+    #gf-logo-atas {
+      position: absolute;
+      right: 0;
+      top: -8px;
+      width: 112px;
+      height: 112px;
+      filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.45));
+    }
+
+    /* ---------- top cards ---------- */
+    .gf-kad {
+      position: absolute;
+      left: 60px;
+      right: 60px;
+      top: 312px;
+      border-radius: 22px;
+      background: rgba(8, 22, 60, 0.82);
+      border: 3px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+    }
+    .gf-kad-tajuk {
+      display: inline-block;
+      margin: 26px 0 0 30px;
+      padding: 6px 18px;
+      background: #d7141a;
+      border-radius: 8px;
+      font-family: "Oswald", sans-serif;
+      font-weight: 700;
+      font-size: 34px;
+      letter-spacing: 0.1em;
+    }
+    .gf-ikon-baris {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      padding: 22px 34px 30px;
+    }
+    .gf-ikon {
+      flex: 0 0 116px;
+      height: 116px;
+      border-radius: 50%;
+      background: #f5b800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .gf-ikon svg { width: 72px; height: 72px; }
+    .gf-teks-besar {
+      font-family: "Oswald", sans-serif;
+      font-weight: 700;
+      font-size: 62px;
+      line-height: 1.02;
+      letter-spacing: 0.02em;
+    }
+    .gf-teks-kecil {
+      margin-top: 8px;
+      font-weight: 600;
+      font-size: 32px;
+      color: #cfe0ff;
+    }
+
+    /* Fakta sains */
+    #gf-fakta { height: 420px; }
+    #gf-segitiga { position: absolute; left: 0; top: 0; width: 960px; height: 420px; }
+    .gf-label {
+      position: absolute;
+      font-family: "Oswald", sans-serif;
+      font-weight: 700;
+      font-size: 44px;
+      letter-spacing: 0.05em;
+      padding: 4px 18px;
+      border-radius: 10px;
+      background: #fff;
+      color: #0b2a7a;
+    }
+    #gf-haba { left: 376px; top: 76px; background: #ff5a1f; color: #fff; }
+    #gf-bahan { left: 112px; top: 336px; background: #8b5a2b; color: #fff; }
+    #gf-oksigen { left: 640px; top: 336px; background: #2f8cff; color: #fff; }
+    #gf-pusat {
+      position: absolute;
+      left: 330px;
+      top: 282px;
+      width: 300px;
+      text-align: center;
+      font-family: "Oswald", sans-serif;
+      font-weight: 700;
+      font-size: 34px;
+      line-height: 1.05;
+      color: #f5b800;
+    }
+
+    /* Senarai nasihat */
+    .gf-senarai { padding: 14px 34px 28px; }
+    .gf-item {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin-top: 18px;
+    }
+    .gf-item .gf-ikon { flex-basis: 96px; height: 96px; }
+    .gf-item .gf-ikon svg { width: 58px; height: 58px; }
+    .gf-item-teks {
+      font-family: "Oswald", sans-serif;
+      font-weight: 600;
+      font-size: 50px;
+      line-height: 1.05;
+    }
+
+    /* ---------- bottom: headline strip, lower third, ticker ---------- */
+    #gf-bawah-bg {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 1340px;
+      height: 580px;
+      background: linear-gradient(180deg, rgba(3, 10, 30, 0), rgba(3, 10, 30, 0.55) 30%, rgba(3, 10, 30, 0.85));
+    }
+    #gf-tajuk {
+      position: absolute;
+      left: 40px;
+      right: 40px;
+      top: 1372px;
+      height: 150px;
+    }
+    #gf-tajuk-label {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 58px;
+      padding: 0 20px;
+      background: #d7141a;
+      display: flex;
+      align-items: center;
+      font-family: "Oswald", sans-serif;
+      font-weight: 700;
+      font-size: 34px;
+      letter-spacing: 0.12em;
+    }
+    #gf-tajuk-isi {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 58px;
+      height: 92px;
+      background: #fff;
+      color: #0b1d4d;
+      display: flex;
+      align-items: center;
+      padding: 0 26px;
+      font-family: "Oswald", sans-serif;
+      font-weight: 700;
+      font-size: 56px;
+      letter-spacing: 0.01em;
+      border-left: 14px solid #f5b800;
+    }
+    #gf-nama {
+      position: absolute;
+      left: 40px;
+      right: 40px;
+      top: 1352px;
+      height: 170px;
+    }
+    #gf-nama-logo {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 170px;
+      height: 170px;
+      background: #fff;
+      padding: 14px;
+    }
+    #gf-nama-logo img { width: 142px; height: 142px; }
+    #gf-nama-atas {
+      position: absolute;
+      left: 170px;
+      right: 0;
+      top: 0;
+      height: 104px;
+      background: linear-gradient(90deg, #0b2a7a, #1a4fd6);
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      font-family: "Oswald", sans-serif;
+      font-weight: 700;
+      font-size: 42px;
+      line-height: 1.05;
+      letter-spacing: 0.01em;
+    }
+    #gf-nama-bawah {
+      position: absolute;
+      left: 170px;
+      top: 104px;
+      height: 66px;
+      background: #f5b800;
+      color: #0b1d4d;
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      font-weight: 800;
+      font-size: 34px;
+      letter-spacing: 0.08em;
+    }
+    #gf-ticker {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 1540px;
+      height: 64px;
+      background: #0b1d4d;
+      border-top: 4px solid #d7141a;
+      overflow: hidden;
+    }
+    #gf-ticker-label {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 60px;
+      width: 220px;
+      background: #d7141a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Oswald", sans-serif;
+      font-weight: 700;
+      font-size: 32px;
+      letter-spacing: 0.1em;
+      z-index: 2;
+    }
+    #gf-ticker-jalur {
+      position: absolute;
+      left: 240px;
+      top: 0;
+      height: 60px;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      font-size: 32px;
+      color: #fff;
+    }
+    #gf-ticker-jalur i { font-style: normal; color: #f5b800; margin: 0 26px; }
+  </style>
+  <div id="root" data-composition-id="grafik" data-width="1080" data-height="1920">
+    <div id="gf-pentas" class="clip" data-start="0" data-duration="52.9" data-layout-allow-overflow data-layout-allow-overlap>
+      <!-- bottom gradient for legibility -->
+      <div id="gf-bawah-bg"></div>
+
+      <!-- top bar -->
+      <div id="gf-atas">
+        <div id="gf-bug">
+          <div id="gf-bug-a">BERITA <b>CILIK</b></div>
+          <div id="gf-live"><span id="gf-dot"></span>LANGSUNG</div>
+        </div>
+        <img id="gf-logo-atas" src="assets/logo-sekolah.svg" alt="Logo sekolah" />
+      </div>
+
+      <!-- card 1: cuaca -->
+      <div id="gf-k1" class="gf-kad">
+        <div class="gf-kad-tajuk">PUNCA</div>
+        <div class="gf-ikon-baris">
+          <div class="gf-ikon">
+            <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="12" fill="#b4320a"/><g stroke="#b4320a" stroke-width="5" stroke-linecap="round"><line x1="32" y1="4" x2="32" y2="13"/><line x1="32" y1="51" x2="32" y2="60"/><line x1="4" y1="32" x2="13" y2="32"/><line x1="51" y1="32" x2="60" y2="32"/><line x1="12" y1="12" x2="18" y2="18"/><line x1="46" y1="46" x2="52" y2="52"/><line x1="52" y1="12" x2="46" y2="18"/><line x1="18" y1="46" x2="12" y2="52"/></g></svg>
+          </div>
+          <div>
+            <div class="gf-teks-besar">CUACA PANAS &amp; KERING</div>
+            <div class="gf-teks-kecil">Api merebak dengan cepat</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 2: asap -->
+      <div id="gf-k2" class="gf-kad">
+        <div class="gf-kad-tajuk">KESAN</div>
+        <div class="gf-ikon-baris">
+          <div class="gf-ikon">
+            <svg viewBox="0 0 64 64"><path d="M4 32 C16 14 48 14 60 32 C48 50 16 50 4 32 Z" fill="none" stroke="#0b2a7a" stroke-width="5"/><circle cx="32" cy="32" r="9" fill="#0b2a7a"/><line x1="8" y1="56" x2="56" y2="8" stroke="#b4320a" stroke-width="6" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <div class="gf-teks-besar">JARAK PENGLIHATAN TERHAD</div>
+            <div class="gf-teks-kecil">Asap tebal memenuhi udara</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 3: fakta sains / segi tiga api -->
+      <div id="gf-fakta" class="gf-kad">
+        <svg id="gf-segitiga" viewBox="0 0 960 420">
+          <path id="gf-tri" d="M480 120 L230 360 L730 360 Z" fill="rgba(255,90,31,0.12)" stroke="#ff7a2f" stroke-width="8" stroke-linejoin="round" />
+          <path id="gf-nyala" d="M480 268 C440 238 452 204 470 182 C468 204 486 212 492 196 C508 216 520 242 480 268 Z" fill="#ffb02e" />
+        </svg>
+        <div class="gf-kad-tajuk" style="position: absolute; left: 0; top: 0">FAKTA SAINS</div>
+        <div id="gf-haba" class="gf-label">HABA</div>
+        <div id="gf-bahan" class="gf-label">BAHAN API</div>
+        <div id="gf-oksigen" class="gf-label">OKSIGEN</div>
+        <div id="gf-pusat">SEGI TIGA API</div>
+      </div>
+
+      <!-- card 4: nasihat -->
+      <div id="gf-k4" class="gf-kad">
+        <div class="gf-kad-tajuk">NASIHAT</div>
+        <div class="gf-senarai">
+          <div id="gf-n1" class="gf-item">
+            <div class="gf-ikon"><svg viewBox="0 0 64 64"><path d="M32 6 L60 56 H4 Z" fill="none" stroke="#b4320a" stroke-width="6" stroke-linejoin="round"/><line x1="32" y1="24" x2="32" y2="40" stroke="#b4320a" stroke-width="6" stroke-linecap="round"/><circle cx="32" cy="48" r="3.5" fill="#b4320a"/></svg></div>
+            <div class="gf-item-teks">Jauhi kawasan kebakaran</div>
+          </div>
+          <div id="gf-n2" class="gf-item">
+            <div class="gf-ikon"><svg viewBox="0 0 64 64"><path d="M12 24 Q32 16 52 24 L50 40 Q32 54 14 40 Z" fill="#fff" stroke="#0b2a7a" stroke-width="4"/><path d="M12 26 L4 22 M52 26 L60 22 M14 38 L5 42 M50 38 L59 42" stroke="#0b2a7a" stroke-width="4" stroke-linecap="round"/><path d="M20 30 H44 M20 36 H44" stroke="#0b2a7a" stroke-width="3"/></svg></div>
+            <div class="gf-item-teks">Pakai pelitup muka ketika jerebu</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 5: alam sekitar -->
+      <div id="gf-k5" class="gf-kad">
+        <div class="gf-kad-tajuk">MARI BERSAMA</div>
+        <div class="gf-senarai">
+          <div id="gf-n3" class="gf-item">
+            <div class="gf-ikon"><svg viewBox="0 0 64 64"><path d="M32 58 V30" stroke="#1e6b2a" stroke-width="6" stroke-linecap="round"/><path d="M32 34 C10 34 8 14 12 6 C28 6 36 18 32 34 Z" fill="#2e9a3e"/><path d="M32 40 C50 40 56 26 54 18 C40 18 32 28 32 40 Z" fill="#3fb24f"/></svg></div>
+            <div class="gf-item-teks">Jaga alam sekitar</div>
+          </div>
+          <div id="gf-n4" class="gf-item">
+            <div class="gf-ikon"><svg viewBox="0 0 64 64"><rect x="6" y="34" width="44" height="10" rx="2" fill="#fff" stroke="#0b2a7a" stroke-width="3"/><rect x="40" y="34" width="10" height="10" fill="#e07a2f"/><path d="M54 30 C58 24 52 20 56 14" stroke="#777" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="32" cy="32" r="28" fill="none" stroke="#b4320a" stroke-width="6"/><line x1="12" y1="52" x2="52" y2="12" stroke="#b4320a" stroke-width="6" stroke-linecap="round"/></svg></div>
+            <div class="gf-item-teks">Jangan buang puntung rokok sebarangan</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- headline strip -->
+      <div id="gf-tajuk">
+        <div id="gf-tajuk-label">TERKINI</div>
+        <div id="gf-tajuk-isi">KEBAKARAN HUTAN: JEREBU MELANDA</div>
+      </div>
+
+      <!-- name lower third -->
+      <div id="gf-nama">
+        <div id="gf-nama-logo"><img src="assets/logo-sekolah.svg" alt="Logo sekolah" /></div>
+        <div id="gf-nama-atas">MUHAMAD RIFHAAN DEENIY BIN MUHAMAD FIRDAUS</div>
+        <div id="gf-nama-bawah">WARTAWAN CILIK · 3 KASIH</div>
+      </div>
+
+      <!-- ticker -->
+      <div id="gf-ticker">
+        <div id="gf-ticker-label">INFO</div>
+        <div id="gf-ticker-jalur">
+          Orang ramai dinasihatkan menjauhi kawasan kebakaran <i>■</i> Pakai pelitup muka jika terdapat jerebu <i>■</i> Api memerlukan haba, bahan api dan oksigen <i>■</i> Jangan buang puntung rokok sebarangan <i>■</i> Jaga alam sekitar kita <i>■</i>
+          Orang ramai dinasihatkan menjauhi kawasan kebakaran <i>■</i> Pakai pelitup muka jika terdapat jerebu <i>■</i> Api memerlukan haba, bahan api dan oksigen <i>■</i> Jangan buang puntung rokok sebarangan <i>■</i> Jaga alam sekitar kita <i>■</i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const IN = { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" };
+
+    // Top bar
+    tl.fromTo("#gf-bug", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 0.25);
+    tl.fromTo("#gf-logo-atas", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 0.4);
+    tl.fromTo("#gf-dot", { opacity: 1 }, { opacity: 0.15, duration: 0.6, ease: "sine.inOut", yoyo: true, repeat: 43 }, 0.5);
+
+    // Ticker: constant crawl for the whole report
+    tl.fromTo("#gf-ticker", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 0.6);
+    tl.fromTo("#gf-ticker-jalur", { x: 0 }, { x: -4200, duration: 52.9, ease: "none" }, 0);
+    tl.fromTo("#gf-bawah-bg", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 0.3);
+
+    // Name lower third (intro): 2.3 – 7.6
+    const namaIn = (t, ir = true) => {
+      tl.fromTo("#gf-nama", { opacity: 0 }, { opacity: 1, duration: 0.01, immediateRender: ir }, t);
+      tl.fromTo("#gf-nama-logo", { scale: 0, rotation: -90 }, { scale: 1, rotation: 0, duration: 0.45, ease: "back.out(1.8)", immediateRender: ir }, t);
+      tl.fromTo("#gf-nama-atas", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.5, ease: "power3.out", immediateRender: ir }, t + 0.15);
+      tl.fromTo("#gf-nama-bawah", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.45, ease: "power3.out", immediateRender: ir }, t + 0.35);
+    };
+    const namaOut = (t) => {
+      tl.to("#gf-nama", { opacity: 0, x: -60, duration: 0.35, ease: "power2.in" }, t);
+      tl.set("#gf-nama", { x: 0 }, t + 0.4);
+    };
+    tl.set("#gf-nama", { opacity: 0 }, 0);
+    namaIn(2.3);
+    namaOut(7.4);
+
+    // Headline strip 7.7 – 45.9
+    tl.set("#gf-tajuk", { opacity: 0 }, 0);
+    tl.fromTo("#gf-tajuk", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 7.75);
+    tl.fromTo("#gf-tajuk-label", { x: -300 }, { x: 0, duration: 0.4, ease: "power3.out" }, 7.75);
+    tl.fromTo("#gf-tajuk-isi", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.55, ease: "power3.out" }, 7.85);
+    tl.to("#gf-tajuk", { opacity: 0, duration: 0.3, ease: "power2.in" }, 45.8);
+
+    // Name lower third (sign-off): 46.1 – 50.75
+    namaIn(46.15, false);
+    namaOut(50.7);
+
+    // Cards in the top band
+    const kad = (id, a, b) => {
+      tl.set(id, { opacity: 0 }, 0);
+      tl.fromTo(id, { opacity: 0, y: -40, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "power3.out" }, a);
+      tl.to(id, { opacity: 0, y: -30, duration: 0.35, ease: "power2.in" }, b - 0.35);
+    };
+    kad("#gf-k1", 7.72, 11.9);
+    kad("#gf-k2", 11.92, 18.1);
+    kad("#gf-fakta", 18.18, 31.7);
+    kad("#gf-k4", 31.72, 39.55);
+    kad("#gf-k5", 39.58, 46.1);
+
+    // Fact card build: triangle draws, corners label as they are said
+    const len = 1300;
+    tl.fromTo("#gf-tri", { strokeDasharray: len, strokeDashoffset: len, fillOpacity: 0 }, { strokeDashoffset: 0, duration: 1.4, ease: "power2.inOut" }, 19.34);
+    tl.set(["#gf-haba", "#gf-bahan", "#gf-oksigen", "#gf-pusat", "#gf-nyala"], { opacity: 0 }, 0);
+    tl.fromTo("#gf-haba", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.4)" }, 23.92);
+    tl.fromTo("#gf-bahan", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.4)" }, 24.7);
+    tl.fromTo("#gf-oksigen", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.4)" }, 26.0);
+    tl.fromTo("#gf-nyala", { opacity: 0, scale: 0.2, transformOrigin: "50% 100%" }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 26.6);
+    tl.fromTo("#gf-tri", { fillOpacity: 0 }, { fillOpacity: 1, duration: 0.6, immediateRender: false }, 28.88);
+    tl.fromTo("#gf-pusat", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 28.88);
+    tl.fromTo("#gf-nyala", { scaleY: 1 }, { scaleY: 1.12, duration: 0.4, ease: "sine.inOut", yoyo: true, repeat: 9, immediateRender: false }, 27.1);
+
+    // Advice items appear as spoken
+    const item = (id, t) => {
+      tl.set(id, { opacity: 0 }, 0);
+      tl.fromTo(id, { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, t);
+    };
+    item("#gf-n1", 34.6);
+    item("#gf-n2", 36.6);
+    item("#gf-n3", 41.75);
+    item("#gf-n4", 43.55);
+
+    // Top bar leaves before the closing card
+    tl.to(["#gf-atas", "#gf-ticker", "#gf-bawah-bg"], { opacity: 0, duration: 0.4 }, 52.4);
+    window.__timelines["grafik"] = tl;
+  </script>
+</template>
