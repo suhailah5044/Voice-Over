@@ -1,7 +1,7 @@
 """Generate compositions/latar.html: an animated haze / forest-fire backdrop (deterministic)."""
 import random, math, os
 R = random.Random(42)
-W, H, D = 1920, 1080, 61.1
+W, H, D = 1920, 1080, 49.4
 
 def treeline(base, amp, step, seed, jag=1.0):
     r = random.Random(seed); pts = [(-40, H)]; x = -40

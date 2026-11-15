@@ -314,7 +314,7 @@
     #gf-lokasi svg { width: 24px; height: 24px; }
   </style>
   <div id="root" data-composition-id="grafik" data-width="1920" data-height="1080">
-    <div id="gf-pentas" class="clip" data-start="0" data-duration="60.6" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="gf-pentas" class="clip" data-start="0" data-duration="48.65" data-layout-allow-overflow data-layout-allow-overlap>
       <!-- bottom gradient for legibility -->
       <div id="gf-bawah-bg"></div>
 
@@ -424,12 +424,12 @@
     // Top bar
     tl.fromTo("#gf-bug", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 0.25);
     tl.fromTo("#gf-logo-atas", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 0.4);
-    tl.fromTo("#gf-dot", { opacity: 1 }, { opacity: 0.15, duration: 0.6, ease: "sine.inOut", yoyo: true, repeat: 49 }, 0.5);
+    tl.fromTo("#gf-dot", { opacity: 1 }, { opacity: 0.15, duration: 0.6, ease: "sine.inOut", yoyo: true, repeat: 79 }, 0.5);
 
     tl.fromTo("#gf-lokasi", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 0.7);
     // Ticker: constant crawl for the whole report
     tl.fromTo("#gf-ticker", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 0.6);
-    tl.fromTo("#gf-ticker-jalur", { x: 0 }, { x: -4300, duration: 60.6, ease: "none" }, 0);
+    tl.fromTo("#gf-ticker-jalur", { x: 0 }, { x: -4300, duration: 48.65, ease: "none" }, 0);
     tl.fromTo("#gf-bawah-bg", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 0.3);
 
     // Name lower third (intro): 2.3 – 7.6
@@ -444,19 +444,19 @@
       tl.set("#gf-nama", { x: 0 }, t + 0.4);
     };
     tl.set("#gf-nama", { opacity: 0 }, 0);
-    namaIn(2.4);
-    namaOut(7.5);
+    namaIn(2.3);
+    namaOut(7.4);
 
     // Headline strip 7.75 – 53.5
     tl.set("#gf-tajuk", { opacity: 0 }, 0);
     tl.fromTo("#gf-tajuk", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 7.85);
     tl.fromTo("#gf-tajuk-label", { x: -340 }, { x: 0, duration: 0.4, ease: "power3.out" }, 7.85);
     tl.fromTo("#gf-tajuk-isi", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.55, ease: "power3.out" }, 7.95);
-    tl.to("#gf-tajuk", { opacity: 0, duration: 0.3, ease: "power2.in" }, 53.3);
+    tl.to("#gf-tajuk", { opacity: 0, duration: 0.3, ease: "power2.in" }, 42.65);
 
     // Name lower third (sign-off)
-    namaIn(53.7, false);
-    namaOut(58.3);
+    namaIn(43.0, false);
+    namaOut(47.9);
 
     // Cards in the left column
     const kad = (id, a, b) => {
@@ -464,32 +464,32 @@
       tl.fromTo(id, { opacity: 0, y: -40, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "power3.out" }, a);
       tl.to(id, { opacity: 0, y: -30, duration: 0.35, ease: "power2.in" }, b - 0.35);
     };
-    kad("#gf-k1", 11.46, 17.42);
-    kad("#gf-k2", 17.46, 27.08);
-    kad("#gf-fakta", 27.1, 39.48);
-    kad("#gf-k4", 39.52, 53.62);
+    kad("#gf-k1", 9.74, 14.3);
+    kad("#gf-k2", 14.34, 20.54);
+    kad("#gf-fakta", 20.56, 30.86);
+    kad("#gf-k4", 30.88, 42.86);
 
     // Fact card: particles, arrow, lungs, labels as they are said
     tl.set(["#gf-l1", "#gf-l2", "#gf-l3", "#gf-anak-panah", "#gf-paru"], { opacity: 0 }, 0);
-    tl.fromTo("#gf-zarah", { opacity: 0, scale: 0.6, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.6, ease: "power3.out" }, 28.5);
-    tl.fromTo("#gf-zarah", { x: 0, y: 0 }, { x: 24, y: -14, duration: 11, ease: "sine.inOut", immediateRender: false }, 28.5);
-    tl.fromTo("#gf-l1", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.4)" }, 29.44);
-    tl.fromTo("#gf-l2", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.4)" }, 31.28);
-    tl.fromTo("#gf-anak-panah", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 34.36);
-    tl.fromTo("#gf-paru", { opacity: 0, scale: 0.6, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.8)" }, 35.0);
-    tl.fromTo("#gf-l3", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.4)" }, 35.4);
-    tl.fromTo("#gf-paru", { scale: 1 }, { scale: 1.06, duration: 0.7, ease: "sine.inOut", yoyo: true, repeat: 3, immediateRender: false }, 36.0);
+    tl.fromTo("#gf-zarah", { opacity: 0, scale: 0.6, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.6, ease: "power3.out" }, 21.8);
+    tl.fromTo("#gf-zarah", { x: 0, y: 0 }, { x: 24, y: -14, duration: 9, ease: "sine.inOut", immediateRender: false }, 21.8);
+    tl.fromTo("#gf-l1", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.4)" }, 22.52);
+    tl.fromTo("#gf-l2", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.4)" }, 24.02);
+    tl.fromTo("#gf-anak-panah", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 26.58);
+    tl.fromTo("#gf-paru", { opacity: 0, scale: 0.6, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.8)" }, 27.1);
+    tl.fromTo("#gf-l3", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.4)" }, 27.48);
+    tl.fromTo("#gf-paru", { scale: 1 }, { scale: 1.06, duration: 0.7, ease: "sine.inOut", yoyo: true, repeat: 3, immediateRender: false }, 28.0);
 
     // Advice items appear as spoken
     const item = (id, t) => {
       tl.set(id, { opacity: 0 }, 0);
       tl.fromTo(id, { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, t);
     };
-    item("#gf-n1", 41.3);
-    item("#gf-n2", 46.44);
+    item("#gf-n1", 32.22);
+    item("#gf-n2", 36.64);
 
     // Top bar leaves before the closing card
-    tl.to(["#gf-atas", "#gf-ticker", "#gf-bawah-bg", "#gf-lokasi"], { opacity: 0, duration: 0.4 }, 60.1);
+    tl.to(["#gf-atas", "#gf-ticker", "#gf-bawah-bg", "#gf-lokasi"], { opacity: 0, duration: 0.4 }, 48.2);
     window.__timelines["grafik"] = tl;
   </script>
 </template>

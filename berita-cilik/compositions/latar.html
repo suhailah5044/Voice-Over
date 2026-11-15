@@ -25,7 +25,7 @@
     }
   </style>
   <div id="root" data-composition-id="latar" data-width="1920" data-height="1080">
-    <div id="lt-pentas" class="clip" data-start="0" data-duration="61.1" data-layout-ignore data-layout-allow-overflow>
+    <div id="lt-pentas" class="clip" data-start="0" data-duration="49.4" data-layout-ignore data-layout-allow-overflow>
       <img id="lt-foto" src="assets/jerebu-kl.jpg" alt="Jerebu di Kuala Lumpur" />
       <div id="lt-asap0" class="lt-asap" style="left:979px;top:168px;width:610px;height:366px;opacity:0.22"></div>
 <div id="lt-asap1" class="lt-asap" style="left:1053px;top:775px;width:535px;height:321px;opacity:0.26"></div>
@@ -88,7 +88,7 @@
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    const D = 61.1;
+    const D = 49.4;
     tl.fromTo("#lt-pentas", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 0);
     tl.fromTo("#lt-foto", { x: -10, scale: 1.0 }, { x: -150, scale: 1.0, duration: D, ease: "none" }, 0);
     tl.fromTo("#lt-kabus", { opacity: 0.85 }, { opacity: 1, duration: D, ease: "sine.inOut" }, 0);
