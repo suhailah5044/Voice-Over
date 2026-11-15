@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=1080, height=1920" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@500;600;700;800&display=block"
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@800;900&family=Barlow+Condensed:wght@500;600;700;800&display=block"
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
@@ -19,6 +19,8 @@
         --ink: #ffffff;
         --font-display: "Anton", "Barlow Condensed", sans-serif;
         --font-strap: "Barlow Condensed", sans-serif;
+        --font-bn: "Montserrat", sans-serif;
+        --maroon: #7a0610;
       }
       * { margin: 0; padding: 0; box-sizing: border-box; }
       html, body {
@@ -31,51 +33,83 @@
       .clip { position: absolute; inset: 0; }
       .abs { position: absolute; }
 
-      /* ================= OPENING ================= */
+      /* ================= OPENING (Breaking News) ================= */
       #opening {
-        background: radial-gradient(circle at 50% 42%, #1d4fb8 0%, #0f2a66 35%, #071233 75%, #030818 100%);
+        background: radial-gradient(ellipse 85% 60% at 50% 45%, #f0242c 0%, #c10d16 38%, #7c0309 72%, #3d0004 100%);
         overflow: hidden;
       }
-      #op-grid {
-        position: absolute; inset: -200px;
-        background-image:
-          linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
-        background-size: 60px 60px;
+      #op-stripes {
+        position: absolute; inset: -300px;
+        background: repeating-linear-gradient(115deg, rgba(255,255,255,0.045) 0 2px, transparent 2px 46px);
       }
-      #op-globe { position: absolute; left: 90px; top: 360px; width: 900px; height: 900px; }
-      .beam {
-        position: absolute; left: -400px; width: 1900px; height: 120px;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.0) 20%, rgba(255,255,255,0.55) 50%, rgba(255,255,255,0) 80%, transparent);
-        transform: rotate(-24deg); mix-blend-mode: screen;
+      #op-shine {
+        position: absolute; left: -200px; top: -300px; width: 1500px; height: 900px;
+        background: radial-gradient(ellipse at 70% 20%, rgba(255,120,120,0.55), transparent 60%);
+        mix-blend-mode: screen;
       }
-      .op-bar { position: absolute; left: 0; height: 26px; width: 1080px; }
+      .streak {
+        position: absolute; height: 6px; border-radius: 3px;
+        background: linear-gradient(90deg, rgba(255,255,255,0), #fff 50%, rgba(255,255,255,0));
+        box-shadow: 0 0 18px rgba(255,255,255,0.9); transform: rotate(-58deg); transform-origin: 50% 50%;
+      }
+      .slash { position: absolute; width: 10px; height: 110px; background: rgba(255,255,255,0.85); transform: skewX(-32deg); }
+      .hline { position: absolute; height: 5px; background: rgba(255,255,255,0.9); }
       #op-logo {
-        position: absolute; left: 50%; top: 420px; width: 300px; height: 300px; margin-left: -150px;
-        border-radius: 50%; background: #fff; box-shadow: 0 0 0 10px rgba(255,255,255,0.15), 0 20px 60px rgba(0,0,0,0.5);
+        position: absolute; left: 50%; top: 300px; width: 260px; height: 260px; margin-left: -130px;
+        border-radius: 50%; background: #fff; box-shadow: 0 0 0 10px rgba(255,255,255,0.18), 0 20px 60px rgba(0,0,0,0.45);
         display: flex; align-items: center; justify-content: center; overflow: hidden;
       }
       #op-logo img { width: 92%; height: 92%; object-fit: contain; }
-      #op-title-wrap { position: absolute; left: 0; right: 0; top: 800px; text-align: center; }
-      #op-title {
-        font-family: var(--font-display); font-size: 210px; line-height: 0.95; letter-spacing: 4px;
-        color: #fff; text-shadow: 0 8px 0 rgba(0,0,0,0.25);
+      #op-kicker {
+        position: absolute; left: 0; right: 0; top: 610px; text-align: center;
+        font-family: var(--font-bn); font-weight: 800; font-size: 46px; letter-spacing: 12px; color: #fff;
+        text-shadow: 0 4px 14px rgba(0,0,0,0.35);
       }
-      #op-cilik {
-        display: inline-block; margin-top: 18px; padding: 6px 48px 10px;
-        background: var(--red); font-family: var(--font-display); font-size: 120px; letter-spacing: 10px;
-        transform: skewX(-10deg); box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      #bn { position: absolute; left: 0; top: 700px; width: 1080px; height: 420px; }
+      #bn-red {
+        position: absolute; left: 50px; top: 0; width: 1010px; height: 230px;
+        background: linear-gradient(180deg, #f2232d, #d5141d);
+        clip-path: polygon(0 0, 100% 0, 96% 100%, 5% 100%);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.4);
       }
-      #op-cilik span { display: inline-block; transform: skewX(10deg); }
-      #op-sub {
-        margin-top: 46px; font-size: 54px; font-weight: 700; letter-spacing: 14px; color: var(--gold);
+      #bn-red-edge {
+        position: absolute; left: 0; top: 0; width: 330px; height: 22px; background: #fff;
+        clip-path: polygon(0 0, 100% 0, 97% 100%, 0 100%);
       }
+      #bn-break {
+        position: absolute; left: 50px; top: 0; width: 1010px; height: 230px; display: flex; align-items: center; justify-content: center;
+        font-family: var(--font-bn); font-weight: 900; font-size: 168px; letter-spacing: 2px; color: #fff;
+        text-shadow: 0 6px 0 rgba(120,0,0,0.35);
+      }
+      #bn-white {
+        position: absolute; left: 470px; top: 230px; width: 560px; height: 175px; background: #fff;
+        clip-path: polygon(0 0, 100% 0, 96% 100%, 0 100%); box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+        display: flex; align-items: center; justify-content: center;
+        font-family: var(--font-bn); font-weight: 900; font-size: 140px; letter-spacing: 2px; color: #0b2a8a;
+      }
+      #bn-line { position: absolute; left: 250px; top: 300px; width: 200px; height: 22px; background: #fff; transform: skewX(-20deg); }
+      #bn-flare {
+        position: absolute; left: 0; top: 100px; width: 260px; height: 260px; margin: -130px 0 0 -130px;
+        background: radial-gradient(circle, #fff 0%, rgba(255,255,255,0.85) 10%, rgba(255,220,220,0.35) 30%, transparent 65%);
+        mix-blend-mode: screen;
+      }
+      #bn-flare::after {
+        content: ""; position: absolute; left: -320px; top: 126px; width: 900px; height: 8px;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.95), transparent);
+      }
+      #op-strip { position: absolute; left: 0; top: 1300px; width: 1080px; height: 110px; overflow: hidden;
+        background: linear-gradient(180deg, #e01b24, #b80b13); box-shadow: 0 12px 30px rgba(0,0,0,0.35); }
+      #op-strip-txt { position: absolute; left: 0; top: 0; height: 110px; display: flex; align-items: center; white-space: nowrap;
+        font-family: var(--font-bn); font-weight: 800; font-size: 62px; color: #fff; letter-spacing: 1px; }
+      #op-strip-txt i { font-style: normal; margin: 0 34px; color: #ffd0d0; }
+      #op-strip-l1 { position: absolute; left: 0; top: 1280px; width: 300px; height: 5px; background: #fff; }
+      #op-strip-l2 { position: absolute; left: 0; top: 1432px; width: 220px; height: 5px; background: #fff; }
       #op-name {
-        position: absolute; left: 0; right: 0; top: 1480px; text-align: center;
-        font-size: 40px; font-weight: 600; letter-spacing: 3px; color: rgba(255,255,255,0.85);
+        position: absolute; left: 0; right: 0; top: 1500px; text-align: center;
+        font-size: 44px; font-weight: 700; letter-spacing: 3px; color: rgba(255,255,255,0.92);
       }
-      #op-wipe { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: var(--red); }
-      #op-wipe2 { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: var(--navy); }
+      #op-wipe { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: #fff; }
+      #op-wipe2 { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: var(--red); }
 
       /* ================= REPORT ================= */
       #report { overflow: hidden; background: #000; }
@@ -116,13 +150,13 @@
         font-family: var(--font-display); font-size: 60px; letter-spacing: 3px;
       }
       #bug .b2 {
-        background: #fff; color: var(--navy); padding: 0 24px; display: flex; align-items: center;
+        background: #fff; color: #0b2a8a; padding: 0 24px; display: flex; align-items: center;
         font-family: var(--font-display); font-size: 60px; letter-spacing: 3px;
       }
       #live {
         position: absolute; left: 44px; top: 178px; height: 54px; padding: 0 20px 0 16px;
-        background: rgba(10,26,63,0.88); display: flex; align-items: center; gap: 12px;
-        font-size: 34px; font-weight: 700; letter-spacing: 4px; border-left: 6px solid var(--red);
+        background: rgba(122,6,16,0.9); display: flex; align-items: center; gap: 12px;
+        font-size: 34px; font-weight: 700; letter-spacing: 4px; border-left: 6px solid #fff;
       }
       #live-dot { width: 18px; height: 18px; border-radius: 50%; background: #ff2a2a; box-shadow: 0 0 12px #ff2a2a; }
       #logo {
@@ -148,7 +182,7 @@
       .lt .main .l1 { font-size: 58px; font-weight: 800; line-height: 1.02; letter-spacing: 0.5px; text-transform: uppercase; }
       .lt .sub {
         position: absolute; left: 40px; width: 1000px; padding: 10px 28px 12px;
-        background: var(--navy-2); font-size: 40px; font-weight: 600; letter-spacing: 1px;
+        background: var(--maroon); font-size: 40px; font-weight: 600; letter-spacing: 1px;
         border-left: 14px solid var(--gold);
       }
       .lt .mask { position: absolute; inset: 0; overflow: hidden; }
@@ -165,12 +199,12 @@
         color: var(--navy); font-size: 42px; font-weight: 700; letter-spacing: 1px;
       }
       #ticker .txt b { color: var(--red); margin: 0 26px; }
-      #tick-under { position: absolute; left: 0; top: 1866px; width: 1080px; height: 54px; background: var(--navy); }
+      #tick-under { position: absolute; left: 0; top: 1866px; width: 1080px; height: 54px; background: var(--maroon); }
 
       /* fakta sains card */
       #fakta {
         position: absolute; left: 36px; top: 470px; width: 560px; height: 880px;
-        background: linear-gradient(180deg, rgba(10,26,63,0.94), rgba(6,16,42,0.94));
+        background: linear-gradient(180deg, rgba(150,8,18,0.95), rgba(80,2,8,0.95));
         border-top: 12px solid var(--gold); box-shadow: 0 20px 60px rgba(0,0,0,0.5);
       }
       #fakta .hd {
@@ -196,13 +230,13 @@
         box-shadow: 0 12px 30px rgba(0,0,0,0.35); padding-right: 26px;
       }
       .nas-ic {
-        width: 104px; height: 104px; background: var(--navy-2); display: flex; align-items: center; justify-content: center; flex: none;
+        width: 104px; height: 104px; background: var(--red); display: flex; align-items: center; justify-content: center; flex: none;
       }
       .nas-t { font-size: 50px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
 
       /* outro */
       #outro {
-        background: radial-gradient(circle at 50% 45%, #1d4fb8 0%, #0f2a66 40%, #050c26 100%);
+        background: radial-gradient(ellipse 85% 60% at 50% 45%, #f0242c 0%, #c10d16 38%, #7c0309 72%, #3d0004 100%);
         overflow: hidden;
       }
       #out-logo {
@@ -214,13 +248,13 @@
       #out-title { position: absolute; left: 0; right: 0; top: 830px; text-align: center; }
       #out-title .t { font-family: var(--font-display); font-size: 170px; line-height: 1; }
       #out-title .c {
-        display: inline-block; margin-top: 10px; padding: 4px 40px 8px; background: var(--red);
+        display: inline-block; margin-top: 10px; padding: 4px 40px 8px; background: #fff; color: #0b2a8a;
         font-family: var(--font-display); font-size: 96px; letter-spacing: 8px; transform: skewX(-10deg);
       }
       #out-cred { position: absolute; left: 60px; right: 60px; top: 1260px; text-align: center; }
       #out-cred .r { font-size: 40px; font-weight: 700; letter-spacing: 6px; color: var(--gold); }
       #out-cred .n { margin-top: 14px; font-size: 54px; font-weight: 800; line-height: 1.1; text-transform: uppercase; }
-      #out-cred .k { margin-top: 12px; font-size: 42px; font-weight: 600; color: #cfd9ff; }
+      #out-cred .k { margin-top: 12px; font-size: 42px; font-weight: 600; color: #ffe0e0; }
     </style>
   </head>
   <body>
@@ -343,36 +377,32 @@
 
       <!-- ===== OPENING ===== -->
       <div id="opening" class="clip" data-start="0" data-duration="6.4" data-track-index="3">
-        <div id="op-grid"></div>
-        <svg id="op-globe" viewBox="-100 -100 200 200">
-          <g fill="none" stroke="rgba(160,200,255,0.35)" stroke-width="0.5">
-            <circle r="90" stroke-width="0.9" />
-            <g id="op-mer">
-              <ellipse rx="90" ry="90" /><ellipse rx="75" ry="90" /><ellipse rx="55" ry="90" /><ellipse rx="30" ry="90" /><ellipse rx="6" ry="90" />
-            </g>
-            <ellipse rx="90" ry="12" cy="-45" /><ellipse rx="90" ry="18" /><ellipse rx="90" ry="12" cy="45" />
-            <ellipse rx="70" ry="9" cy="-65" /><ellipse rx="70" ry="9" cy="65" />
-          </g>
-          <g id="op-ring" fill="none" stroke="rgba(255,199,44,0.7)">
-            <circle r="98" stroke-width="1.4" stroke-dasharray="6 10" />
-          </g>
-          <g id="op-ring2" fill="none" stroke="rgba(215,25,32,0.85)">
-            <circle r="94" stroke-width="2.4" stroke-dasharray="80 40 20 40" />
-          </g>
-        </svg>
-        <div class="beam" id="beam1" style="top: 500px"></div>
-        <div class="beam" id="beam2" style="top: 1200px"></div>
-        <div class="op-bar" id="opbar1" style="top: 300px; background: var(--red)"></div>
-        <div class="op-bar" id="opbar2" style="top: 336px; background: #fff; height: 8px"></div>
-        <div class="op-bar" id="opbar3" style="top: 1620px; background: var(--red)"></div>
-        <div class="op-bar" id="opbar4" style="top: 1600px; background: #fff; height: 8px"></div>
+        <div id="op-stripes"></div>
+        <div id="op-shine"></div>
+        <div class="streak" id="stk1" style="left: 620px; top: 260px; width: 900px"></div>
+        <div class="streak" id="stk2" style="left: -380px; top: 640px; width: 700px"></div>
+        <div class="streak" id="stk3" style="left: 560px; top: 1560px; width: 800px"></div>
+        <div class="slash" id="sl1" style="left: 960px; top: 470px"></div>
+        <div class="slash" id="sl2" style="left: 1000px; top: 470px"></div>
+        <div class="slash" id="sl3" style="left: 1040px; top: 470px"></div>
+        <div class="hline" id="hl1" style="left: 0; top: 1180px; width: 340px"></div>
+        <div class="hline" id="hl2" style="left: 640px; top: 1180px; width: 440px; opacity: 0.6"></div>
         <div id="op-logo"><img src="assets/logo-sekolah.png" alt="" /></div>
-        <div id="op-title-wrap">
-          <div id="op-title">BERITA</div>
-          <div id="op-cilik"><span>CILIK</span></div>
-          <div id="op-sub">LAPORAN KHAS</div>
+        <div id="op-kicker">WARTAWAN CILIK</div>
+        <div id="bn">
+          <div id="bn-red-edge"></div>
+          <div id="bn-red"></div>
+          <div id="bn-break">BREAKING</div>
+          <div id="bn-line"></div>
+          <div id="bn-white">NEWS</div>
+          <div id="bn-flare"></div>
         </div>
-        <div id="op-name">Bersama Wartawan Cilik &middot; Muhamad Afif Aryash</div>
+        <div id="op-strip-l1"></div>
+        <div id="op-strip">
+          <div id="op-strip-txt">LAPORAN KHAS: KEBAKARAN HUTAN<i>&#9679;</i>WARTAWAN CILIK 5 SAYANG<i>&#9679;</i>LAPORAN KHAS: KEBAKARAN HUTAN<i>&#9679;</i>WARTAWAN CILIK 5 SAYANG<i>&#9679;</i></div>
+        </div>
+        <div id="op-strip-l2"></div>
+        <div id="op-name">Bersama Muhamad Afif Aryash</div>
         <div id="op-wipe"></div>
         <div id="op-wipe2"></div>
       </div>
@@ -393,31 +423,39 @@
       const tl = gsap.timeline({ paused: true });
       const R = 6.0; // report audio/video start
 
-      /* ---------- OPENING (0 – 6.4) ---------- */
+      /* ---------- OPENING (0 – 6.4) — Breaking News ---------- */
       tl.set("#op-wipe", { yPercent: 100 }, 0);
       tl.set("#op-wipe2", { yPercent: 100 }, 0);
-      tl.fromTo("#op-grid", { opacity: 0.5, scale: 1.25 }, { opacity: 1, scale: 1, duration: 2.5, ease: "power2.out" }, 0);
-      tl.fromTo("#op-globe", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 1.6, ease: "power3.out" }, 0.1);
-      tl.fromTo("#op-mer", { scaleX: 1 }, { scaleX: -1, duration: 6.4, ease: "none", transformOrigin: "50% 50%" }, 0);
-      tl.fromTo("#op-ring", { rotation: 0 }, { rotation: 140, duration: 6.4, ease: "none", svgOrigin: "0 0" }, 0);
-      tl.fromTo("#op-ring2", { rotation: 0 }, { rotation: -200, duration: 6.4, ease: "none", svgOrigin: "0 0" }, 0);
-      tl.fromTo("#beam1", { x: -1600 }, { x: 1600, duration: 1.4, ease: "power1.inOut" }, 0.4);
-      tl.fromTo("#beam2", { x: 1600 }, { x: -1600, duration: 1.4, ease: "power1.inOut" }, 1.4);
-      tl.fromTo("#beam1", { x: -1600 }, { x: 1600, duration: 0.9, ease: "power2.inOut", immediateRender: false }, 3.2);
-      tl.fromTo(["#opbar1", "#opbar3"], { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.7, ease: "expo.out", stagger: 0.25 }, 1.0);
-      tl.fromTo(["#opbar2", "#opbar4"], { scaleX: 0, transformOrigin: "100% 50%" }, { scaleX: 1, duration: 0.7, ease: "expo.out", stagger: 0.25 }, 1.15);
-      tl.fromTo("#op-logo", { scale: 0, rotation: -120, opacity: 0 }, { scale: 1, rotation: 0, opacity: 1, duration: 0.9, ease: "back.out(1.6)" }, 2.0);
-      // title hit at 4.0 (synced to music boom)
-      tl.fromTo("#op-title", { scale: 2.4, opacity: 0, filter: "blur(16px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power4.out" }, 3.85);
-      tl.fromTo("#op-cilik", { xPercent: -160, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 0.45, ease: "expo.out" }, 4.05);
-      tl.fromTo("#op-sub", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.7, ease: "power3.out" }, 4.35);
-      tl.fromTo("#op-name", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 2.3);
+      tl.fromTo("#op-stripes", { x: 0 }, { x: -260, duration: 6.4, ease: "none" }, 0);
+      tl.fromTo("#op-shine", { opacity: 0.4, x: -120 }, { opacity: 1, x: 120, duration: 6.4, ease: "sine.inOut" }, 0);
+      tl.fromTo("#stk1", { x: 700, y: -700, opacity: 1 }, { x: -1400, y: 1400, duration: 1.1, ease: "power2.in" }, 0.2);
+      tl.fromTo("#stk2", { x: 900, y: -900, opacity: 1 }, { x: -900, y: 900, duration: 1.0, ease: "power2.in" }, 1.3);
+      tl.fromTo("#stk3", { x: 900, y: -900, opacity: 1 }, { x: -1300, y: 1300, duration: 1.0, ease: "power2.in" }, 2.6);
+      tl.fromTo(["#sl1", "#sl2", "#sl3"], { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out", stagger: 0.08 }, 0.8);
+      tl.fromTo("#hl1", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.6, ease: "expo.out" }, 1.0);
+      tl.fromTo("#hl2", { scaleX: 0, transformOrigin: "100% 50%" }, { scaleX: 1, duration: 0.6, ease: "expo.out" }, 1.15);
+      tl.fromTo("#op-logo", { scale: 0, rotation: -120, opacity: 0 }, { scale: 1, rotation: 0, opacity: 1, duration: 0.9, ease: "back.out(1.6)" }, 1.4);
+      tl.fromTo("#op-kicker", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 2.0);
+      tl.fromTo("#op-name", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 2.4);
+      // the hit (music boom at 4.0)
+      tl.fromTo("#bn-red", { xPercent: -115 }, { xPercent: 0, duration: 0.32, ease: "expo.out" }, 3.82);
+      tl.fromTo("#bn-red-edge", { xPercent: -110 }, { xPercent: 0, duration: 0.4, ease: "expo.out" }, 3.9);
+      tl.fromTo("#bn-break", { scale: 1.9, opacity: 0, filter: "blur(14px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power4.out" }, 3.92);
+      tl.fromTo("#bn-white", { xPercent: 120 }, { xPercent: 0, duration: 0.38, ease: "expo.out" }, 4.06);
+      tl.fromTo("#bn-line", { xPercent: -300, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 0.4, ease: "expo.out" }, 4.12);
+      tl.fromTo("#bn-flare", { x: -80, opacity: 0 }, { x: 1160, opacity: 1, duration: 0.9, ease: "power2.inOut" }, 4.0);
+      tl.to("#bn-flare", { opacity: 0, duration: 0.15 }, 4.85);
+      tl.fromTo("#bn", { scale: 1.04 }, { scale: 1.0, duration: 2.2, ease: "power1.out", transformOrigin: "50% 40%" }, 4.0);
+      tl.fromTo("#op-strip", { xPercent: 100 }, { xPercent: 0, duration: 0.45, ease: "expo.out" }, 4.25);
+      tl.fromTo("#op-strip-txt", { x: 200 }, { x: -900, duration: 2.2, ease: "none" }, 4.25);
+      tl.fromTo(["#op-strip-l1", "#op-strip-l2"], { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.5, ease: "expo.out", stagger: 0.1 }, 4.4);
       tl.fromTo("#opening", { x: 0 }, { keyframes: [{ x: -14, duration: 0.04 }, { x: 12, duration: 0.04 }, { x: -6, duration: 0.04 }, { x: 0, duration: 0.04 }] }, 4.0);
       // wipe into report
       tl.to("#op-wipe", { yPercent: 0, duration: 0.35, ease: "power3.in" }, 5.5);
       tl.to("#op-wipe2", { yPercent: 0, duration: 0.3, ease: "power3.in" }, 5.62);
       tl.to(["#op-wipe", "#op-wipe2"], { yPercent: -100, duration: 0.45, ease: "power3.out", stagger: 0.06 }, 5.95);
-      tl.set(["#op-grid", "#op-globe", "#op-title-wrap", "#op-logo", "#op-name", ".op-bar", ".beam"], { opacity: 0 }, 5.93);
+      tl.set(["#op-stripes", "#op-shine", ".streak", ".slash", ".hline", "#op-logo", "#op-kicker", "#bn", "#op-strip", "#op-strip-l1", "#op-strip-l2", "#op-name"], { opacity: 0 }, 5.93);
+      tl.set("#opening", { backgroundImage: "none", backgroundColor: "rgba(0,0,0,0)" }, 5.93);
 
       /* ---------- REPORT ---------- */
       // background slow push & fire flicker (deterministic pseudo-random)
