@@ -29,10 +29,10 @@
     }
     #pb-globe {
       position: absolute;
-      left: 610px;
-      top: 90px;
-      width: 700px;
-      height: 700px;
+      left: 510px;
+      top: 40px;
+      width: 900px;
+      height: 900px;
     }
     .pb-bar {
       position: absolute;
@@ -40,9 +40,9 @@
       width: 2120px;
       height: 100px;
     }
-    #pb-bar-merah { top: 690px; background: linear-gradient(90deg, #8e0a0e, #d7141a 40%, #ff3b3b); }
-    #pb-bar-biru { top: 790px; height: 20px; background: #f5b800; }
-    #pb-bar-putih { top: 810px; height: 8px; background: #ffffff; }
+    #pb-bar-merah { top: 720px; background: linear-gradient(90deg, #8e0a0e, #d7141a 40%, #ff3b3b); }
+    #pb-bar-biru { top: 820px; height: 20px; background: #f5b800; }
+    #pb-bar-putih { top: 840px; height: 8px; background: #ffffff; }
     #pb-judul {
       position: absolute;
       left: 0;
@@ -61,7 +61,7 @@
       position: absolute;
       left: 0;
       right: 0;
-      top: 705px;
+      top: 735px;
       text-align: center;
       font-size: 58px;
       font-weight: 600;
@@ -72,7 +72,7 @@
       position: absolute;
       left: 0;
       right: 0;
-      top: 860px;
+      top: 885px;
       text-align: center;
       font-family: "Montserrat", sans-serif;
       font-weight: 700;
@@ -82,19 +82,19 @@
     }
     #pb-logo {
       position: absolute;
-      left: 880px;
-      top: 90px;
-      width: 160px;
-      height: 160px;
+      left: 890px;
+      top: 60px;
+      width: 140px;
+      height: 140px;
       filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.5));
     }
     #pb-kilat { position: absolute; inset: 0; background: #fff; opacity: 0; }
     #pb-glint {
       position: absolute;
-      top: 300px;
+      top: 380px;
       left: -500px;
       width: 260px;
-      height: 360px;
+      height: 320px;
       background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0));
       transform: skewX(-20deg);
     }
@@ -113,6 +113,55 @@
       width: 1920px;
       height: 1080px;
       background: #f5b800;
+    }
+    .pb-sh { position: absolute; }
+    #pb-banner {
+      position: absolute;
+      left: 560px;
+      top: 250px;
+      width: 800px;
+      height: 150px;
+      border-radius: 26px;
+      border: 8px solid #ffffff;
+      background: linear-gradient(180deg, #ff4a4a 0%, #d7141a 48%, #9a070b 52%, #c10f14 100%);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5), inset 0 4px 0 rgba(255, 255, 255, 0.35);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #pb-banner-teks {
+      font-family: "Archivo Black", sans-serif;
+      font-size: 104px;
+      letter-spacing: 0.06em;
+      color: #ffffff;
+      text-shadow: 0 4px 0 #8e0a0e, 0 8px 20px rgba(0, 0, 0, 0.45);
+    }
+    #pb-banner-kilat {
+      position: absolute;
+      top: -20px;
+      left: -260px;
+      width: 220px;
+      height: 200px;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0));
+      transform: skewX(-20deg);
+    }
+    #pb-besar {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 380px;
+      text-align: center;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 300px;
+      line-height: 1;
+      letter-spacing: 0.02em;
+    }
+    #pb-besar span {
+      color: #e8141b;
+      -webkit-text-stroke: 14px #ffffff;
+      paint-order: stroke fill;
+      text-shadow: 0 6px 0 #7d0508, 0 12px 0 #5c0306, 0 22px 40px rgba(0, 0, 0, 0.6);
     }
   </style>
   <div id="root" data-composition-id="pembuka" data-width="1920" data-height="1080">
@@ -145,7 +194,30 @@
         </g>
       </svg>
       <img id="pb-logo" src="assets/logo-sekolah.svg" alt="Logo sekolah" />
-      <div id="pb-judul"><span id="pb-berita">BERITA</span><span id="pb-cilik">CILIK</span></div>
+      <svg id="pb-sh0" class="pb-sh" style="left:726px;top:504px;width:48px;height:48px" viewBox="0 0 10 10"><path d="M0 0 L10 3 L3 10 Z" fill="#4d86ff"/></svg>
+      <svg id="pb-sh1" class="pb-sh" style="left:1025px;top:565px;width:57px;height:57px" viewBox="0 0 10 10"><path d="M0 0 L10 3 L3 10 Z" fill="#4d86ff"/></svg>
+      <svg id="pb-sh2" class="pb-sh" style="left:1051px;top:511px;width:34px;height:34px" viewBox="0 0 10 10"><path d="M0 0 L10 3 L3 10 Z" fill="#4d86ff"/></svg>
+      <svg id="pb-sh3" class="pb-sh" style="left:1000px;top:508px;width:30px;height:30px" viewBox="0 0 10 10"><path d="M0 0 L10 3 L3 10 Z" fill="#cfe2ff"/></svg>
+      <svg id="pb-sh4" class="pb-sh" style="left:969px;top:631px;width:44px;height:44px" viewBox="0 0 10 10"><path d="M0 0 L10 3 L3 10 Z" fill="#cfe2ff"/></svg>
+      <svg id="pb-sh5" class="pb-sh" style="left:999px;top:661px;width:43px;height:43px" viewBox="0 0 10 10"><path d="M0 0 L10 3 L3 10 Z" fill="#ffffff"/></svg>
+      <svg id="pb-sh6" class="pb-sh" style="left:1203px;top:476px;width:57px;height:57px" viewBox="0 0 10 10"><path d="M0 0 L10 3 L3 10 Z" fill="#4d86ff"/></svg>
+      <svg id="pb-sh7" class="pb-sh" style="left:765px;top:490px;width:54px;height:54px" viewBox="0 0 10 10"><path d="M0 0 L10 3 L3 10 Z" fill="#7fb0ff"/></svg>
+      <svg id="pb-sh8" class="pb-sh" style="left:1216px;top:463px;width:34px;height:34px" viewBox="0 0 10 10"><path d="M0 0 L10 3 L3 10 Z" fill="#cfe2ff"/></svg>
+      <svg id="pb-sh9" class="pb-sh" style="left:790px;top:532px;width:43px;height:43px" viewBox="0 0 10 10"><path d="M0 0 L10 3 L3 10 Z" fill="#7fb0ff"/></svg>
+      <svg id="pb-sh10" class="pb-sh" style="left:832px;top:350px;width:32px;height:32px" viewBox="0 0 10 10"><path d="M0 0 L10 3 L3 10 Z" fill="#ffffff"/></svg>
+      <svg id="pb-sh11" class="pb-sh" style="left:961px;top:660px;width:35px;height:35px" viewBox="0 0 10 10"><path d="M0 0 L10 3 L3 10 Z" fill="#cfe2ff"/></svg>
+      <svg id="pb-sh12" class="pb-sh" style="left:1065px;top:507px;width:37px;height:37px" viewBox="0 0 10 10"><path d="M0 0 L10 3 L3 10 Z" fill="#ffffff"/></svg>
+      <svg id="pb-sh13" class="pb-sh" style="left:1114px;top:449px;width:53px;height:53px" viewBox="0 0 10 10"><path d="M0 0 L10 3 L3 10 Z" fill="#7fb0ff"/></svg>
+      <svg id="pb-sh14" class="pb-sh" style="left:901px;top:515px;width:49px;height:49px" viewBox="0 0 10 10"><path d="M0 0 L10 3 L3 10 Z" fill="#7fb0ff"/></svg>
+      <svg id="pb-sh15" class="pb-sh" style="left:862px;top:418px;width:28px;height:28px" viewBox="0 0 10 10"><path d="M0 0 L10 3 L3 10 Z" fill="#ffffff"/></svg>
+      <svg id="pb-sh16" class="pb-sh" style="left:825px;top:401px;width:70px;height:70px" viewBox="0 0 10 10"><path d="M0 0 L10 3 L3 10 Z" fill="#cfe2ff"/></svg>
+      <svg id="pb-sh17" class="pb-sh" style="left:890px;top:378px;width:56px;height:56px" viewBox="0 0 10 10"><path d="M0 0 L10 3 L3 10 Z" fill="#4d86ff"/></svg>
+      <svg id="pb-sh18" class="pb-sh" style="left:768px;top:470px;width:27px;height:27px" viewBox="0 0 10 10"><path d="M0 0 L10 3 L3 10 Z" fill="#cfe2ff"/></svg>
+      <svg id="pb-sh19" class="pb-sh" style="left:932px;top:338px;width:45px;height:45px" viewBox="0 0 10 10"><path d="M0 0 L10 3 L3 10 Z" fill="#cfe2ff"/></svg>
+      <svg id="pb-sh20" class="pb-sh" style="left:1042px;top:493px;width:55px;height:55px" viewBox="0 0 10 10"><path d="M0 0 L10 3 L3 10 Z" fill="#ffffff"/></svg>
+      <svg id="pb-sh21" class="pb-sh" style="left:1031px;top:609px;width:45px;height:45px" viewBox="0 0 10 10"><path d="M0 0 L10 3 L3 10 Z" fill="#ffffff"/></svg>
+      <div id="pb-banner"><span id="pb-banner-teks">BERITA</span><div id="pb-banner-kilat"></div></div>
+      <div id="pb-besar"><span id="pb-cilik">CILIK</span></div>
       <div id="pb-bar-merah" class="pb-bar"></div>
       <div id="pb-tagline">LAPORAN WARTAWAN CILIK</div>
       <div id="pb-bar-biru" class="pb-bar"></div>
@@ -177,8 +249,32 @@
     tl.fromTo("#pb-logo", { opacity: 0, scale: 0.4, rotation: -30 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.7, ease: "back.out(2)" }, 1.0);
 
     // Title slams on the timpani hits (2.0 and 3.0)
-    tl.fromTo("#pb-berita", { opacity: 0, scale: 2.4, filter: "blur(18px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "power4.out" }, 1.9);
-    tl.fromTo("#pb-cilik", { opacity: 0, scale: 2.4, filter: "blur(18px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "power4.out" }, 2.9);
+    tl.fromTo("#pb-banner", { opacity: 0, scaleX: 0.05, scaleY: 0.4 }, { opacity: 1, scaleX: 1, scaleY: 1, duration: 0.4, ease: "back.out(1.6)" }, 1.9);
+    tl.fromTo("#pb-banner-kilat", { x: 0 }, { x: 1300, duration: 0.7, ease: "power2.inOut" }, 2.2);
+    tl.fromTo("#pb-besar", { opacity: 0, scale: 3, filter: "blur(18px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.34, ease: "power4.out" }, 2.9);
+    tl.fromTo("#pb-banner-kilat", { x: 0 }, { x: 1300, duration: 0.7, ease: "power2.inOut", immediateRender: false }, 4.05);
+    tl.fromTo("#pb-sh0", { x: 0, y: 0, rotation: 211, scale: 0.3, opacity: 0 }, { x: -990, y: 183, rotation: 618, scale: 1.4, opacity: 0.9, duration: 2.39, ease: "power2.in" }, 0.40);
+    tl.fromTo("#pb-sh1", { x: 0, y: 0, rotation: 15, scale: 0.3, opacity: 0 }, { x: 732, y: 295, rotation: 430, scale: 1.4, opacity: 0.9, duration: 2.22, ease: "power2.in" }, 1.67);
+    tl.fromTo("#pb-sh2", { x: 0, y: 0, rotation: 87, scale: 0.3, opacity: 0 }, { x: 389, y: 356, rotation: 385, scale: 1.4, opacity: 0.9, duration: 2.19, ease: "power2.in" }, 0.15);
+    tl.fromTo("#pb-sh3", { x: 0, y: 0, rotation: 236, scale: 0.3, opacity: 0 }, { x: 283, y: 475, rotation: 671, scale: 1.4, opacity: 0.9, duration: 1.92, ease: "power2.in" }, 0.75);
+    tl.fromTo("#pb-sh4", { x: 0, y: 0, rotation: 305, scale: 0.3, opacity: 0 }, { x: 111, y: 520, rotation: 790, scale: 1.4, opacity: 0.9, duration: 1.60, ease: "power2.in" }, 0.72);
+    tl.fromTo("#pb-sh5", { x: 0, y: 0, rotation: 26, scale: 0.3, opacity: 0 }, { x: 312, y: 724, rotation: 328, scale: 1.4, opacity: 0.9, duration: 1.91, ease: "power2.in" }, 1.11);
+    tl.fromTo("#pb-sh6", { x: 0, y: 0, rotation: 4, scale: 0.3, opacity: 0 }, { x: 942, y: 54, rotation: 248, scale: 1.4, opacity: 0.9, duration: 2.16, ease: "power2.in" }, 0.84);
+    tl.fromTo("#pb-sh7", { x: 0, y: 0, rotation: 42, scale: 0.3, opacity: 0 }, { x: -770, y: 159, rotation: 222, scale: 1.4, opacity: 0.9, duration: 2.46, ease: "power2.in" }, 0.77);
+    tl.fromTo("#pb-sh8", { x: 0, y: 0, rotation: 359, scale: 0.3, opacity: 0 }, { x: 1042, y: -100, rotation: 554, scale: 1.4, opacity: 0.9, duration: 1.75, ease: "power2.in" }, 1.06);
+    tl.fromTo("#pb-sh9", { x: 0, y: 0, rotation: 27, scale: 0.3, opacity: 0 }, { x: -659, y: 152, rotation: 212, scale: 1.4, opacity: 0.9, duration: 1.97, ease: "power2.in" }, 0.43);
+    tl.fromTo("#pb-sh10", { x: 0, y: 0, rotation: 139, scale: 0.3, opacity: 0 }, { x: -559, y: -323, rotation: 646, scale: 1.4, opacity: 0.9, duration: 2.42, ease: "power2.in" }, 1.10);
+    tl.fromTo("#pb-sh11", { x: 0, y: 0, rotation: 342, scale: 0.3, opacity: 0 }, { x: 3, y: 488, rotation: 674, scale: 1.4, opacity: 0.9, duration: 1.70, ease: "power2.in" }, 1.51);
+    tl.fromTo("#pb-sh12", { x: 0, y: 0, rotation: 297, scale: 0.3, opacity: 0 }, { x: 1240, y: 185, rotation: 664, scale: 1.4, opacity: 0.9, duration: 2.53, ease: "power2.in" }, 1.05);
+    tl.fromTo("#pb-sh13", { x: 0, y: 0, rotation: 27, scale: 0.3, opacity: 0 }, { x: 768, y: -67, rotation: 476, scale: 1.4, opacity: 0.9, duration: 1.67, ease: "power2.in" }, 0.44);
+    tl.fromTo("#pb-sh14", { x: 0, y: 0, rotation: 350, scale: 0.3, opacity: 0 }, { x: -721, y: 269, rotation: 851, scale: 1.4, opacity: 0.9, duration: 2.58, ease: "power2.in" }, 0.25);
+    tl.fromTo("#pb-sh15", { x: 0, y: 0, rotation: 6, scale: 0.3, opacity: 0 }, { x: -615, y: -558, rotation: 533, scale: 1.4, opacity: 0.9, duration: 1.62, ease: "power2.in" }, 1.56);
+    tl.fromTo("#pb-sh16", { x: 0, y: 0, rotation: 27, scale: 0.3, opacity: 0 }, { x: -649, y: -448, rotation: 531, scale: 1.4, opacity: 0.9, duration: 2.34, ease: "power2.in" }, 0.97);
+    tl.fromTo("#pb-sh17", { x: 0, y: 0, rotation: 324, scale: 0.3, opacity: 0 }, { x: -338, y: -676, rotation: 844, scale: 1.4, opacity: 0.9, duration: 1.63, ease: "power2.in" }, 1.49);
+    tl.fromTo("#pb-sh18", { x: 0, y: 0, rotation: 26, scale: 0.3, opacity: 0 }, { x: -709, y: 0, rotation: 564, scale: 1.4, opacity: 0.9, duration: 2.48, ease: "power2.in" }, 0.25);
+    tl.fromTo("#pb-sh19", { x: 0, y: 0, rotation: 302, scale: 0.3, opacity: 0 }, { x: -127, y: -555, rotation: 593, scale: 1.4, opacity: 0.9, duration: 1.69, ease: "power2.in" }, 0.23);
+    tl.fromTo("#pb-sh20", { x: 0, y: 0, rotation: 175, scale: 0.3, opacity: 0 }, { x: 1262, y: 107, rotation: 463, scale: 1.4, opacity: 0.9, duration: 2.28, ease: "power2.in" }, 1.53);
+    tl.fromTo("#pb-sh21", { x: 0, y: 0, rotation: 321, scale: 0.3, opacity: 0 }, { x: 235, y: 460, rotation: 572, scale: 1.4, opacity: 0.9, duration: 2.03, ease: "power2.in" }, 0.62);
     tl.fromTo("#pb-kilat", { opacity: 0.0 }, { opacity: 0.35, duration: 0.05 }, 2.0);
     tl.to("#pb-kilat", { opacity: 0, duration: 0.3 }, 2.05);
 
@@ -191,7 +287,7 @@
     // Final hit at 4.0
     tl.fromTo("#pb-kilat", { opacity: 0 }, { opacity: 0.6, duration: 0.04, immediateRender: false }, 4.0);
     tl.to("#pb-kilat", { opacity: 0, duration: 0.45, ease: "power2.out" }, 4.04);
-    tl.fromTo("#pb-judul", { scale: 1.06 }, { scale: 1, duration: 0.5, ease: "power3.out" }, 4.0);
+    tl.fromTo("#pb-besar", { scale: 1.08 }, { scale: 1, duration: 0.5, ease: "power3.out", immediateRender: false }, 4.0);
     tl.fromTo("#pb-glint", { x: 0 }, { x: 2900, duration: 0.9, ease: "power2.inOut" }, 4.1);
     tl.fromTo("#pb-edisi", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 4.2);
 
@@ -199,7 +295,7 @@
     tl.fromTo("#pb-tirai2", { x: -1920 }, { x: 0, duration: 0.35, ease: "power3.in" }, 5.3);
     tl.fromTo("#pb-tirai", { x: -1920 }, { x: 0, duration: 0.35, ease: "power3.in" }, 5.4);
     tl.set("#pb-tirai2", { opacity: 0 }, 5.76);
-    tl.set(["#pb-bg", "#pb-rays", "#pb-grid", "#pb-globe", "#pb-logo", "#pb-judul", "#pb-bar-merah", "#pb-bar-biru", "#pb-bar-putih", "#pb-tagline", "#pb-edisi", "#pb-glint", "#pb-kilat"], { opacity: 0 }, 5.76);
+    tl.set(["#pb-bg", "#pb-rays", "#pb-grid", "#pb-globe", "#pb-logo", "#pb-banner", "#pb-besar", ".pb-sh", "#pb-bar-merah", "#pb-bar-biru", "#pb-bar-putih", "#pb-tagline", "#pb-edisi", "#pb-glint", "#pb-kilat"], { opacity: 0 }, 5.76);
     tl.to("#pb-tirai", { x: 1920, duration: 0.5, ease: "power3.inOut" }, 5.85);
     window.__timelines["pembuka"] = tl;
   </script>
