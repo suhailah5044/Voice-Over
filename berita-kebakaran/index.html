@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="ms" data-resolution="portrait">
+<html lang="ms" data-resolution="landscape">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=1080, height=1920" />
+    <meta name="viewport" content="width=1920, height=1080" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@800;900&family=Barlow+Condensed:wght@500;600;700;800&display=block"
@@ -304,10 +304,92 @@
       #out-cred .r { font-size: 40px; font-weight: 700; letter-spacing: 6px; color: var(--gold); }
       #out-cred .n { margin-top: 14px; font-size: 54px; font-weight: 800; line-height: 1.1; text-transform: uppercase; }
       #out-cred .k { margin-top: 12px; font-size: 42px; font-weight: 600; color: #ffe0e0; }
+      /* ================= LANDSCAPE 1920x1080 OVERRIDES ================= */
+      html, body { width: 1920px; height: 1080px; }
+      #root { width: 1920px; height: 1080px; }
+      #op-wipe, #op-wipe2 { width: 1920px; height: 1080px; }
+      #op-stripes { inset: -400px; }
+      #op-shine { left: 0; top: -300px; width: 2200px; height: 900px; }
+      #op-logo { top: 40px; width: 360px; height: 250px; margin-left: -180px; }
+      #op-kicker { top: 296px; font-size: 40px; }
+      #bn { left: 0; top: 370px; width: 1920px; height: 400px; }
+      #bn-red { left: 300px; width: 1320px; height: 210px; }
+      #bn-red-edge { left: 250px; width: 420px; }
+      #bn-break { left: 300px; width: 1320px; height: 210px; font-size: 170px; letter-spacing: 4px; }
+      #bn-white { left: 960px; top: 210px; width: 640px; height: 160px; font-size: 130px; letter-spacing: 6px; }
+      #bn-line { left: 640px; top: 280px; width: 260px; }
+      #op-strip { top: 860px; width: 1920px; height: 96px; }
+      #op-strip-txt { height: 96px; font-size: 54px; }
+      #op-strip-l1 { top: 840px; width: 520px; }
+      #op-strip-l2 { top: 976px; width: 380px; }
+      #op-name { top: 995px; font-size: 40px; }
+
+      #bg { left: -40px; top: -30px; width: 2000px; height: 1140px; background-image: url("assets/latar-kebakaran-landscape.png"); filter: blur(1.5px) saturate(1.08); }
+      #glow { background: radial-gradient(ellipse 50% 45% at 30% 30%, rgba(255,120,20,0.5), rgba(255,80,0,0) 70%); }
+      #vignette { background:
+          linear-gradient(180deg, rgba(5,10,30,0.5) 0%, rgba(5,10,30,0) 18%, rgba(5,10,30,0) 66%, rgba(5,10,30,0.7) 100%),
+          radial-gradient(ellipse at 55% 50%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.45) 100%); }
+      #anchor { left: 960px; top: -120px; width: 670px; height: 1190px; transform-origin: 55% 32%; }
+      #anchor video { width: 670px; height: 1190px; filter: drop-shadow(0 0 24px rgba(0,0,0,0.55)); }
+      #bug { left: 60px; top: 48px; height: 84px; }
+      #bug .b1, #bug .b2 { font-size: 54px; }
+      #live { left: 60px; top: 146px; height: 48px; font-size: 30px; }
+      #logo { right: 60px; top: 40px; width: 250px; height: 170px; }
+
+      #caps { top: 730px; height: 110px; width: 1920px; }
+      .cap-row { left: 200px; right: 200px; font-size: 54px; }
+
+      #l3 { top: 860px; width: 1920px; height: 160px; }
+      #l3-bn { left: 40px; width: 360px; height: 150px; }
+      #l3-bn .r, #l3-bn .b { height: 75px; }
+      #l3-bn span { font-size: 50px; }
+      #l3-white { left: 360px; top: 6px; width: 1520px; height: 82px; }
+      .l3t { left: 80px; height: 82px; font-size: 52px; }
+      #l3-slash { height: 82px; }
+      #l3-slash i { height: 82px; }
+      #l3-navy { left: 360px; top: 88px; width: 1520px; height: 56px; }
+      .l3s { left: 80px; height: 56px; font-size: 34px; }
+      #ticker { top: 1020px; width: 1920px; height: 60px; }
+      #ticker .txt { height: 60px; font-size: 32px; }
+      #tick-under { display: none; }
+
+      #fakta { left: 80px; top: 196px; width: 640px; height: 650px; }
+      #fakta .hd { height: 100px; font-size: 64px; }
+      #fakta .q { top: 100px; font-size: 34px; }
+      #tri { left: 130px; top: 175px; width: 380px; height: 334px; }
+      .tri-lab { font-size: 34px; }
+      #lab-haba { left: 40px !important; top: 330px !important; }
+      #lab-bahan { left: 430px !important; top: 330px !important; }
+      #lab-oks { left: 248px !important; top: 500px !important; }
+      #tri-name { width: 640px; top: 548px; font-size: 54px; line-height: 1; }
+
+      #nasihat { left: 80px; top: 350px; width: 820px; }
+      .nas-item { height: 96px; }
+      .nas-ic { width: 96px; height: 96px; }
+      .nas-t { font-size: 46px; }
+
+      #co-wrap { left: 160px; right: 160px; top: 470px; height: 160px; }
+      .co-l { font-size: 66px; }
+
+      #pes-bg { background-image: url("assets/latar-kebakaran-landscape.png"); }
+      #pes-head { left: 100px; right: auto; top: 80px; }
+      #pes-head img { width: 200px; height: 140px; }
+      #pes-title { left: 100px; right: auto; top: 300px; text-align: left; font-size: 110px; }
+      #pes-title span { font-size: 86px; }
+      #pes-quote { left: 100px; right: auto; width: 720px; top: 720px; font-size: 56px; }
+      #pes-list { left: 930px; right: 100px; top: 150px; }
+      .pes-item { min-height: 200px; margin-bottom: 36px; }
+
+      #out-logo { top: 70px; width: 440px; height: 300px; margin-left: -220px; }
+      #out-title { top: 400px; }
+      #out-title .t { font-size: 150px; }
+      #out-title .c { font-size: 84px; }
+      #out-cred { top: 720px; }
+      #out-cred .n { font-size: 50px; }
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="82.4" data-width="1080" data-height="1920">
+    <div id="root" data-composition-id="main" data-start="0" data-duration="82.4" data-width="1920" data-height="1080">
 
       <!-- ===== AUDIO ===== -->
       <audio id="a-taip" src="assets/taip.wav" data-start="0" data-duration="7" data-volume="0.7"></audio>
@@ -330,31 +412,6 @@
         <div id="bug"><div class="b1">BERITA</div><div class="b2">CILIK</div></div>
         <div id="live"><div id="live-dot"></div>LANGSUNG</div>
         <div id="logo"><img src="assets/logo-sekolah.png" alt="" /></div>
-
-        <!-- lower third 1: name -->
-        <div id="lt-name" class="lt">
-          <div class="mask">
-            <div class="tag">WARTAWAN CILIK</div>
-            <div class="main"><div class="l1">Muhamad Afif Aryash<br />bin Muhamad Firdaus</div></div>
-            <div class="sub" style="top: 210px">Murid Tahun 5 Sayang</div>
-          </div>
-        </div>
-
-        <!-- lower third 2: headline -->
-        <div id="lt-head" class="lt">
-          <div class="mask">
-            <div class="tag">KEBAKARAN HUTAN</div>
-            <div class="main"><div class="l1" id="head-a">Api merebak dengan pantas</div></div>
-            <div class="sub" id="head-sub" style="top: 148px">Cuaca panas dan kering punca kebakaran merebak</div>
-          </div>
-        </div>
-        <div id="lt-head2" class="lt">
-          <div class="mask">
-            <div class="tag">KEBAKARAN HUTAN</div>
-            <div class="main"><div class="l1">Asap tebal memenuhi udara</div></div>
-            <div class="sub" style="top: 148px">Jarak penglihatan menjadi terhad</div>
-          </div>
-        </div>
 
         <!-- fakta sains -->
         <div id="fakta">
@@ -384,7 +441,7 @@
         </div>
 
         <!-- nasihat -->
-        <div id="nasihat-tag" class="abs" style="left: 40px; top: 930px; height: 72px; padding: 0 26px; background: var(--red); display: flex; align-items: center; font-size: 44px; font-weight: 800; letter-spacing: 4px">NASIHAT KESELAMATAN</div>
+        <div id="nasihat-tag" class="abs" style="left: 80px; top: 260px; height: 72px; padding: 0 26px; background: var(--red); display: flex; align-items: center; font-size: 44px; font-weight: 800; letter-spacing: 4px">NASIHAT KESELAMATAN</div>
         <div id="nasihat">
           <div class="nas-item" id="nas1">
             <div class="nas-ic"><svg width="64" height="64" viewBox="0 0 24 24"><path fill="#fff" d="M12 2 1 21h22L12 2zm0 4.5 7.5 13h-15L12 6.5zM11 10v5h2v-5h-2zm0 6v2h2v-2h-2z"/></svg></div>
@@ -393,24 +450,6 @@
           <div class="nas-item" id="nas2">
             <div class="nas-ic"><svg width="66" height="66" viewBox="0 0 24 24"><path fill="#fff" d="M3 9c3-2 6-3 9-3s6 1 9 3v3c0 4-4 7-9 7s-9-3-9-7V9zm2 1.1V12c0 2.8 3.1 5 7 5s7-2.2 7-5v-1.9C16.8 8.7 14.4 8 12 8s-4.8.7-7 2.1zM7 11h10v1.5H7zm1 3h8v1.5H8z"/></svg></div>
             <div class="nas-t">Pakai pelitup muka ketika jerebu</div>
-          </div>
-        </div>
-
-        <!-- lower third 3: alam sekitar -->
-        <div id="lt-alam" class="lt">
-          <div class="mask">
-            <div class="tag">JAGA ALAM SEKITAR</div>
-            <div class="main"><div class="l1">Kita perlu menjaga alam sekitar</div></div>
-            <div class="sub" id="alam-sub" style="top: 148px">Jangan buang puntung rokok merata-rata</div>
-          </div>
-        </div>
-
-        <!-- lower third 4: sign-off -->
-        <div id="lt-end" class="lt">
-          <div class="mask">
-            <div class="tag">MELAPORKAN DARI LOKASI KEJADIAN</div>
-            <div class="main"><div class="l1">Muhamad Afif Aryash<br />bin Muhamad Firdaus</div></div>
-            <div class="sub" style="top: 210px">Wartawan Cilik &middot; 5 Sayang</div>
           </div>
         </div>
 
@@ -461,22 +500,22 @@
       <div id="opening" class="clip" data-start="7" data-duration="6.4" data-track-index="3">
         <div id="op-stripes"></div>
         <div id="op-shine"></div>
-        <div class="streak" id="stk1" style="left: 620px; top: 260px; width: 900px"></div>
-        <div class="streak" id="stk2" style="left: -380px; top: 640px; width: 700px"></div>
-        <div class="streak" id="stk3" style="left: 560px; top: 1560px; width: 800px"></div>
-        <div class="slash" id="sl1" style="left: 960px; top: 470px"></div>
-        <div class="slash" id="sl2" style="left: 1000px; top: 470px"></div>
-        <div class="slash" id="sl3" style="left: 1040px; top: 470px"></div>
-        <div class="hline" id="hl1" style="left: 0; top: 1180px; width: 340px"></div>
-        <div class="hline" id="hl2" style="left: 640px; top: 1180px; width: 440px; opacity: 0.6"></div>
+        <div class="streak" id="stk1" style="left: 1300px; top: 120px; width: 900px"></div>
+        <div class="streak" id="stk2" style="left: -200px; top: 420px; width: 700px"></div>
+        <div class="streak" id="stk3" style="left: 1100px; top: 900px; width: 800px"></div>
+        <div class="slash" id="sl1" style="left: 1720px; top: 210px"></div>
+        <div class="slash" id="sl2" style="left: 1760px; top: 210px"></div>
+        <div class="slash" id="sl3" style="left: 1800px; top: 210px"></div>
+        <div class="hline" id="hl1" style="left: 0; top: 790px; width: 520px"></div>
+        <div class="hline" id="hl2" style="left: 1320px; top: 790px; width: 600px; opacity: 0.6"></div>
         <div id="op-logo"><img src="assets/logo-sekolah.png" alt="" /></div>
         <div id="op-kicker">WARTAWAN CILIK</div>
         <div id="bn">
           <div id="bn-red-edge"></div>
           <div id="bn-red"></div>
-          <div id="bn-break">BREAKING</div>
+          <div id="bn-break">KEBAKARAN</div>
           <div id="bn-line"></div>
-          <div id="bn-white">NEWS</div>
+          <div id="bn-white">HUTAN</div>
           <div id="bn-flare"></div>
         </div>
         <div id="op-strip-l1"></div>
@@ -527,11 +566,11 @@
       tl.fromTo("#bn-break", { scale: 1.9, opacity: 0, filter: "blur(14px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power4.out" }, 3.92);
       tl.fromTo("#bn-white", { xPercent: 120 }, { xPercent: 0, duration: 0.38, ease: "expo.out" }, 4.06);
       tl.fromTo("#bn-line", { xPercent: -300, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 0.4, ease: "expo.out" }, 4.12);
-      tl.fromTo("#bn-flare", { x: -80, opacity: 0 }, { x: 1160, opacity: 1, duration: 0.9, ease: "power2.inOut" }, 4.0);
+      tl.fromTo("#bn-flare", { x: 240, opacity: 0 }, { x: 1700, opacity: 1, duration: 0.9, ease: "power2.inOut" }, 4.0);
       tl.to("#bn-flare", { opacity: 0, duration: 0.15 }, 4.85);
       tl.fromTo("#bn", { scale: 1.04 }, { scale: 1.0, duration: 2.2, ease: "power1.out", transformOrigin: "50% 40%" }, 4.0);
       tl.fromTo("#op-strip", { xPercent: 100 }, { xPercent: 0, duration: 0.45, ease: "expo.out" }, 4.25);
-      tl.fromTo("#op-strip-txt", { x: 200 }, { x: -900, duration: 2.2, ease: "none" }, 4.25);
+      tl.fromTo("#op-strip-txt", { x: 300 }, { x: -700, duration: 2.2, ease: "none" }, 4.25);
       tl.fromTo(["#op-strip-l1", "#op-strip-l2"], { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.5, ease: "expo.out", stagger: 0.1 }, 4.4);
       tl.fromTo("#opening", { x: 0 }, { keyframes: [{ x: -14, duration: 0.04 }, { x: 12, duration: 0.04 }, { x: -6, duration: 0.04 }, { x: 0, duration: 0.04 }] }, 4.0);
       // wipe into report
@@ -553,15 +592,12 @@
       // anchor: entrance + punch-ins on every cut (hides jump cuts)
       const cuts = [4.79, 7.98, 31.1, 33.93, 39.24, 44.98, 52.46].map((c) => R + c);
       const scales = [1.0, 1.07, 1.0, 1.07, 1.0, 1.07, 1.0, 1.07];
-      tl.set("#anchor", { x: 120, y: 120, scale: 0.94 }, 5.6);
+      tl.set("#anchor", { x: 0, y: 0, scale: 1 }, 5.6);
       tl.fromTo("#anchor", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 5.9);
       cuts.forEach((c, i) => {
-        if (c > R + 20 && c < R + 36) return; // during fakta sains the split layout owns the transform
-        tl.set("#anchor", { scale: 0.94 * scales[i + 1], y: scales[i + 1] > 1 ? 160 : 120 }, c);
+        tl.set("#anchor", { scale: scales[i + 1] }, c);
       });
       // fakta sains split layout: move reporter right
-      tl.to("#anchor", { x: 330, y: 220, scale: 0.84, duration: 0.6, ease: "power3.inOut" }, R + 20.2);
-      tl.to("#anchor", { x: 120, y: 120, scale: 0.94, duration: 0.6, ease: "power3.inOut" }, R + 36.2);
 
       // header
       tl.fromTo("#bug", { x: -500 }, { x: 0, duration: 0.6, ease: "expo.out" }, 6.2);
@@ -575,7 +611,7 @@
       // ticker
       tl.fromTo("#ticker", { yPercent: 160 }, { yPercent: 0, duration: 0.5, ease: "power3.out" }, 6.5);
       tl.fromTo("#tick-under", { yPercent: 160 }, { yPercent: 0, duration: 0.5, ease: "power3.out" }, 6.5);
-      tl.fromTo("#tick-txt", { x: 1080 }, { x: -7400, duration: 58.5, ease: "none" }, 6.6);
+      tl.fromTo("#tick-txt", { x: 1920 }, { x: -6800, duration: 58.5, ease: "none" }, 6.6);
 
       // lower-third helper
       function lt(id, tin, tout) {
@@ -587,12 +623,6 @@
         tl.fromTo(id + " .sub", { xPercent: -110 }, { xPercent: 0, duration: 0.55, ease: "expo.out" }, tin + 0.18);
         tl.to(el, { xPercent: 110, duration: 0.4, ease: "power3.in", stagger: 0.05 }, tout);
       }
-      ["#lt-name", "#lt-head", "#lt-head2", "#lt-alam", "#lt-end"].forEach((id) => {
-        tl.set(id, { opacity: 0 }, 0);
-        tl.set(id + " .mask > *", { xPercent: -120 }, 0);
-      });
-      tl.set("#alam-sub", { opacity: 0 }, 0);
-      tl.to("#alam-sub", { opacity: 1, duration: 0.35 }, R + 48.9);
 
 
       // breaking-news lower third (persistent), title swaps per section
@@ -637,7 +667,7 @@
       tl.to(["#nasihat-tag", "#nas1", "#nas2"], { xPercent: -120, duration: 0.4, ease: "power3.in", stagger: 0.06 }, R + 44.75);
 
       // into outro
-      tl.fromTo("#outro", { clipPath: "circle(0% at 50% 50%)" }, { clipPath: "circle(80% at 50% 50%)", duration: 0.6, ease: "power3.inOut" }, 71.0);
+      tl.fromTo("#outro", { clipPath: "circle(0% at 50% 50%)" }, { clipPath: "circle(120% at 50% 50%)", duration: 0.6, ease: "power3.inOut" }, 71.0);
       tl.fromTo("#out-logo", { scale: 0 }, { scale: 1, duration: 0.6, ease: "back.out(1.8)" }, 71.2);
       tl.fromTo("#out-title .t", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "power4.out" }, 71.7);
       tl.fromTo("#out-title .c", { xPercent: -150, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 0.45, ease: "expo.out" }, 71.85);
