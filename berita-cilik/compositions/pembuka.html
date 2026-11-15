@@ -9,12 +9,12 @@
     #pb-bg {
       position: absolute;
       inset: 0;
-      background: radial-gradient(120% 70% at 50% 40%, #1546c4 0%, #0a2a7c 38%, #061743 70%, #020a22 100%);
+      background: radial-gradient(80% 90% at 50% 45%, #1546c4 0%, #0a2a7c 40%, #061743 72%, #020a22 100%);
     }
     #pb-rays {
       position: absolute;
-      left: -540px;
-      top: -360px;
+      left: -120px;
+      top: -900px;
       width: 2160px;
       height: 2160px;
       background: repeating-conic-gradient(from 0deg at 50% 50%, rgba(255, 255, 255, 0.07) 0deg 6deg, rgba(255, 255, 255, 0) 6deg 18deg);
@@ -22,94 +22,79 @@
     }
     #pb-grid {
       position: absolute;
-      inset: 0;
+      inset: -90px 0 0 0;
       background-image: linear-gradient(rgba(255, 255, 255, 0.06) 2px, transparent 2px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.06) 2px, transparent 2px);
       background-size: 90px 90px;
     }
     #pb-globe {
       position: absolute;
-      left: 140px;
-      top: 470px;
-      width: 800px;
-      height: 800px;
+      left: 610px;
+      top: 90px;
+      width: 700px;
+      height: 700px;
     }
     .pb-bar {
       position: absolute;
-      left: -200px;
-      width: 1480px;
-      height: 120px;
+      left: -100px;
+      width: 2120px;
+      height: 100px;
     }
-    #pb-bar-merah { top: 1250px; background: linear-gradient(90deg, #8e0a0e, #d7141a 40%, #ff3b3b); }
-    #pb-bar-biru { top: 1370px; height: 26px; background: #f5b800; }
-    #pb-bar-putih { top: 1396px; height: 10px; background: #ffffff; }
+    #pb-bar-merah { top: 690px; background: linear-gradient(90deg, #8e0a0e, #d7141a 40%, #ff3b3b); }
+    #pb-bar-biru { top: 790px; height: 20px; background: #f5b800; }
+    #pb-bar-putih { top: 810px; height: 8px; background: #ffffff; }
     #pb-judul {
       position: absolute;
       left: 0;
       right: 0;
-      top: 730px;
+      top: 330px;
       text-align: center;
-      line-height: 0.9;
-    }
-    #pb-berita {
-      display: block;
-      font-size: 230px;
+      font-size: 250px;
       font-weight: 700;
-      color: #fff;
+      line-height: 1;
       letter-spacing: 0.04em;
       text-shadow: 0 10px 40px rgba(0, 0, 0, 0.55);
     }
-    #pb-cilik {
-      display: block;
-      font-size: 230px;
-      font-weight: 700;
-      color: #f5b800;
-      letter-spacing: 0.08em;
-      text-shadow: 0 10px 40px rgba(0, 0, 0, 0.55);
-    }
+    #pb-berita { display: inline-block; color: #fff; }
+    #pb-cilik { display: inline-block; color: #f5b800; margin-left: 40px; }
     #pb-tagline {
       position: absolute;
       left: 0;
       right: 0;
-      top: 1272px;
+      top: 705px;
       text-align: center;
-      font-size: 64px;
+      font-size: 58px;
       font-weight: 600;
       color: #fff;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.24em;
     }
     #pb-edisi {
       position: absolute;
       left: 0;
       right: 0;
-      top: 1470px;
+      top: 860px;
       text-align: center;
       font-family: "Montserrat", sans-serif;
       font-weight: 700;
-      font-size: 40px;
+      font-size: 38px;
       color: #dfe8ff;
       letter-spacing: 0.18em;
     }
     #pb-logo {
       position: absolute;
-      left: 430px;
-      top: 230px;
-      width: 220px;
-      height: 220px;
+      left: 880px;
+      top: 90px;
+      width: 160px;
+      height: 160px;
       filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.5));
     }
-    #pb-kilat {
-      position: absolute;
-      inset: 0;
-      background: #fff;
-      opacity: 0;
-    }
+    #pb-kilat { position: absolute; inset: 0; background: #fff; opacity: 0; }
     #pb-glint {
       position: absolute;
-      top: 690px;
+      top: 300px;
       left: -500px;
       width: 260px;
-      height: 560px;
+      height: 360px;
       background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0));
       transform: skewX(-20deg);
     }
@@ -117,20 +102,20 @@
       position: absolute;
       left: 0;
       top: 0;
-      width: 1080px;
-      height: 1920px;
-      background: linear-gradient(180deg, #d7141a, #8e0a0e);
+      width: 1920px;
+      height: 1080px;
+      background: linear-gradient(90deg, #8e0a0e, #d7141a);
     }
     #pb-tirai2 {
       position: absolute;
       left: 0;
       top: 0;
-      width: 1080px;
-      height: 1920px;
+      width: 1920px;
+      height: 1080px;
       background: #f5b800;
     }
   </style>
-  <div id="root" data-composition-id="pembuka" data-width="1080" data-height="1920">
+  <div id="root" data-composition-id="pembuka" data-width="1920" data-height="1080">
     <div id="pb-panggung" class="clip" data-start="0" data-duration="6.4" data-layout-allow-overflow data-layout-allow-overlap>
       <div id="pb-bg"></div>
       <div id="pb-rays"></div>
@@ -160,10 +145,7 @@
         </g>
       </svg>
       <img id="pb-logo" src="assets/logo-sekolah.svg" alt="Logo sekolah" />
-      <div id="pb-judul">
-        <span id="pb-berita">BERITA</span>
-        <span id="pb-cilik">CILIK</span>
-      </div>
+      <div id="pb-judul"><span id="pb-berita">BERITA</span><span id="pb-cilik">CILIK</span></div>
       <div id="pb-bar-merah" class="pb-bar"></div>
       <div id="pb-tagline">LAPORAN WARTAWAN CILIK</div>
       <div id="pb-bar-biru" class="pb-bar"></div>
@@ -177,7 +159,6 @@
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    // Rotating rays and a spinning wireframe globe.
     tl.fromTo("#pb-rays", { rotation: 0 }, { rotation: 40, duration: 6.4, ease: "none" }, 0);
     tl.fromTo("#pb-globe", { scale: 1.25, opacity: 0.0 }, { scale: 1, opacity: 1, duration: 1.4, ease: "power3.out" }, 0);
     const spin = { p: 0 };
@@ -190,7 +171,7 @@
       });
     };
     tl.fromTo(spin, { p: 0 }, { p: 1.2, duration: 6.4, ease: "none", onUpdate: paint }, 0);
-    tl.fromTo("#pb-grid", { opacity: 0, y: 0 }, { opacity: 1, y: 90, duration: 6.4, ease: "none" }, 0);
+    tl.fromTo("#pb-grid", { y: 0 }, { y: 90, duration: 6.4, ease: "none" }, 0);
 
     // Logo drops in
     tl.fromTo("#pb-logo", { opacity: 0, scale: 0.4, rotation: -30 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.7, ease: "back.out(2)" }, 1.0);
@@ -202,24 +183,24 @@
     tl.to("#pb-kilat", { opacity: 0, duration: 0.3 }, 2.05);
 
     // Red banner and tagline
-    tl.fromTo("#pb-bar-merah", { x: -1500 }, { x: 0, duration: 0.45, ease: "power3.out" }, 3.4);
-    tl.fromTo("#pb-bar-biru", { x: 1500 }, { x: 0, duration: 0.45, ease: "power3.out" }, 3.5);
-    tl.fromTo("#pb-bar-putih", { x: -1500 }, { x: 0, duration: 0.45, ease: "power3.out" }, 3.55);
+    tl.fromTo("#pb-bar-merah", { x: -2200 }, { x: 0, duration: 0.45, ease: "power3.out" }, 3.4);
+    tl.fromTo("#pb-bar-biru", { x: 2200 }, { x: 0, duration: 0.45, ease: "power3.out" }, 3.5);
+    tl.fromTo("#pb-bar-putih", { x: -2200 }, { x: 0, duration: 0.45, ease: "power3.out" }, 3.55);
     tl.fromTo("#pb-tagline", { opacity: 0, scaleX: 1.4 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.out" }, 3.6);
 
-    // Final hit at 4.0: flash, glint across the title, edition line
+    // Final hit at 4.0
     tl.fromTo("#pb-kilat", { opacity: 0 }, { opacity: 0.6, duration: 0.04, immediateRender: false }, 4.0);
     tl.to("#pb-kilat", { opacity: 0, duration: 0.45, ease: "power2.out" }, 4.04);
     tl.fromTo("#pb-judul", { scale: 1.06 }, { scale: 1, duration: 0.5, ease: "power3.out" }, 4.0);
-    tl.fromTo("#pb-glint", { x: 0 }, { x: 2000, duration: 0.9, ease: "power2.inOut" }, 4.1);
+    tl.fromTo("#pb-glint", { x: 0 }, { x: 2900, duration: 0.9, ease: "power2.inOut" }, 4.1);
     tl.fromTo("#pb-edisi", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 4.2);
 
-    // Exit: gold then red curtain sweep up, then the red curtain lifts off to reveal the report
-    tl.fromTo("#pb-tirai2", { y: 1920 }, { y: 0, duration: 0.35, ease: "power3.in" }, 5.3);
-    tl.fromTo("#pb-tirai", { y: 1920 }, { y: 0, duration: 0.35, ease: "power3.in" }, 5.4);
+    // Exit: gold then red curtain sweep across, then the red curtain slides off to reveal the report
+    tl.fromTo("#pb-tirai2", { x: -1920 }, { x: 0, duration: 0.35, ease: "power3.in" }, 5.3);
+    tl.fromTo("#pb-tirai", { x: -1920 }, { x: 0, duration: 0.35, ease: "power3.in" }, 5.4);
     tl.set("#pb-tirai2", { opacity: 0 }, 5.76);
     tl.set(["#pb-bg", "#pb-rays", "#pb-grid", "#pb-globe", "#pb-logo", "#pb-judul", "#pb-bar-merah", "#pb-bar-biru", "#pb-bar-putih", "#pb-tagline", "#pb-edisi", "#pb-glint", "#pb-kilat"], { opacity: 0 }, 5.76);
-    tl.to("#pb-tirai", { y: -1920, duration: 0.5, ease: "power3.inOut" }, 5.85);
+    tl.to("#pb-tirai", { x: 1920, duration: 0.5, ease: "power3.inOut" }, 5.85);
     window.__timelines["pembuka"] = tl;
   </script>
 </template>

@@ -41,18 +41,18 @@ html = f'''<template>
   <style>
     #root {{ position: absolute; inset: 0; }}
     .kp-grup {{
-      position: absolute; left: 0; top: 1218px; width: 1080px; height: 130px;
+      position: absolute; left: 0; top: 770px; width: 1920px; height: 96px;
       display: flex; align-items: center; justify-content: center; overflow: visible;
     }}
     .kp-teks {{
-      display: inline-block; max-width: 940px; text-align: center;
+      display: inline-block; max-width: 1500px; text-align: center;
       padding: 10px 26px; border-radius: 14px;
       background: rgba(5, 12, 35, 0.72);
-      font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 48px; line-height: 1.15;
+      font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 46px; line-height: 1.15;
       color: #fff; text-shadow: 0 2px 6px rgba(0,0,0,0.6);
     }}
   </style>
-  <div id="root" data-composition-id="kapsyen" data-width="1080" data-height="1920">
+  <div id="root" data-composition-id="kapsyen" data-width="1920" data-height="1080">
 {items}
   </div>
   <script>
