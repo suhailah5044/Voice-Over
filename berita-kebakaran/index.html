@@ -55,13 +55,13 @@
       .slash { position: absolute; width: 10px; height: 110px; background: rgba(255,255,255,0.85); transform: skewX(-32deg); }
       .hline { position: absolute; height: 5px; background: rgba(255,255,255,0.9); }
       #op-logo {
-        position: absolute; left: 50%; top: 300px; width: 260px; height: 260px; margin-left: -130px;
-        border-radius: 50%; background: #fff; box-shadow: 0 0 0 10px rgba(255,255,255,0.18), 0 20px 60px rgba(0,0,0,0.45);
-        display: flex; align-items: center; justify-content: center; overflow: hidden;
+        position: absolute; left: 50%; top: 200px; width: 520px; height: 400px; margin-left: -260px;
+        display: flex; align-items: center; justify-content: center;
       }
-      #op-logo img { width: 92%; height: 92%; object-fit: contain; }
+      #op-logo img { width: 100%; height: 100%; object-fit: contain;
+        filter: drop-shadow(0 0 3px #fff) drop-shadow(0 0 3px #fff) drop-shadow(0 18px 30px rgba(0,0,0,0.45)); }
       #op-kicker {
-        position: absolute; left: 0; right: 0; top: 610px; text-align: center;
+        position: absolute; left: 0; right: 0; top: 618px; text-align: center;
         font-family: var(--font-bn); font-weight: 800; font-size: 46px; letter-spacing: 12px; color: #fff;
         text-shadow: 0 4px 14px rgba(0,0,0,0.35);
       }
@@ -160,11 +160,11 @@
       }
       #live-dot { width: 18px; height: 18px; border-radius: 50%; background: #ff2a2a; box-shadow: 0 0 12px #ff2a2a; }
       #logo {
-        position: absolute; right: 44px; top: 60px; width: 176px; height: 176px; border-radius: 50%;
-        background: #fff; display: flex; align-items: center; justify-content: center; overflow: hidden;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.45), 0 0 0 6px rgba(255,255,255,0.25);
+        position: absolute; right: 40px; top: 56px; width: 250px; height: 190px; border-radius: 22px;
+        background: rgba(255,255,255,0.95); display: flex; align-items: center; justify-content: center; overflow: hidden;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.45);
       }
-      #logo img { width: 92%; height: 92%; object-fit: contain; }
+      #logo img { width: 94%; height: 94%; object-fit: contain; }
 
       /* lower thirds */
       .lt { position: absolute; left: 0; top: 1430px; width: 1080px; height: 300px; }
@@ -240,11 +240,11 @@
         overflow: hidden;
       }
       #out-logo {
-        position: absolute; left: 50%; top: 520px; width: 240px; height: 240px; margin-left: -120px; border-radius: 50%;
-        background: #fff; display: flex; align-items: center; justify-content: center; overflow: hidden;
-        box-shadow: 0 0 0 10px rgba(255,255,255,0.15);
+        position: absolute; left: 50%; top: 380px; width: 520px; height: 400px; margin-left: -260px;
+        display: flex; align-items: center; justify-content: center;
       }
-      #out-logo img { width: 92%; height: 92%; object-fit: contain; }
+      #out-logo img { width: 100%; height: 100%; object-fit: contain;
+        filter: drop-shadow(0 0 3px #fff) drop-shadow(0 0 3px #fff) drop-shadow(0 18px 30px rgba(0,0,0,0.45)); }
       #out-title { position: absolute; left: 0; right: 0; top: 830px; text-align: center; }
       #out-title .t { font-family: var(--font-display); font-size: 170px; line-height: 1; }
       #out-title .c {
@@ -434,7 +434,8 @@
       tl.fromTo(["#sl1", "#sl2", "#sl3"], { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out", stagger: 0.08 }, 0.8);
       tl.fromTo("#hl1", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.6, ease: "expo.out" }, 1.0);
       tl.fromTo("#hl2", { scaleX: 0, transformOrigin: "100% 50%" }, { scaleX: 1, duration: 0.6, ease: "expo.out" }, 1.15);
-      tl.fromTo("#op-logo", { scale: 0, rotation: -120, opacity: 0 }, { scale: 1, rotation: 0, opacity: 1, duration: 0.9, ease: "back.out(1.6)" }, 1.4);
+      tl.fromTo("#op-logo", { scale: 0.2, opacity: 0, y: 40 }, { scale: 1, opacity: 1, y: 0, duration: 0.9, ease: "back.out(1.6)" }, 1.4);
+      tl.fromTo("#op-logo", { rotationY: 0 }, { rotationY: 360, duration: 1.2, ease: "power2.inOut" }, 1.4);
       tl.fromTo("#op-kicker", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 2.0);
       tl.fromTo("#op-name", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 2.4);
       // the hit (music boom at 4.0)
