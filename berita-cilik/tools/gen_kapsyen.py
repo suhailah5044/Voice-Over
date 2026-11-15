@@ -2,8 +2,8 @@
 import os, json
 G = [
  ("Assalamualaikum dan selamat sejahtera.", 0.15, 2.66),
- ("Saya Muhamad Rifhaan Deeniy", 2.68, 4.60),
- ("bin Muhamad Firdaus,", 4.60, 5.66),
+ ("Saya Muhammad Rifhaan Deeniy", 2.68, 4.60),
+ ("bin Muhammad Firdaus,", 4.60, 5.66),
  ("Wartawan Cilik melaporkan", 5.68, 7.66),
  ("keadaan jerebu yang berlaku", 7.66, 9.78),
  ("di beberapa kawasan.", 9.78, 11.40),
@@ -24,8 +24,8 @@ G = [
  ("ketika keadaan jerebu teruk.", 44.06, 46.40),
  ("Jangan melakukan pembakaran terbuka", 46.44, 49.46),
  ("kerana perbuatan ini boleh mencemarkan udara.", 49.46, 53.62),
- ("Saya Muhamad Rifhaan Deeniy", 53.68, 55.44),
- ("bin Muhamad Firdaus", 55.44, 56.38),
+ ("Saya Muhammad Rifhaan Deeniy", 53.68, 55.44),
+ ("bin Muhammad Firdaus", 55.44, 56.38),
  ("melaporkan untuk Wartawan Cilik.", 56.38, 58.48),
  ("Sekian, terima kasih.", 58.52, 60.40),
 ]
