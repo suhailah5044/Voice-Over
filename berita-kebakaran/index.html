@@ -124,7 +124,7 @@
       .cap-row { position: absolute; left: 40px; right: 40px; bottom: 0; text-align: center; visibility: hidden; line-height: 1.12;
         font-family: var(--font-bn); font-weight: 900; font-size: 52px; letter-spacing: 0.5px; text-transform: uppercase; color: #fff;
         text-shadow: 0 0 3px #000, 0 0 3px #000, 0 4px 10px rgba(0,0,0,0.85), 2px 2px 0 #000, -2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000; }
-      .cap-row span { display: inline-block; }
+      .cap-row span { display: inline-block; margin: 0 0.12em; }
 
       /* ================= PESANAN ================= */
       #pesanan { overflow: hidden; z-index: 15; background: #200; }
@@ -716,7 +716,7 @@
         master.set(row, { autoAlpha: 0 }, gEnd);
         g.forEach(([w, ws, we], wi) => {
           master.set(spans[wi], { color: "#ffd400" }, ws);
-          master.fromTo(spans[wi], { scale: 1.12 }, { scale: 1, duration: 0.18, ease: "power2.out", immediateRender: false }, ws);
+          master.fromTo(spans[wi], { scale: 1.05 }, { scale: 1, duration: 0.18, ease: "power2.out", immediateRender: false }, ws);
           const nx = g[wi + 1] ? g[wi + 1][1] : gEnd;
           master.set(spans[wi], { color: "#ffffff" }, nx);
         });
