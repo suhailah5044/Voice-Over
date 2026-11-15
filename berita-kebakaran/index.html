@@ -120,7 +120,7 @@
       
 
       /* ================= CAPTIONS ================= */
-      #caps { position: absolute; left: 0; top: 1286px; width: 1080px; height: 136px; z-index: 8; pointer-events: none; }
+      #caps { position: absolute; left: 0; top: 1440px; width: 1080px; height: 136px; z-index: 8; pointer-events: none; }
       .cap-row { position: absolute; left: 40px; right: 40px; bottom: 0; text-align: center; visibility: hidden; line-height: 1.12;
         font-family: var(--font-bn); font-weight: 900; font-size: 52px; letter-spacing: 0.5px; text-transform: uppercase; color: #fff;
         text-shadow: 0 0 3px #000, 0 0 3px #000, 0 4px 10px rgba(0,0,0,0.85), 2px 2px 0 #000, -2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000; }
@@ -223,18 +223,31 @@
       .lt .mask { position: absolute; inset: 0; overflow: hidden; }
 
       /* ticker */
-      #ticker { position: absolute; left: 0; top: 1790px; width: 1080px; height: 76px; display: flex; }
-      #ticker .lab {
-        position: relative; z-index: 2; width: 220px; background: var(--red); display: flex; align-items: center; justify-content: center;
-        font-family: var(--font-display); font-size: 44px; letter-spacing: 3px;
-      }
-      #ticker .rail { position: relative; flex: 1; background: rgba(255,255,255,0.96); overflow: hidden; }
+      #ticker { position: absolute; left: 0; top: 1790px; width: 1080px; height: 66px; display: flex; }
+      #ticker .rail { position: relative; flex: 1; background: linear-gradient(180deg, #e0161f, #b70a12); overflow: hidden; }
       #ticker .txt {
-        position: absolute; left: 0; top: 0; height: 76px; white-space: nowrap; display: flex; align-items: center;
-        color: var(--navy); font-size: 42px; font-weight: 700; letter-spacing: 1px;
+        position: absolute; left: 0; top: 0; height: 66px; white-space: nowrap; display: flex; align-items: center;
+        color: #fff; font-family: var(--font-bn); font-size: 34px; font-weight: 800; letter-spacing: 0.5px;
       }
-      #ticker .txt b { color: var(--red); margin: 0 26px; }
-      #tick-under { position: absolute; left: 0; top: 1866px; width: 1080px; height: 54px; background: var(--maroon); }
+      #ticker .txt b { color: #fff; margin: 0 22px; font-weight: 400; opacity: 0.9; }
+      #l3 { position: absolute; left: 0; top: 1600px; width: 1080px; height: 180px; }
+      #l3-bn { position: absolute; left: 18px; top: 0; width: 310px; height: 176px; z-index: 2;
+        transform: skewX(-12deg); box-shadow: 0 12px 30px rgba(0,0,0,0.45); }
+      #l3-bn .r, #l3-bn .b { height: 88px; display: flex; align-items: center; justify-content: center; }
+      #l3-bn .r { background: linear-gradient(180deg, #ef2029, #c10d16); }
+      #l3-bn .b { background: linear-gradient(180deg, #123a9e, #0b2370); }
+      #l3-bn span { transform: skewX(12deg); font-family: var(--font-bn); font-weight: 900; font-style: italic; font-size: 46px; color: #fff; letter-spacing: 0.5px; }
+      #l3-white { position: absolute; left: 270px; top: 10px; width: 790px; height: 92px; background: #fff; overflow: hidden;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.35); }
+      .l3t { position: absolute; left: 66px; top: 0; height: 92px; display: flex; align-items: center; white-space: nowrap;
+        font-family: var(--font-bn); font-weight: 900; font-size: 48px; color: #d7141d; letter-spacing: 0.5px; }
+      #l3-slash { position: absolute; right: 14px; top: 0; height: 92px; display: flex; gap: 10px; align-items: center; }
+      #l3-slash i { display: block; width: 10px; height: 92px; background: #d7141d; transform: skewX(-22deg); }
+      #l3-navy { position: absolute; left: 270px; top: 102px; width: 790px; height: 62px; overflow: hidden;
+        background: linear-gradient(90deg, #0b2370, #123a9e 70%, rgba(18,58,158,0.85)); }
+      .l3s { position: absolute; left: 70px; top: 0; height: 62px; display: flex; align-items: center; white-space: nowrap;
+        font-family: var(--font-strap); font-weight: 600; font-size: 36px; color: #fff; }
+      #tick-under { position: absolute; left: 0; top: 1856px; width: 1080px; height: 64px; background: var(--maroon); }
 
       /* fakta sains card */
       #fakta {
@@ -401,13 +414,17 @@
           </div>
         </div>
 
+        <!-- lower third: breaking news -->
+        <div id="l3">
+          <div id="l3-bn"><div class="r"><span>BREAKING</span></div><div class="b"><span>NEWS</span></div></div>
+          <div id="l3-white"><div class="l3t" id="l3t0">AFIF ON AIR</div><div class="l3t" id="l3t1">KEBAKARAN HUTAN</div><div class="l3t" id="l3t2">ASAP TEBAL</div><div class="l3t" id="l3t3">FAKTA SAINS</div><div class="l3t" id="l3t4">NASIHAT KESELAMATAN</div><div class="l3t" id="l3t5">JAGA ALAM SEKITAR</div><div class="l3t" id="l3t6">AFIF ON AIR</div><div id="l3-slash"><i></i><i></i></div></div>
+          <div id="l3-navy"><div class="l3s" id="l3s0">Muhamad Afif Aryash bin Muhamad Firdaus &middot; 5 Sayang</div><div class="l3s" id="l3s1">Api merebak pantas akibat cuaca panas &amp; kering</div><div class="l3s" id="l3s2">Jarak penglihatan menjadi terhad</div><div class="l3s" id="l3s3">Segi tiga api: haba, bahan api &amp; oksigen</div><div class="l3s" id="l3s4">Jauhi kawasan kebakaran &middot; pakai pelitup muka</div><div class="l3s" id="l3s5">Jangan buang puntung rokok merata-rata</div><div class="l3s" id="l3s6">Melaporkan dari lokasi kejadian</div></div>
+        </div>
+
         <!-- ticker -->
         <div id="ticker">
-          <div class="lab">TERKINI</div>
           <div class="rail">
-            <div class="txt" id="tick-txt">
-              KEBAKARAN HUTAN: API MEREBAK AKIBAT CUACA PANAS DAN KERING<b>&#9679;</b>ORANG RAMAI DINASIHATKAN MENJAUHI KAWASAN KEBAKARAN<b>&#9679;</b>PAKAI PELITUP MUKA JIKA BERJEREBU<b>&#9679;</b>JANGAN BUANG PUNTUNG ROKOK MERATA-RATA<b>&#9679;</b>HABA + BAHAN API + OKSIGEN = SEGI TIGA API<b>&#9679;</b>KEBAKARAN HUTAN: API MEREBAK AKIBAT CUACA PANAS DAN KERING<b>&#9679;</b>ORANG RAMAI DINASIHATKAN MENJAUHI KAWASAN KEBAKARAN<b>&#9679;</b>PAKAI PELITUP MUKA JIKA BERJEREBU<b>&#9679;</b>JANGAN BUANG PUNTUNG ROKOK MERATA-RATA<b>&#9679;</b>
-            </div>
+            <div class="txt" id="tick-txt">LIVE BREAKING NEWS<b>|</b>KEBAKARAN HUTAN: API MEREBAK AKIBAT CUACA PANAS DAN KERING<b>|</b>LIVE BREAKING NEWS<b>|</b>JAUHI KAWASAN KEBAKARAN<b>|</b>LIVE BREAKING NEWS<b>|</b>PAKAI PELITUP MUKA KETIKA JEREBU<b>|</b>LIVE BREAKING NEWS<b>|</b>JANGAN BUANG PUNTUNG ROKOK MERATA-RATA<b>|</b>LIVE BREAKING NEWS<b>|</b>HABA + BAHAN API + OKSIGEN = SEGI TIGA API<b>|</b>LIVE BREAKING NEWS<b>|</b>KEBAKARAN HUTAN: API MEREBAK AKIBAT CUACA PANAS DAN KERING<b>|</b>LIVE BREAKING NEWS<b>|</b>JAUHI KAWASAN KEBAKARAN<b>|</b>LIVE BREAKING NEWS<b>|</b>PAKAI PELITUP MUKA KETIKA JEREBU<b>|</b>LIVE BREAKING NEWS<b>|</b>JANGAN BUANG PUNTUNG ROKOK MERATA-RATA<b>|</b>LIVE BREAKING NEWS<b>|</b>HABA + BAHAN API + OKSIGEN = SEGI TIGA API<b>|</b></div>
           </div>
         </div>
         <div id="tick-under"></div>
@@ -558,7 +575,7 @@
       // ticker
       tl.fromTo("#ticker", { yPercent: 160 }, { yPercent: 0, duration: 0.5, ease: "power3.out" }, 6.5);
       tl.fromTo("#tick-under", { yPercent: 160 }, { yPercent: 0, duration: 0.5, ease: "power3.out" }, 6.5);
-      tl.fromTo("#tick-txt", { x: 860 }, { x: -6200, duration: 58.5, ease: "none" }, 6.6);
+      tl.fromTo("#tick-txt", { x: 1080 }, { x: -7400, duration: 58.5, ease: "none" }, 6.6);
 
       // lower-third helper
       function lt(id, tin, tout) {
@@ -574,13 +591,22 @@
         tl.set(id, { opacity: 0 }, 0);
         tl.set(id + " .mask > *", { xPercent: -120 }, 0);
       });
-      lt("#lt-name", R + 1.7, R + 7.6);
-      lt("#lt-head", R + 8.0, R + 13.2);
-      lt("#lt-head2", R + 13.8, R + 19.9);
-      lt("#lt-alam", R + 45.1, R + 52.0);
       tl.set("#alam-sub", { opacity: 0 }, 0);
       tl.to("#alam-sub", { opacity: 1, duration: 0.35 }, R + 48.9);
-      lt("#lt-end", R + 52.7, R + 58.6);
+
+
+      // breaking-news lower third (persistent), title swaps per section
+      tl.fromTo("#l3-bn", { xPercent: -140 }, { xPercent: 0, duration: 0.5, ease: "expo.out" }, R + 0.2);
+      tl.fromTo("#l3-white", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.5, ease: "expo.out" }, R + 0.35);
+      tl.fromTo("#l3-navy", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.5, ease: "expo.out" }, R + 0.45);
+      const L3T = [0.3, 8.0, 13.8, 20.3, 36.4, 45.1, 52.6];
+      L3T.forEach((t, k) => {
+        tl.set(["#l3t" + k, "#l3s" + k], { yPercent: 110, opacity: 0 }, 0);
+        tl.to(["#l3t" + k, "#l3s" + k], { yPercent: 0, opacity: 1, duration: 0.4, ease: "power3.out", stagger: 0.08 }, R + t + 0.3);
+        if (k < L3T.length - 1) tl.to(["#l3t" + k, "#l3s" + k], { yPercent: -110, opacity: 0, duration: 0.3, ease: "power2.in", stagger: 0.05 }, R + L3T[k + 1]);
+      });
+      tl.fromTo("#l3-slash i", { opacity: 0.35 }, { opacity: 1, duration: 0.5, repeat: 58, yoyo: true, ease: "sine.inOut" }, R + 0.8);
+      tl.to("#l3", { yPercent: 160, duration: 0.4, ease: "power3.in" }, R + 58.9);
 
       // fakta sains card (src times mapped to report time)
       tl.set("#fakta", { xPercent: -130 }, 0);
