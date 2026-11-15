@@ -327,7 +327,7 @@
         <img id="gf-logo-atas" src="assets/logo-sekolah.png" alt="Logo SKHMS" />
       </div>
 
-      <div id="gf-lokasi"><svg viewBox="0 0 24 24"><path d="M12 2 C7.6 2 4 5.4 4 9.8 C4 15.6 12 22 12 22 C12 22 20 15.6 20 9.8 C20 5.4 16.4 2 12 2 Z" fill="#d7141a"/><circle cx="12" cy="10" r="3.2" fill="#fff"/></svg>KUALA LUMPUR, MALAYSIA</div>
+      <div id="gf-lokasi"><svg viewBox="0 0 24 24"><path d="M12 2 C7.6 2 4 5.4 4 9.8 C4 15.6 12 22 12 22 C12 22 20 15.6 20 9.8 C20 5.4 16.4 2 12 2 Z" fill="#d7141a"/><circle cx="12" cy="10" r="3.2" fill="#fff"/></svg>MALAYSIA</div>
 
       <!-- card 1: kesan -->
       <div id="gf-k1" class="gf-kad">
@@ -385,15 +385,11 @@
         <div class="gf-senarai">
           <div id="gf-n1" class="gf-item">
             <div class="gf-ikon"><svg viewBox="0 0 64 64"><path d="M8 54 L32 10 L56 54 Z" fill="none" stroke="#0b2a7a" stroke-width="5" stroke-linejoin="round"/><circle cx="32" cy="34" r="5" fill="#0b2a7a"/><path d="M32 39 V48 M26 44 H38" stroke="#0b2a7a" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="32" r="28" fill="none" stroke="#b4320a" stroke-width="5"/></svg></div>
-            <div class="gf-item-teks">Kurangkan aktiviti di luar</div>
+            <div class="gf-item-teks">Kurangkan aktiviti di luar ketika jerebu teruk</div>
           </div>
           <div id="gf-n2" class="gf-item">
             <div class="gf-ikon"><svg viewBox="0 0 64 64"><path d="M32 52 C20 50 18 38 25 30 C25 37 29 38 30 35 C28 27 32 19 37 14 C37 24 46 29 46 40 C46 48 40 52 32 52 Z" fill="#e07a2f"/><circle cx="32" cy="32" r="28" fill="none" stroke="#b4320a" stroke-width="6"/><line x1="12" y1="52" x2="52" y2="12" stroke="#b4320a" stroke-width="6" stroke-linecap="round"/></svg></div>
-            <div class="gf-item-teks">Jangan lakukan pembakaran terbuka</div>
-          </div>
-          <div id="gf-n3" class="gf-item">
-            <div class="gf-ikon"><svg viewBox="0 0 64 64"><path d="M12 24 Q32 16 52 24 L50 40 Q32 54 14 40 Z" fill="#fff" stroke="#0b2a7a" stroke-width="4"/><path d="M12 26 L4 22 M52 26 L60 22 M14 38 L5 42 M50 38 L59 42" stroke="#0b2a7a" stroke-width="4" stroke-linecap="round"/><path d="M20 30 H44 M20 36 H44" stroke="#0b2a7a" stroke-width="3"/></svg></div>
-            <div class="gf-item-teks">Pakai pelitup muka bila perlu</div>
+            <div class="gf-item-teks">Jangan melakukan pembakaran terbuka</div>
           </div>
         </div>
       </div>
@@ -401,7 +397,7 @@
       <!-- headline strip -->
       <div id="gf-tajuk">
         <div id="gf-tajuk-label">TERKINI</div>
-        <div id="gf-tajuk-isi">JEREBU MELANDA BEBERAPA KAWASAN<small>Udara kurang bersih, orang ramai diminta berwaspada</small></div>
+        <div id="gf-tajuk-isi">JEREBU MELANDA BEBERAPA KAWASAN<small>Wartawan Cilik melaporkan keadaan jerebu yang berlaku di beberapa kawasan</small></div>
       </div>
 
       <!-- name lower third -->
@@ -415,8 +411,8 @@
       <div id="gf-ticker">
         <div id="gf-ticker-label">BERITA TERKINI</div>
         <div id="gf-ticker-jalur">
-          Kurangkan aktiviti di luar ketika jerebu teruk <i>■</i> Jangan lakukan pembakaran terbuka <i>■</i> Jerebu mengandungi zarah halus yang boleh masuk ke sistem pernafasan <i>■</i> Jaga kesihatan, jaga alam sekitar <i>■</i>
-          Kurangkan aktiviti di luar ketika jerebu teruk <i>■</i> Jangan lakukan pembakaran terbuka <i>■</i> Jerebu mengandungi zarah halus yang boleh masuk ke sistem pernafasan <i>■</i> Jaga kesihatan, jaga alam sekitar <i>■</i>
+          Jerebu menyebabkan udara menjadi kurang bersih dan jarak penglihatan berkurangan <i>■</i> Orang ramai dinasihatkan supaya mengurangkan aktiviti di luar ketika keadaan jerebu teruk <i>■</i> Jangan melakukan pembakaran terbuka kerana perbuatan ini boleh mencemarkan udara <i>■</i>
+          Jerebu menyebabkan udara menjadi kurang bersih dan jarak penglihatan berkurangan <i>■</i> Orang ramai dinasihatkan supaya mengurangkan aktiviti di luar ketika keadaan jerebu teruk <i>■</i> Jangan melakukan pembakaran terbuka kerana perbuatan ini boleh mencemarkan udara <i>■</i>
         </div>
       </div>
     </div>
@@ -433,7 +429,7 @@
     tl.fromTo("#gf-lokasi", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 0.7);
     // Ticker: constant crawl for the whole report
     tl.fromTo("#gf-ticker", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 0.6);
-    tl.fromTo("#gf-ticker-jalur", { x: 0 }, { x: -3600, duration: 60.6, ease: "none" }, 0);
+    tl.fromTo("#gf-ticker-jalur", { x: 0 }, { x: -4300, duration: 60.6, ease: "none" }, 0);
     tl.fromTo("#gf-bawah-bg", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 0.3);
 
     // Name lower third (intro): 2.3 – 7.6
@@ -491,7 +487,6 @@
     };
     item("#gf-n1", 41.3);
     item("#gf-n2", 46.44);
-    item("#gf-n3", 49.6);
 
     // Top bar leaves before the closing card
     tl.to(["#gf-atas", "#gf-ticker", "#gf-bawah-bg", "#gf-lokasi"], { opacity: 0, duration: 0.4 }, 60.1);

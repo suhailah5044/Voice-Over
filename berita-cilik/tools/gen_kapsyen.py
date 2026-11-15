@@ -19,7 +19,7 @@ G = [
  ("Zarah ini boleh masuk", 32.66, 34.86),
  ("ke dalam sistem pernafasan", 34.86, 36.86),
  ("apabila kita bernafas.", 36.86, 39.45),
- ("Orang ramai dinasihati", 39.52, 41.34),
+ ("Orang ramai dinasihatkan", 39.52, 41.34),
  ("supaya mengurangkan aktiviti di luar", 41.34, 44.06),
  ("ketika keadaan jerebu teruk.", 44.06, 46.40),
  ("Jangan melakukan pembakaran terbuka", 46.44, 49.46),
