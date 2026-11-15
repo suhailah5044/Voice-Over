@@ -61,7 +61,7 @@
       position: absolute;
       left: 60px;
       width: 780px;
-      top: 170px;
+      top: 190px;
       border-radius: 22px;
       background: rgba(8, 22, 60, 0.82);
       border: 3px solid rgba(255, 255, 255, 0.16);
@@ -125,7 +125,7 @@
     }
     #gf-l1 { white-space: nowrap; left: 40px; top: 96px; background: #d9c7a4; color: #3a2a10; }
     #gf-l2 { white-space: nowrap; font-size: 36px; left: 30px; top: 330px; background: #fff; color: #0b2a7a; }
-    #gf-l3 { white-space: nowrap; font-size: 36px; left: 420px; top: 330px; background: #ff6f7d; color: #fff; }
+    #gf-l3 { white-space: nowrap; font-size: 34px; left: 400px; top: 330px; background: #ff6f7d; color: #fff; }
 
     /* Senarai nasihat */
     .gf-senarai { padding: 14px 34px 28px; }
@@ -293,6 +293,22 @@
       color: #0b1d4d;
       letter-spacing: 0;
     }
+    #gf-lokasi {
+      position: absolute;
+      left: 50px;
+      top: 124px;
+      height: 40px;
+      padding: 0 16px 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(5, 12, 35, 0.78);
+      border-left: 6px solid #f5b800;
+      font-weight: 800;
+      font-size: 24px;
+      letter-spacing: 0.08em;
+    }
+    #gf-lokasi svg { width: 24px; height: 24px; }
   </style>
   <div id="root" data-composition-id="grafik" data-width="1920" data-height="1080">
     <div id="gf-pentas" class="clip" data-start="0" data-duration="60.6" data-layout-allow-overflow data-layout-allow-overlap>
@@ -307,6 +323,8 @@
         </div>
         <img id="gf-logo-atas" src="assets/logo-sekolah.svg" alt="Logo sekolah" />
       </div>
+
+      <div id="gf-lokasi"><svg viewBox="0 0 24 24"><path d="M12 2 C7.6 2 4 5.4 4 9.8 C4 15.6 12 22 12 22 C12 22 20 15.6 20 9.8 C20 5.4 16.4 2 12 2 Z" fill="#d7141a"/><circle cx="12" cy="10" r="3.2" fill="#fff"/></svg>KUALA LUMPUR, MALAYSIA</div>
 
       <!-- card 1: kesan -->
       <div id="gf-k1" class="gf-kad">
@@ -409,6 +427,7 @@
     tl.fromTo("#gf-logo-atas", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 0.4);
     tl.fromTo("#gf-dot", { opacity: 1 }, { opacity: 0.15, duration: 0.6, ease: "sine.inOut", yoyo: true, repeat: 49 }, 0.5);
 
+    tl.fromTo("#gf-lokasi", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 0.7);
     // Ticker: constant crawl for the whole report
     tl.fromTo("#gf-ticker", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 0.6);
     tl.fromTo("#gf-ticker-jalur", { x: 0 }, { x: -3600, duration: 60.6, ease: "none" }, 0);
@@ -472,7 +491,7 @@
     item("#gf-n3", 49.6);
 
     // Top bar leaves before the closing card
-    tl.to(["#gf-atas", "#gf-ticker", "#gf-bawah-bg"], { opacity: 0, duration: 0.4 }, 60.1);
+    tl.to(["#gf-atas", "#gf-ticker", "#gf-bawah-bg", "#gf-lokasi"], { opacity: 0, duration: 0.4 }, 60.1);
     window.__timelines["grafik"] = tl;
   </script>
 </template>

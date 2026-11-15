@@ -57,7 +57,7 @@ html = f'''<template>
   <style>
     #root {{ position: absolute; inset: 0; overflow: hidden; }}
     #lt-foto {{
-      position: absolute; left: 0; top: 0; width: 2410px; height: 1080px;
+      position: absolute; left: 0; top: -70px; width: 2221px; height: 1242px;
     }}
     #lt-matahari {{
       position: absolute; left: 1080px; top: 60px; width: 160px; height: 160px; border-radius: 50%;
@@ -82,7 +82,6 @@ html = f'''<template>
   <div id="root" data-composition-id="latar" data-width="1920" data-height="1080">
     <div id="lt-pentas" class="clip" data-start="0" data-duration="{D}" data-layout-ignore data-layout-allow-overflow>
       <img id="lt-foto" src="assets/jerebu-kl.jpg" alt="Jerebu di Kuala Lumpur" />
-      <div id="lt-matahari"></div>
       {smoke_html}
       <div id="lt-kabus"></div>
       {ash_html}
@@ -93,8 +92,7 @@ html = f'''<template>
     const tl = gsap.timeline({{ paused: true }});
     const D = {D};
     tl.fromTo("#lt-pentas", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.01 }}, 0);
-    tl.fromTo("#lt-foto", {{ x: -60, scale: 1.04 }}, {{ x: -440, scale: 1.0, duration: D, ease: "none" }}, 0);
-    tl.fromTo("#lt-matahari", {{ y: 0, opacity: 0.7 }}, {{ y: 40, opacity: 0.9, duration: D, ease: "none" }}, 0);
+    tl.fromTo("#lt-foto", {{ x: -10, scale: 1.0 }}, {{ x: -150, scale: 1.0, duration: D, ease: "none" }}, 0);
     tl.fromTo("#lt-kabus", {{ opacity: 0.85 }}, {{ opacity: 1, duration: D, ease: "sine.inOut" }}, 0);
     {smoke_js}
     {ash_js}
