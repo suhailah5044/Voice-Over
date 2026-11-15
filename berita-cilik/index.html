@@ -24,13 +24,13 @@
       }
       #wartawan {
         position: absolute;
-        left: 737px;
-        top: -406px;
+        left: 657px;
+        top: -696px;
         width: 1080px;
         height: 1920px;
         object-fit: cover;
         transform-origin: 0 0;
-        scale: 0.95;
+        scale: 1.15;
       }
       /* Warm haze wash so the indoor-lit child sits in the smoky scene. */
       #wash {
@@ -44,7 +44,7 @@
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="63.4" data-width="1920" data-height="1080">
+    <div id="root" data-composition-id="main" data-start="0" data-duration="71.1" data-width="1920" data-height="1080">
       <!-- 1. Pembuka: news opening -->
       <div id="pembuka" data-composition-id="pembuka" data-composition-src="compositions/pembuka.html"
         data-start="0" data-duration="6.4" data-track-index="1" data-track-kind="graphics"
@@ -52,51 +52,51 @@
 
       <!-- 2. Latar jerebu behind the reporter -->
       <div id="latar" data-composition-id="latar" data-composition-src="compositions/latar.html"
-        data-start="5.6" data-duration="53.4" data-track-index="2" data-track-kind="graphics"
+        data-start="5.6" data-duration="61.1" data-track-index="2" data-track-kind="graphics"
         data-width="1920" data-height="1080" style="z-index: 1"></div>
 
       <!-- 3. Reporter cutout -->
       <div id="bingkai">
         <video id="wartawan" class="clip" src="assets/wartawan-cutout.webm" muted playsinline
-          data-start="6" data-duration="52.9" data-media-start="0" data-track-index="3"
+          data-start="6" data-duration="60.6" data-media-start="0" data-track-index="3"
           data-layout-allow-occlusion></video>
       </div>
       <div id="wash"></div>
 
       <!-- 4. News graphics (bug, lower thirds, fact cards, ticker) -->
       <div id="grafik" data-composition-id="grafik" data-composition-src="compositions/grafik.html"
-        data-start="6" data-duration="52.9" data-track-index="4" data-track-kind="graphics"
+        data-start="6" data-duration="60.6" data-track-index="4" data-track-kind="graphics"
         data-width="1920" data-height="1080" style="z-index: 6"></div>
 
       <!-- 5. Captions -->
       <div id="kapsyen" data-composition-id="kapsyen" data-composition-src="compositions/kapsyen.html"
-        data-start="6" data-duration="52.9" data-track-index="5" data-track-kind="captions"
+        data-start="6" data-duration="60.6" data-track-index="5" data-track-kind="captions"
         data-width="1920" data-height="1080" style="z-index: 7"></div>
 
       <!-- 6. Penutup: closing card -->
       <div id="penutup" data-composition-id="penutup" data-composition-src="compositions/penutup.html"
-        data-start="58.6" data-duration="4.8" data-track-index="6" data-track-kind="graphics"
+        data-start="66.3" data-duration="4.8" data-track-index="6" data-track-kind="graphics"
         data-width="1920" data-height="1080" style="z-index: 9"></div>
 
       <!-- Audio -->
       <audio id="sting-buka" class="clip" src="assets/intro-sting.wav" data-start="0" data-duration="6" data-volume="0.9" data-track-index="7"></audio>
-      <audio id="suara" class="clip" src="assets/suara.wav" data-start="6" data-duration="52.9" data-volume="1" data-track-index="8"></audio>
-      <audio id="muzik-latar" class="clip" src="assets/news-bed.wav" data-start="5.6" data-duration="53.2" data-volume="0.13" data-fade-in="1" data-fade-out="1" data-track-index="9"></audio>
-      <audio id="sting-tutup" class="clip" src="assets/outro-sting.wav" data-start="58.8" data-duration="4.5" data-volume="0.9" data-track-index="10"></audio>
+      <audio id="suara" class="clip" src="assets/suara.wav" data-start="6" data-duration="60.6" data-volume="1" data-track-index="8"></audio>
+      <audio id="muzik-latar" class="clip" src="assets/news-bed.wav" data-start="5.6" data-duration="60.9" data-volume="0.13" data-fade-in="1" data-fade-out="1" data-track-index="9"></audio>
+      <audio id="sting-tutup" class="clip" src="assets/outro-sting.wav" data-start="66.5" data-duration="4.5" data-volume="0.9" data-track-index="10"></audio>
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });
       tl.fromTo("#wash", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power2.out" }, 6);
       // Alternate a gentle punch-in at every jump cut so the cuts read as camera changes.
-      const cuts = [0, 4.89, 7.96, 9.9, 12.25, 18.2, 19.47, 24.86, 27.23, 29.19, 33.71, 34.23, 38.21, 39.82, 40.21, 42.73, 44.69, 46.34, 49.64];
-      const plan = [1, 1.1, 1, 1.1, 1, 1.08, 1, 1, 1.1, 1, 1.1, 1.1, 1, 1.1, 1.1, 1, 1.1, 1, 1.1];
+      const cuts = [0, 11.89, 23.36, 24.62, 27.35, 28.14, 39.83, 46.66, 48.92, 52.12, 54.07];
+      const plan = [1, 1.1, 1, 1.1, 1, 1.1, 1, 1.1, 1, 1.1, 1];
       cuts.forEach((c, i) => {
-        const next = i + 1 < cuts.length ? cuts[i + 1] : 52.9;
+        const next = i + 1 < cuts.length ? cuts[i + 1] : 60.6;
         tl.set("#bingkai", { scale: plan[i] }, 6 + c);
         // slow push so each shot breathes
         tl.to("#bingkai", { scale: plan[i] * 1.02, duration: Math.max(0.2, next - c - 0.02), ease: "none" }, 6 + c);
       });
-      tl.to("#wash", { opacity: 0, duration: 0.4 }, 58.6);
+      tl.to("#wash", { opacity: 0, duration: 0.4 }, 66.3);
       window.__timelines["main"] = tl;
     </script>
   </body>

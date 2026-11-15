@@ -111,7 +111,7 @@
 
     /* Fakta sains */
     #gf-fakta { height: 400px; }
-    #gf-segitiga { position: absolute; left: 0; top: 0; width: 780px; height: 400px; }
+    #gf-rajah { position: absolute; left: 0; top: 0; width: 780px; height: 400px; }
     .gf-label {
       position: absolute;
       font-family: "Oswald", sans-serif;
@@ -123,21 +123,9 @@
       background: #fff;
       color: #0b2a7a;
     }
-    #gf-haba { left: 316px; top: 62px; background: #ff5a1f; color: #fff; }
-    #gf-bahan { left: 60px; top: 316px; background: #8b5a2b; color: #fff; }
-    #gf-oksigen { left: 520px; top: 316px; background: #2f8cff; color: #fff; }
-    #gf-pusat {
-      position: absolute;
-      left: 240px;
-      top: 266px;
-      width: 300px;
-      text-align: center;
-      font-family: "Oswald", sans-serif;
-      font-weight: 700;
-      font-size: 34px;
-      line-height: 1.05;
-      color: #f5b800;
-    }
+    #gf-l1 { white-space: nowrap; left: 40px; top: 96px; background: #d9c7a4; color: #3a2a10; }
+    #gf-l2 { white-space: nowrap; font-size: 36px; left: 30px; top: 330px; background: #fff; color: #0b2a7a; }
+    #gf-l3 { white-space: nowrap; font-size: 36px; left: 420px; top: 330px; background: #ff6f7d; color: #fff; }
 
     /* Senarai nasihat */
     .gf-senarai { padding: 14px 34px 28px; }
@@ -307,7 +295,7 @@
     }
   </style>
   <div id="root" data-composition-id="grafik" data-width="1920" data-height="1080">
-    <div id="gf-pentas" class="clip" data-start="0" data-duration="52.9" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="gf-pentas" class="clip" data-start="0" data-duration="60.6" data-layout-allow-overflow data-layout-allow-overlap>
       <!-- bottom gradient for legibility -->
       <div id="gf-bawah-bg"></div>
 
@@ -320,45 +308,54 @@
         <img id="gf-logo-atas" src="assets/logo-sekolah.svg" alt="Logo sekolah" />
       </div>
 
-      <!-- card 1: cuaca -->
+      <!-- card 1: kesan -->
       <div id="gf-k1" class="gf-kad">
-        <div class="gf-kad-tajuk">PUNCA</div>
-        <div class="gf-ikon-baris">
-          <div class="gf-ikon">
-            <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="12" fill="#b4320a"/><g stroke="#b4320a" stroke-width="5" stroke-linecap="round"><line x1="32" y1="4" x2="32" y2="13"/><line x1="32" y1="51" x2="32" y2="60"/><line x1="4" y1="32" x2="13" y2="32"/><line x1="51" y1="32" x2="60" y2="32"/><line x1="12" y1="12" x2="18" y2="18"/><line x1="46" y1="46" x2="52" y2="52"/><line x1="52" y1="12" x2="46" y2="18"/><line x1="18" y1="46" x2="12" y2="52"/></g></svg>
-          </div>
-          <div>
-            <div class="gf-teks-besar">CUACA PANAS &amp; KERING</div>
-            <div class="gf-teks-kecil">Api merebak dengan cepat</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- card 2: asap -->
-      <div id="gf-k2" class="gf-kad">
         <div class="gf-kad-tajuk">KESAN</div>
         <div class="gf-ikon-baris">
           <div class="gf-ikon">
             <svg viewBox="0 0 64 64"><path d="M4 32 C16 14 48 14 60 32 C48 50 16 50 4 32 Z" fill="none" stroke="#0b2a7a" stroke-width="5"/><circle cx="32" cy="32" r="9" fill="#0b2a7a"/><line x1="8" y1="56" x2="56" y2="8" stroke="#b4320a" stroke-width="6" stroke-linecap="round"/></svg>
           </div>
           <div>
-            <div class="gf-teks-besar">JARAK PENGLIHATAN TERHAD</div>
-            <div class="gf-teks-kecil">Asap tebal memenuhi udara</div>
+            <div class="gf-teks-besar">UDARA KURANG BERSIH</div>
+            <div class="gf-teks-kecil">Jarak penglihatan berkurangan</div>
           </div>
         </div>
       </div>
 
-      <!-- card 3: fakta sains / segi tiga api -->
+      <!-- card 2: punca -->
+      <div id="gf-k2" class="gf-kad">
+        <div class="gf-kad-tajuk">PUNCA</div>
+        <div class="gf-ikon-baris">
+          <div class="gf-ikon">
+            <svg viewBox="0 0 64 64"><path d="M32 60 C14 58 10 40 20 28 C20 38 26 40 28 36 C24 24 30 12 38 4 C38 18 52 26 52 42 C52 54 42 60 32 60 Z" fill="#b4320a"/><path d="M32 58 C24 56 22 48 27 42 C28 48 32 48 33 45 C32 40 36 34 40 32 C40 40 46 44 44 50 C42 56 38 58 32 58 Z" fill="#ffd27a"/></svg>
+          </div>
+          <div>
+            <div class="gf-teks-besar">ASAP KEBAKARAN HUTAN &amp; PEMBAKARAN TERBUKA</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 3: fakta sains / zarah halus -->
       <div id="gf-fakta" class="gf-kad">
-        <svg id="gf-segitiga" viewBox="0 0 780 400">
-          <path id="gf-tri" d="M390 110 L160 340 L620 340 Z" fill="rgba(255,90,31,0.12)" stroke="#ff7a2f" stroke-width="8" stroke-linejoin="round" />
-          <path id="gf-nyala" d="M390 250 C350 220 362 186 380 164 C378 186 396 194 402 178 C418 198 430 224 390 250 Z" fill="#ffb02e" />
+        <svg id="gf-rajah" viewBox="0 0 780 400">
+          <g id="gf-zarah" fill="#d9c7a4">
+            <circle cx="120" cy="170" r="9"/><circle cx="160" cy="140" r="6"/><circle cx="190" cy="190" r="8"/><circle cx="100" cy="230" r="7"/>
+            <circle cx="150" cy="250" r="10"/><circle cx="210" cy="240" r="6"/><circle cx="230" cy="160" r="7"/><circle cx="80" cy="190" r="5"/>
+            <circle cx="180" cy="290" r="6"/><circle cx="120" cy="300" r="8"/><circle cx="240" cy="290" r="5"/><circle cx="70" cy="270" r="6"/>
+          </g>
+          <path id="gf-anak-panah" d="M290 220 H440 M410 190 L445 220 L410 250" fill="none" stroke="#f5b800" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+          <g id="gf-paru">
+            <path d="M580 110 V190" stroke="#ff9a9a" stroke-width="14" stroke-linecap="round"/>
+            <path d="M580 180 C560 190 540 200 530 214" stroke="#ff9a9a" stroke-width="10" fill="none" stroke-linecap="round"/>
+            <path d="M580 180 C600 190 620 200 630 214" stroke="#ff9a9a" stroke-width="10" fill="none" stroke-linecap="round"/>
+            <path d="M560 160 C520 150 490 200 488 260 C486 320 510 340 540 330 C566 322 570 290 570 250 C570 210 568 180 560 160 Z" fill="#ff6f7d"/>
+            <path d="M600 160 C640 150 670 200 672 260 C674 320 650 340 620 330 C594 322 590 290 590 250 C590 210 592 180 600 160 Z" fill="#ff6f7d"/>
+          </g>
         </svg>
         <div class="gf-kad-tajuk" style="position: absolute; left: 0; top: 0">FAKTA SAINS</div>
-        <div id="gf-haba" class="gf-label">HABA</div>
-        <div id="gf-bahan" class="gf-label">BAHAN API</div>
-        <div id="gf-oksigen" class="gf-label">OKSIGEN</div>
-        <div id="gf-pusat">SEGI TIGA API</div>
+        <div id="gf-l1" class="gf-label">ZARAH HALUS</div>
+        <div id="gf-l2" class="gf-label">TERAPUNG DI UDARA</div>
+        <div id="gf-l3" class="gf-label">SISTEM PERNAFASAN</div>
       </div>
 
       <!-- card 4: nasihat -->
@@ -366,27 +363,16 @@
         <div class="gf-kad-tajuk">NASIHAT</div>
         <div class="gf-senarai">
           <div id="gf-n1" class="gf-item">
-            <div class="gf-ikon"><svg viewBox="0 0 64 64"><path d="M32 6 L60 56 H4 Z" fill="none" stroke="#b4320a" stroke-width="6" stroke-linejoin="round"/><line x1="32" y1="24" x2="32" y2="40" stroke="#b4320a" stroke-width="6" stroke-linecap="round"/><circle cx="32" cy="48" r="3.5" fill="#b4320a"/></svg></div>
-            <div class="gf-item-teks">Jauhi kawasan kebakaran</div>
+            <div class="gf-ikon"><svg viewBox="0 0 64 64"><path d="M8 54 L32 10 L56 54 Z" fill="none" stroke="#0b2a7a" stroke-width="5" stroke-linejoin="round"/><circle cx="32" cy="34" r="5" fill="#0b2a7a"/><path d="M32 39 V48 M26 44 H38" stroke="#0b2a7a" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="32" r="28" fill="none" stroke="#b4320a" stroke-width="5"/></svg></div>
+            <div class="gf-item-teks">Kurangkan aktiviti di luar</div>
           </div>
           <div id="gf-n2" class="gf-item">
-            <div class="gf-ikon"><svg viewBox="0 0 64 64"><path d="M12 24 Q32 16 52 24 L50 40 Q32 54 14 40 Z" fill="#fff" stroke="#0b2a7a" stroke-width="4"/><path d="M12 26 L4 22 M52 26 L60 22 M14 38 L5 42 M50 38 L59 42" stroke="#0b2a7a" stroke-width="4" stroke-linecap="round"/><path d="M20 30 H44 M20 36 H44" stroke="#0b2a7a" stroke-width="3"/></svg></div>
-            <div class="gf-item-teks">Pakai pelitup muka ketika jerebu</div>
+            <div class="gf-ikon"><svg viewBox="0 0 64 64"><path d="M32 52 C20 50 18 38 25 30 C25 37 29 38 30 35 C28 27 32 19 37 14 C37 24 46 29 46 40 C46 48 40 52 32 52 Z" fill="#e07a2f"/><circle cx="32" cy="32" r="28" fill="none" stroke="#b4320a" stroke-width="6"/><line x1="12" y1="52" x2="52" y2="12" stroke="#b4320a" stroke-width="6" stroke-linecap="round"/></svg></div>
+            <div class="gf-item-teks">Jangan lakukan pembakaran terbuka</div>
           </div>
-        </div>
-      </div>
-
-      <!-- card 5: alam sekitar -->
-      <div id="gf-k5" class="gf-kad">
-        <div class="gf-kad-tajuk">MARI BERSAMA</div>
-        <div class="gf-senarai">
           <div id="gf-n3" class="gf-item">
-            <div class="gf-ikon"><svg viewBox="0 0 64 64"><path d="M32 58 V30" stroke="#1e6b2a" stroke-width="6" stroke-linecap="round"/><path d="M32 34 C10 34 8 14 12 6 C28 6 36 18 32 34 Z" fill="#2e9a3e"/><path d="M32 40 C50 40 56 26 54 18 C40 18 32 28 32 40 Z" fill="#3fb24f"/></svg></div>
-            <div class="gf-item-teks">Jaga alam sekitar</div>
-          </div>
-          <div id="gf-n4" class="gf-item">
-            <div class="gf-ikon"><svg viewBox="0 0 64 64"><rect x="6" y="34" width="44" height="10" rx="2" fill="#fff" stroke="#0b2a7a" stroke-width="3"/><rect x="40" y="34" width="10" height="10" fill="#e07a2f"/><path d="M54 30 C58 24 52 20 56 14" stroke="#777" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="32" cy="32" r="28" fill="none" stroke="#b4320a" stroke-width="6"/><line x1="12" y1="52" x2="52" y2="12" stroke="#b4320a" stroke-width="6" stroke-linecap="round"/></svg></div>
-            <div class="gf-item-teks">Jangan buang puntung rokok sebarangan</div>
+            <div class="gf-ikon"><svg viewBox="0 0 64 64"><path d="M12 24 Q32 16 52 24 L50 40 Q32 54 14 40 Z" fill="#fff" stroke="#0b2a7a" stroke-width="4"/><path d="M12 26 L4 22 M52 26 L60 22 M14 38 L5 42 M50 38 L59 42" stroke="#0b2a7a" stroke-width="4" stroke-linecap="round"/><path d="M20 30 H44 M20 36 H44" stroke="#0b2a7a" stroke-width="3"/></svg></div>
+            <div class="gf-item-teks">Pakai pelitup muka bila perlu</div>
           </div>
         </div>
       </div>
@@ -394,7 +380,7 @@
       <!-- headline strip -->
       <div id="gf-tajuk">
         <div id="gf-tajuk-label">TERKINI</div>
-        <div id="gf-tajuk-isi">KEBAKARAN HUTAN: JEREBU MELANDA<small>Orang ramai diminta berwaspada dan menjaga kesihatan</small></div>
+        <div id="gf-tajuk-isi">JEREBU MELANDA BEBERAPA KAWASAN<small>Udara kurang bersih, orang ramai diminta berwaspada</small></div>
       </div>
 
       <!-- name lower third -->
@@ -408,8 +394,8 @@
       <div id="gf-ticker">
         <div id="gf-ticker-label">BERITA TERKINI</div>
         <div id="gf-ticker-jalur">
-          Orang ramai dinasihatkan menjauhi kawasan kebakaran <i>■</i> Pakai pelitup muka jika terdapat jerebu <i>■</i> Api memerlukan haba, bahan api dan oksigen <i>■</i> Jangan buang puntung rokok sebarangan <i>■</i> Jaga alam sekitar kita <i>■</i>
-          Orang ramai dinasihatkan menjauhi kawasan kebakaran <i>■</i> Pakai pelitup muka jika terdapat jerebu <i>■</i> Api memerlukan haba, bahan api dan oksigen <i>■</i> Jangan buang puntung rokok sebarangan <i>■</i> Jaga alam sekitar kita <i>■</i>
+          Kurangkan aktiviti di luar ketika jerebu teruk <i>■</i> Jangan lakukan pembakaran terbuka <i>■</i> Jerebu mengandungi zarah halus yang boleh masuk ke sistem pernafasan <i>■</i> Jaga kesihatan, jaga alam sekitar <i>■</i>
+          Kurangkan aktiviti di luar ketika jerebu teruk <i>■</i> Jangan lakukan pembakaran terbuka <i>■</i> Jerebu mengandungi zarah halus yang boleh masuk ke sistem pernafasan <i>■</i> Jaga kesihatan, jaga alam sekitar <i>■</i>
         </div>
       </div>
     </div>
@@ -421,11 +407,11 @@
     // Top bar
     tl.fromTo("#gf-bug", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 0.25);
     tl.fromTo("#gf-logo-atas", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 0.4);
-    tl.fromTo("#gf-dot", { opacity: 1 }, { opacity: 0.15, duration: 0.6, ease: "sine.inOut", yoyo: true, repeat: 43 }, 0.5);
+    tl.fromTo("#gf-dot", { opacity: 1 }, { opacity: 0.15, duration: 0.6, ease: "sine.inOut", yoyo: true, repeat: 49 }, 0.5);
 
     // Ticker: constant crawl for the whole report
     tl.fromTo("#gf-ticker", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 0.6);
-    tl.fromTo("#gf-ticker-jalur", { x: 0 }, { x: -3600, duration: 52.9, ease: "none" }, 0);
+    tl.fromTo("#gf-ticker-jalur", { x: 0 }, { x: -3600, duration: 60.6, ease: "none" }, 0);
     tl.fromTo("#gf-bawah-bg", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 0.3);
 
     // Name lower third (intro): 2.3 – 7.6
@@ -440,56 +426,53 @@
       tl.set("#gf-nama", { x: 0 }, t + 0.4);
     };
     tl.set("#gf-nama", { opacity: 0 }, 0);
-    namaIn(2.3);
-    namaOut(7.4);
+    namaIn(2.4);
+    namaOut(7.5);
 
-    // Headline strip 7.7 – 45.9
+    // Headline strip 7.75 – 53.5
     tl.set("#gf-tajuk", { opacity: 0 }, 0);
-    tl.fromTo("#gf-tajuk", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 7.75);
-    tl.fromTo("#gf-tajuk-label", { x: -340 }, { x: 0, duration: 0.4, ease: "power3.out" }, 7.75);
-    tl.fromTo("#gf-tajuk-isi", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.55, ease: "power3.out" }, 7.85);
-    tl.to("#gf-tajuk", { opacity: 0, duration: 0.3, ease: "power2.in" }, 45.8);
+    tl.fromTo("#gf-tajuk", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 7.85);
+    tl.fromTo("#gf-tajuk-label", { x: -340 }, { x: 0, duration: 0.4, ease: "power3.out" }, 7.85);
+    tl.fromTo("#gf-tajuk-isi", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.55, ease: "power3.out" }, 7.95);
+    tl.to("#gf-tajuk", { opacity: 0, duration: 0.3, ease: "power2.in" }, 53.3);
 
-    // Name lower third (sign-off): 46.1 – 50.75
-    namaIn(46.15, false);
-    namaOut(50.7);
+    // Name lower third (sign-off)
+    namaIn(53.7, false);
+    namaOut(58.3);
 
-    // Cards in the top band
+    // Cards in the left column
     const kad = (id, a, b) => {
       tl.set(id, { opacity: 0 }, 0);
       tl.fromTo(id, { opacity: 0, y: -40, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "power3.out" }, a);
       tl.to(id, { opacity: 0, y: -30, duration: 0.35, ease: "power2.in" }, b - 0.35);
     };
-    kad("#gf-k1", 7.72, 11.9);
-    kad("#gf-k2", 11.92, 18.1);
-    kad("#gf-fakta", 18.18, 31.7);
-    kad("#gf-k4", 31.72, 39.55);
-    kad("#gf-k5", 39.58, 46.1);
+    kad("#gf-k1", 11.46, 17.42);
+    kad("#gf-k2", 17.46, 27.08);
+    kad("#gf-fakta", 27.1, 39.48);
+    kad("#gf-k4", 39.52, 53.62);
 
-    // Fact card build: triangle draws, corners label as they are said
-    const len = 1300;
-    tl.fromTo("#gf-tri", { strokeDasharray: len, strokeDashoffset: len, fillOpacity: 0 }, { strokeDashoffset: 0, duration: 1.4, ease: "power2.inOut" }, 19.34);
-    tl.set(["#gf-haba", "#gf-bahan", "#gf-oksigen", "#gf-pusat", "#gf-nyala"], { opacity: 0 }, 0);
-    tl.fromTo("#gf-haba", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.4)" }, 23.92);
-    tl.fromTo("#gf-bahan", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.4)" }, 24.7);
-    tl.fromTo("#gf-oksigen", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.4)" }, 26.0);
-    tl.fromTo("#gf-nyala", { opacity: 0, scale: 0.2, transformOrigin: "50% 100%" }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 26.6);
-    tl.fromTo("#gf-tri", { fillOpacity: 0 }, { fillOpacity: 1, duration: 0.6, immediateRender: false }, 28.88);
-    tl.fromTo("#gf-pusat", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 28.88);
-    tl.fromTo("#gf-nyala", { scaleY: 1 }, { scaleY: 1.12, duration: 0.4, ease: "sine.inOut", yoyo: true, repeat: 9, immediateRender: false }, 27.1);
+    // Fact card: particles, arrow, lungs, labels as they are said
+    tl.set(["#gf-l1", "#gf-l2", "#gf-l3", "#gf-anak-panah", "#gf-paru"], { opacity: 0 }, 0);
+    tl.fromTo("#gf-zarah", { opacity: 0, scale: 0.6, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.6, ease: "power3.out" }, 28.5);
+    tl.fromTo("#gf-zarah", { x: 0, y: 0 }, { x: 24, y: -14, duration: 11, ease: "sine.inOut", immediateRender: false }, 28.5);
+    tl.fromTo("#gf-l1", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.4)" }, 29.44);
+    tl.fromTo("#gf-l2", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.4)" }, 31.28);
+    tl.fromTo("#gf-anak-panah", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 34.36);
+    tl.fromTo("#gf-paru", { opacity: 0, scale: 0.6, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.8)" }, 35.0);
+    tl.fromTo("#gf-l3", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.4)" }, 35.4);
+    tl.fromTo("#gf-paru", { scale: 1 }, { scale: 1.06, duration: 0.7, ease: "sine.inOut", yoyo: true, repeat: 3, immediateRender: false }, 36.0);
 
     // Advice items appear as spoken
     const item = (id, t) => {
       tl.set(id, { opacity: 0 }, 0);
       tl.fromTo(id, { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, t);
     };
-    item("#gf-n1", 34.6);
-    item("#gf-n2", 36.6);
-    item("#gf-n3", 41.75);
-    item("#gf-n4", 43.55);
+    item("#gf-n1", 41.3);
+    item("#gf-n2", 46.44);
+    item("#gf-n3", 49.6);
 
     // Top bar leaves before the closing card
-    tl.to(["#gf-atas", "#gf-ticker", "#gf-bawah-bg"], { opacity: 0, duration: 0.4 }, 52.4);
+    tl.to(["#gf-atas", "#gf-ticker", "#gf-bawah-bg"], { opacity: 0, duration: 0.4 }, 60.1);
     window.__timelines["grafik"] = tl;
   </script>
 </template>

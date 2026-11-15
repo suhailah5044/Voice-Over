@@ -70,7 +70,7 @@ b = reverb(b, 0.35); b[-int(0.3*SR):] *= np.linspace(1, 0, int(0.3*SR))
 stereo_write("intro-sting.wav", b)
 
 # ---------- news bed: 60 s, very soft pulse + pad ----------
-D = 60.0; b = np.zeros(int(D*SR))
+D = 62.5; b = np.zeros(int(D*SR))
 prog = [[50, 57, 62, 65], [46, 53, 58, 62], [48, 55, 60, 64], [45, 52, 57, 61]]
 bar = 4*beat
 for i in range(int(D/bar)):
