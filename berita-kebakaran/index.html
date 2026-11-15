@@ -389,23 +389,23 @@
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="82.4" data-width="1920" data-height="1080">
+    <div id="root" data-composition-id="main" data-start="0" data-duration="67.3" data-width="1920" data-height="1080">
 
       <!-- ===== AUDIO ===== -->
       <audio id="a-taip" src="assets/taip.wav" data-start="0" data-duration="7" data-volume="0.7"></audio>
       <audio id="a-intro" src="assets/intro.wav" data-start="7" data-duration="6.4" data-volume="0.9"></audio>
-      <audio id="a-suasana" src="assets/suasana-bomba.wav" data-start="0" data-duration="72.4" data-volume="0.5"></audio>
-      <audio id="a-muzik" src="assets/muzik-berita.wav" data-start="13.0" data-duration="59.4" data-volume="0.5"></audio>
-      <audio id="a-voice" src="assets/suara.wav" data-start="13.0" data-duration="59.28" data-volume="1"></audio>
-      <audio id="a-bed" src="assets/latar-pesanan.wav" data-start="72.4" data-duration="5.6" data-volume="0.55"></audio>
-      <audio id="a-outro" src="assets/outro.wav" data-start="78.1" data-duration="3.4" data-volume="0.85"></audio>
+      <audio id="a-suasana" src="assets/suasana-bomba.wav" data-start="0" data-duration="57.3" data-volume="0.25" data-fade-out="1.2"></audio>
+      <audio id="a-muzik" src="assets/muzik-berita.wav" data-start="13.0" data-duration="44.3" data-volume="0.5" data-fade-out="1.5"></audio>
+      <audio id="a-voice" src="assets/suara.wav" data-start="13.0" data-duration="44.15" data-volume="1"></audio>
+      <audio id="a-bed" src="assets/latar-pesanan.wav" data-start="57.3" data-duration="5.6" data-volume="0.55"></audio>
+      <audio id="a-outro" src="assets/outro.wav" data-start="63.0" data-duration="3.4" data-volume="0.85"></audio>
 
       <!-- ===== REPORT (under opening) ===== -->
       <div id="report" class="abs" style="inset:0">
         <div id="bg"></div>
         <div id="glow"></div>
         <div id="anchor">
-          <video id="v-anchor" src="assets/wartawan.webm" muted playsinline data-start="13.0" data-duration="59.28" data-track-index="2"></video>
+          <video id="v-anchor" src="assets/wartawan2.webm" muted playsinline data-start="13.0" data-duration="44.15" data-track-index="2"></video>
           <div id="rim"></div>
         </div>
         <div id="vignette"></div>
@@ -475,7 +475,7 @@
       <div id="caps"></div>
 
       <!-- ===== PESANAN ===== -->
-      <div id="pesanan" class="clip" data-start="72.4" data-duration="5.7" data-track-index="5">
+      <div id="pesanan" class="clip" data-start="57.3" data-duration="5.7" data-track-index="5">
         <div id="pes-bg"></div>
         <div id="pes-shade"></div>
         <div id="pes-head"><img src="assets/logo-sekolah.png" alt="" /><div><div class="k">WARTAWAN CILIK SKHMS</div><div class="s">Laporan Khas &middot; Kebakaran Hutan</div></div></div>
@@ -531,7 +531,7 @@
       </div>
 
       <!-- ===== OUTRO ===== -->
-      <div id="outro" class="clip" data-start="78.0" data-duration="4.4" data-track-index="4">
+      <div id="outro" class="clip" data-start="62.9" data-duration="4.4" data-track-index="4">
         <div id="out-logo"><img src="assets/logo-sekolah.png" alt="" /></div>
         <div id="out-title"><div class="t">BERITA</div><div class="c">CILIK</div></div>
         <div id="out-cred">
@@ -584,28 +584,23 @@
 
       /* ---------- REPORT ---------- */
       // background slow push & fire flicker (deterministic pseudo-random)
-      tl.fromTo("#bg", { scale: 1.0 }, { scale: 1.12, duration: 60, ease: "none" }, 5.6);
+      tl.fromTo("#bg", { scale: 1.0 }, { scale: 1.1, duration: 46, ease: "none" }, 5.6);
       let seed = 7;
       const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
-      for (let t = 5.6; t < 65.3; t += 0.18) {
+      for (let t = 5.6; t < 51.3; t += 0.18) {
         tl.to("#glow", { opacity: 0.55 + rnd() * 0.45, duration: 0.18, ease: "sine.inOut" }, t);
       }
 
-      // anchor: entrance + punch-ins on every cut (hides jump cuts)
-      const cuts = [4.79, 7.98, 31.1, 33.93, 39.24, 44.98, 52.46].map((c) => R + c);
-      const scales = [1.0, 1.07, 1.0, 1.07, 1.0, 1.07, 1.0, 1.07];
+      // anchor: entrance + slow continuous push (smooth, no jumpy punch-ins)
       tl.set("#anchor", { x: 0, y: 0, scale: 1 }, 5.6);
       tl.fromTo("#anchor", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 5.9);
-      cuts.forEach((c, i) => {
-        tl.set("#anchor", { scale: scales[i + 1] }, c);
-      });
-      // fakta sains split layout: move reporter right
+      tl.fromTo("#anchor", { scale: 1.0 }, { scale: 1.06, duration: 44.2, ease: "none" }, R);
 
       // header
       tl.fromTo("#bug", { x: -500 }, { x: 0, duration: 0.6, ease: "expo.out" }, 6.2);
       tl.fromTo("#live", { x: -400, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "expo.out" }, 6.35);
       tl.fromTo("#logo", { scale: 0, rotation: -90 }, { scale: 1, rotation: 0, duration: 0.7, ease: "back.out(1.7)" }, 6.4);
-      for (let t = 6.6; t < 65.2; t += 1.0) {
+      for (let t = 6.6; t < 51.2; t += 1.0) {
         tl.to("#live-dot", { opacity: 0.15, duration: 0.45, ease: "sine.inOut" }, t);
         tl.to("#live-dot", { opacity: 1, duration: 0.45, ease: "sine.inOut" }, t + 0.5);
       }
@@ -613,7 +608,7 @@
       // ticker
       tl.fromTo("#ticker", { yPercent: 160 }, { yPercent: 0, duration: 0.5, ease: "power3.out" }, 6.5);
       tl.fromTo("#tick-under", { yPercent: 160 }, { yPercent: 0, duration: 0.5, ease: "power3.out" }, 6.5);
-      tl.fromTo("#tick-txt", { x: 1920 }, { x: -6800, duration: 58.5, ease: "none" }, 6.6);
+      tl.fromTo("#tick-txt", { x: 1920 }, { x: -4600, duration: 44, ease: "none" }, 6.6);
 
       // lower-third helper
       function lt(id, tin, tout) {
@@ -631,50 +626,50 @@
       tl.fromTo("#l3-bn", { xPercent: -140 }, { xPercent: 0, duration: 0.5, ease: "expo.out" }, R + 0.2);
       tl.fromTo("#l3-white", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.5, ease: "expo.out" }, R + 0.35);
       tl.fromTo("#l3-navy", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.5, ease: "expo.out" }, R + 0.45);
-      const L3T = [0.3, 8.0, 13.8, 20.3, 36.4, 45.1, 52.6];
+      const L3T = [0.3, 6.6, 11.3, 15.8, 25.9, 32.7, 37.5];
       L3T.forEach((t, k) => {
         tl.set(["#l3t" + k, "#l3s" + k], { yPercent: 110, opacity: 0 }, 0);
         tl.to(["#l3t" + k, "#l3s" + k], { yPercent: 0, opacity: 1, duration: 0.4, ease: "power3.out", stagger: 0.08 }, R + t + 0.3);
         if (k < L3T.length - 1) tl.to(["#l3t" + k, "#l3s" + k], { yPercent: -110, opacity: 0, duration: 0.3, ease: "power2.in", stagger: 0.05 }, R + L3T[k + 1]);
       });
-      tl.fromTo("#l3-slash i", { opacity: 0.35 }, { opacity: 1, duration: 0.5, repeat: 58, yoyo: true, ease: "sine.inOut" }, R + 0.8);
-      tl.to("#l3", { yPercent: 160, duration: 0.4, ease: "power3.in" }, R + 58.9);
+      tl.fromTo("#l3-slash i", { opacity: 0.35 }, { opacity: 1, duration: 0.5, repeat: 44, yoyo: true, ease: "sine.inOut" }, R + 0.8);
+      tl.to("#l3", { yPercent: 160, duration: 0.4, ease: "power3.in" }, R + 44.2);
 
       // fakta sains card (src times mapped to report time)
       tl.set("#fakta", { xPercent: -130 }, 0);
-      tl.to("#fakta", { xPercent: 0, duration: 0.6, ease: "expo.out" }, R + 20.3);
+      tl.to("#fakta", { xPercent: 0, duration: 0.6, ease: "expo.out" }, R + 15.85);
       tl.set(["#tri-s1", "#tri-s2", "#tri-s3"], { strokeDasharray: 420, strokeDashoffset: 420 }, 0);
       tl.set([".tri-lab", "#tri-name"], { opacity: 0, scale: 0.6 }, 0);
-      tl.fromTo("#fakta .q", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }, R + 21.6);
-      tl.to("#tri-s1", { strokeDashoffset: 0, duration: 0.5, ease: "power2.out" }, R + 27.2);
-      tl.to("#lab-haba", { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, R + 27.25);
-      tl.to("#tri-s2", { strokeDashoffset: 0, duration: 0.5, ease: "power2.out" }, R + 28.05);
-      tl.to("#lab-bahan", { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, R + 28.1);
-      tl.to("#tri-s3", { strokeDashoffset: 0, duration: 0.5, ease: "power2.out" }, R + 29.9);
-      tl.to("#lab-oks", { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, R + 29.95);
-      tl.to("#tri-fill", { opacity: 0.85, duration: 0.6 }, R + 33.3);
-      tl.to("#flame", { opacity: 1, duration: 0.4 }, R + 33.4);
-      tl.fromTo("#flame", { scale: 0.6 }, { scale: 1, duration: 0.6, ease: "back.out(2)" }, R + 33.4);
-      tl.to("#tri-name", { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, R + 33.4);
-      for (let t = R + 34; t < R + 36; t += 0.3) {
+      tl.fromTo("#fakta .q", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }, R + 16.9);
+      tl.to("#tri-s1", { strokeDashoffset: 0, duration: 0.5, ease: "power2.out" }, R + 20.75);
+      tl.to("#lab-haba", { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, R + 20.8);
+      tl.to("#tri-s2", { strokeDashoffset: 0, duration: 0.5, ease: "power2.out" }, R + 21.15);
+      tl.to("#lab-bahan", { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, R + 21.2);
+      tl.to("#tri-s3", { strokeDashoffset: 0, duration: 0.5, ease: "power2.out" }, R + 22.2);
+      tl.to("#lab-oks", { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, R + 22.25);
+      tl.to("#tri-fill", { opacity: 0.85, duration: 0.6 }, R + 24.7);
+      tl.to("#flame", { opacity: 1, duration: 0.4 }, R + 24.75);
+      tl.fromTo("#flame", { scale: 0.6 }, { scale: 1, duration: 0.6, ease: "back.out(2)" }, R + 24.75);
+      tl.to("#tri-name", { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, R + 24.75);
+      for (let t = R + 25.2; t < R + 26.1; t += 0.3) {
         tl.to("#flame", { scaleY: 0.9 + rnd() * 0.2, scaleX: 0.95 + rnd() * 0.1, duration: 0.3, ease: "sine.inOut", svgOrigin: "250 364" }, t);
       }
-      tl.to("#fakta", { xPercent: -130, duration: 0.5, ease: "power3.in" }, R + 36.1);
+      tl.to("#fakta", { xPercent: -130, duration: 0.5, ease: "power3.in" }, R + 26.0);
 
       // nasihat keselamatan
       tl.set(["#nasihat-tag", "#nas1", "#nas2"], { xPercent: -120 }, 0);
-      tl.to("#nasihat-tag", { xPercent: 0, duration: 0.45, ease: "expo.out" }, R + 36.6);
-      tl.to("#nas1", { xPercent: 0, duration: 0.55, ease: "expo.out" }, R + 39.4);
-      tl.to("#nas2", { xPercent: 0, duration: 0.55, ease: "expo.out" }, R + 41.7);
-      tl.to(["#nasihat-tag", "#nas1", "#nas2"], { xPercent: -120, duration: 0.4, ease: "power3.in", stagger: 0.06 }, R + 44.75);
+      tl.to("#nasihat-tag", { xPercent: 0, duration: 0.45, ease: "expo.out" }, R + 26.3);
+      tl.to("#nas1", { xPercent: 0, duration: 0.55, ease: "expo.out" }, R + 28.2);
+      tl.to("#nas2", { xPercent: 0, duration: 0.55, ease: "expo.out" }, R + 30.5);
+      tl.to(["#nasihat-tag", "#nas1", "#nas2"], { xPercent: -120, duration: 0.4, ease: "power3.in", stagger: 0.06 }, R + 32.6);
 
       // into outro
-      tl.fromTo("#outro", { clipPath: "circle(0% at 50% 50%)" }, { clipPath: "circle(120% at 50% 50%)", duration: 0.6, ease: "power3.inOut" }, 71.0);
-      tl.fromTo("#out-logo", { scale: 0 }, { scale: 1, duration: 0.6, ease: "back.out(1.8)" }, 71.2);
-      tl.fromTo("#out-title .t", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "power4.out" }, 71.7);
-      tl.fromTo("#out-title .c", { xPercent: -150, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 0.45, ease: "expo.out" }, 71.85);
-      tl.fromTo("#out-cred", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5 }, 72.1);
-      tl.to("#root", { opacity: 1, duration: 0.01 }, 75.39);
+      tl.fromTo("#outro", { clipPath: "circle(0% at 50% 50%)" }, { clipPath: "circle(120% at 50% 50%)", duration: 0.6, ease: "power3.inOut" }, 55.9);
+      tl.fromTo("#out-logo", { scale: 0 }, { scale: 1, duration: 0.6, ease: "back.out(1.8)" }, 56.1);
+      tl.fromTo("#out-title .t", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "power4.out" }, 56.6);
+      tl.fromTo("#out-title .c", { xPercent: -150, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 0.45, ease: "expo.out" }, 56.75);
+      tl.fromTo("#out-cred", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5 }, 57.0);
+      tl.to("#root", { opacity: 1, duration: 0.01 }, 60.29);
 
       window.__timelines = window.__timelines || {};
       master.add(tl, 7.0);
@@ -701,7 +696,7 @@
       master.fromTo("#coldopen", { opacity: 1 }, { opacity: 1, duration: 0.01 }, 6.9);
 
       /* ---------- CAPTIONS (word by word) ---------- */
-      const CAPS = ([[["Assalamualaikum", 12.19, 13.01], ["dan", 13.01, 13.23], ["selamat", 13.23, 13.67], ["sejahtera", 13.67, 14.17]], [["Saya", 14.17, 14.67], ["Muhamad", 14.67, 15.11], ["Afif", 15.11, 15.45], ["Aryash", 15.45, 15.79]], [["bin", 15.79, 15.99], ["Muhamad Firdaus", 15.99, 16.63]], [["Wartawan", 16.63, 16.79], ["cilik", 17.13, 17.45], ["melaporkan", 17.45, 17.97]], [["kejadian", 17.97, 18.47], ["kebakaran", 18.47, 18.95], ["hutan", 18.95, 19.33]], [["Api", 19.33, 19.98], ["telah", 20.49, 20.85], ["merebak", 20.85, 22.23]], [["dengan", 22.23, 22.51], ["cepat", 22.51, 23.05]], [["kerana", 23.05, 23.53], ["cuaca", 23.53, 23.91], ["panas", 23.91, 24.47]], [["dan", 24.47, 24.65], ["kering", 24.65, 25.23]], [["Asap", 25.23, 26.97], ["tebal", 26.97, 27.23], ["memenuhi", 27.23, 28.01], ["udara", 28.01, 28.47]], [["dan", 28.47, 28.91], ["menyebabkan", 28.91, 30.03]], [["jarak", 30.03, 30.45], ["penglihatan", 30.45, 31.43]], [["menjadi", 31.43, 31.73], ["terhad", 31.73, 32.35]], [["Fakta", 32.35, 33.25], ["Sains", 33.25, 33.87]], [["Api", 33.87, 35.21], ["memerlukan", 35.21, 35.71], ["tiga", 35.71, 36.33], ["perkara", 36.33, 36.81]], [["untuk", 36.81, 37.17], ["terus", 37.17, 37.73], ["menyala", 37.73, 38.59]], [["Iaitu", 38.59, 39.29], ["haba,", 39.29, 39.81]], [["bahan", 40.07, 41.17], ["api", 41.17, 41.55], ["dan", 41.55, 41.91], ["oksigen", 41.91, 42.63]], [["Tiga", 43.15, 43.55], ["perkara", 43.8, 44.3], ["ini", 44.3, 44.66]], [["dikenali", 44.66, 45.06], ["sebagai", 45.06, 45.38]], [["segi", 45.38, 45.93], ["tiga", 46.47, 47.49], ["api", 47.49, 48.09]], [["Orang", 48.11, 48.73], ["ramai", 48.73, 49.21], ["dinasihatkan", 49.21, 50.71]], [["supaya", 50.71, 51.24], ["menjauhi", 51.58, 52.48]], [["kawasan", 52.48, 52.92], ["kebakaran", 52.92, 53.44]], [["Dan", 53.44, 53.62], ["memakai", 53.62, 54.06], ["pelitup", 54.06, 54.54], ["muka", 54.54, 54.8]], [["jika", 54.8, 55.74], ["terdapat", 55.74, 56.22], ["jerebu", 56.22, 56.72]], [["Kita", 57.04, 57.72], ["juga", 57.72, 58.2], ["perlu", 58.2, 59.22]], [["menjaga", 59.22, 60.06], ["alam", 60.06, 60.78], ["sekitar", 60.78, 61.06]], [["dan", 61.06, 61.3], ["tidak", 61.3, 61.58], ["membuang", 61.58, 62.18]], [["puntung", 62.18, 63.06], ["rokok", 63.06, 63.66], ["sembarangan", 63.66, 64.14]], [["Saya", 64.53, 64.88], ["Muhamad", 64.62, 65.52], ["Afif", 65.52, 65.88], ["Aryash", 65.88, 66.24]], [["bin", 66.24, 66.42], ["Muhamad Firdaus", 66.42, 66.94]], [["melaporkan", 66.94, 67.66], ["dari", 67.66, 68.3], ["lokasi", 68.3, 68.78], ["kejadian", 68.78, 69.14]], [["Sekian", 69.14, 70.14], ["terima", 70.14, 70.62], ["kasih", 70.62, 70.96]]]).map((g) => g.map(([w, a, b]) => [w, a + 1.0, b + 1.0]));
+      const CAPS = [[["Assalamualaikum", 13.0, 14.02], ["dan", 14.02, 14.24], ["selamat", 14.24, 14.66], ["sejahtera", 14.66, 15.16]], [["Saya", 15.16, 15.7], ["Muhamad", 15.7, 16.08], ["Afif", 16.08, 16.46], ["Aryash", 16.46, 16.78]], [["bin", 16.78, 16.98], ["Muhamad Firdaus", 16.98, 17.48]], [["Wartawan", 17.48, 18.0], ["cilik", 18.0, 18.34], ["melaporkan", 18.34, 18.74]], [["kejadian", 18.74, 19.18], ["kebakaran", 19.18, 19.58], ["hutan", 19.58, 19.88]], [["Api", 19.88, 20.66], ["telah", 20.66, 20.94], ["merebak", 20.94, 21.48]], [["dengan", 21.48, 21.7], ["cepat", 21.7, 22.22]], [["kerana", 22.22, 22.76], ["cuaca", 22.76, 23.12], ["panas", 23.12, 23.68]], [["dan", 23.68, 23.88], ["kering", 23.88, 24.44]], [["Asap", 24.44, 24.88], ["tebal", 24.88, 25.06], ["memenuhi", 25.06, 25.6], ["udara", 25.6, 25.98]], [["dan", 25.98, 26.26], ["menyebabkan", 26.26, 27.04]], [["jarak", 27.04, 27.36], ["penglihatan", 27.36, 28.16]], [["menjadi", 28.16, 28.4], ["terhad", 28.4, 28.92]], [["Fakta", 28.92, 29.44], ["Sains", 29.44, 29.92]], [["Api", 29.92, 30.82], ["memerlukan", 30.82, 31.2], ["tiga", 31.2, 31.64], ["perkara", 31.64, 32.06]], [["untuk", 32.06, 32.38], ["terus", 32.38, 32.7], ["menyala", 32.7, 33.08]], [["Iaitu", 33.08, 33.78], ["haba,", 33.78, 34.08]], [["bahan", 34.16, 34.62], ["api", 34.62, 35.04], ["dan", 35.04, 35.22], ["oksigen", 35.22, 35.74]], [["Tiga", 35.74, 36.62], ["perkara", 36.62, 36.94], ["ini", 36.94, 37.22]], [["dikenali", 37.22, 37.5], ["sebagai", 37.5, 37.72]], [["segi", 37.72, 38.22], ["tiga", 38.22, 38.54], ["api", 38.54, 38.86]], [["Orang", 38.86, 39.4], ["ramai", 39.4, 39.84], ["dinasihatkan", 39.84, 40.56]], [["supaya", 40.56, 41.24], ["menjauhi", 41.24, 41.88]], [["kawasan", 41.88, 42.32], ["kebakaran", 42.32, 42.82]], [["Dan", 42.82, 43.56], ["memakai", 43.56, 44.18], ["pelitup", 44.18, 44.54], ["muka", 44.54, 44.74]], [["jika", 44.74, 45.06], ["terdapat", 45.06, 45.42], ["jerebu", 45.42, 45.76]], [["Kita", 45.76, 46.34], ["perlu", 46.34, 46.68], ["menjaga", 46.68, 47.38]], [["alam", 47.38, 47.62], ["sekitar", 47.62, 47.78]], [["Dan", 47.78, 48.26], ["tidak", 48.26, 48.5], ["membuang", 48.5, 49.2]], [["puntung", 49.2, 49.68], ["rokok", 49.68, 50.0], ["sembarangan", 50.0, 50.58]], [["Saya", 50.58, 51.48], ["Muhamad", 51.48, 51.86], ["Afif", 51.86, 52.22], ["Aryash", 52.22, 52.54]], [["bin", 52.54, 52.68], ["Muhamad Firdaus", 52.68, 53.08]], [["melaporkan", 53.08, 53.7], ["dari", 53.7, 54.18], ["lokasi", 54.18, 54.66], ["kejadian", 54.66, 55.06]], [["Sekian", 55.06, 56.08], ["terima", 56.08, 56.54], ["kasih", 56.54, 56.8]]];
       const capRoot = document.getElementById("caps");
       CAPS.forEach((g, gi) => {
         const row = document.createElement("div");
@@ -723,12 +718,12 @@
       });
 
       /* ---------- PESANAN infographic (72.4 – 78.0) ---------- */
-      master.fromTo("#pesanan", { clipPath: "inset(0 0 100% 0)" }, { clipPath: "inset(0 0 0% 0)", duration: 0.5, ease: "power3.inOut" }, 72.4);
-      master.fromTo("#pes-bg", { scale: 1.15 }, { scale: 1.0, duration: 5.6, ease: "none" }, 72.4);
-      master.fromTo("#pes-head", { y: -60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "expo.out" }, 72.7);
-      master.fromTo("#pes-title", { scale: 1.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "power4.out" }, 72.95);
-      master.fromTo(".pes-item", { xPercent: -120, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 0.5, ease: "expo.out", stagger: 0.45 }, 73.4);
-      master.fromTo("#pes-quote", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.6)" }, 75.0);
+      master.fromTo("#pesanan", { clipPath: "inset(0 0 100% 0)" }, { clipPath: "inset(0 0 0% 0)", duration: 0.5, ease: "power3.inOut" }, 57.3);
+      master.fromTo("#pes-bg", { scale: 1.15 }, { scale: 1.0, duration: 5.6, ease: "none" }, 57.3);
+      master.fromTo("#pes-head", { y: -60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "expo.out" }, 57.6);
+      master.fromTo("#pes-title", { scale: 1.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "power4.out" }, 57.85);
+      master.fromTo(".pes-item", { xPercent: -120, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 0.5, ease: "expo.out", stagger: 0.45 }, 58.3);
+      master.fromTo("#pes-quote", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.6)" }, 59.9);
 
       window.__timelines = window.__timelines || {};
       window.__timelines["main"] = master;
