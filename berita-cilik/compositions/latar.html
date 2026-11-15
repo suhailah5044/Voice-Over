@@ -1,25 +1,12 @@
 <template>
   <style>
     #root { position: absolute; inset: 0; overflow: hidden; }
-    #lt-langit {
-      position: absolute; inset: 0;
-      background: linear-gradient(180deg, #6f6a66 0%, #9c8670 22%, #c99766 45%, #d98f52 58%, #a8684a 72%, #4a3329 100%);
+    #lt-foto {
+      position: absolute; left: 0; top: 0; width: 4284px; height: 1920px;
     }
     #lt-matahari {
-      position: absolute; left: 610px; top: 520px; width: 230px; height: 230px; border-radius: 50%;
-      background: radial-gradient(circle, #ffd9a0 0%, #ff9e52 45%, rgba(255,120,60,0) 72%);
-      filter: blur(4px);
-    }
-    #lt-sinar {
-      position: absolute; left: 225px; top: 135px; width: 1000px; height: 1000px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,190,120,0.45) 0%, rgba(255,160,90,0.12) 35%, rgba(255,160,90,0) 65%);
-    }
-    #lt-hutan { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
-    #lt-api {
-      position: absolute; left: -100px; top: 1180px; width: 1280px; height: 520px;
-      background: radial-gradient(60% 50% at 30% 70%, rgba(255,110,30,0.75), rgba(255,70,20,0) 70%),
-                  radial-gradient(50% 45% at 78% 75%, rgba(255,140,40,0.65), rgba(255,70,20,0) 70%);
-      mix-blend-mode: screen;
+      position: absolute; left: 640px; top: 300px; width: 200px; height: 200px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,226,170,0.85) 0%, rgba(255,190,110,0.35) 45%, rgba(255,170,90,0) 72%);
     }
     .lt-asap {
       position: absolute; border-radius: 50%;
@@ -30,7 +17,7 @@
     .lt-bara { background: #ffb050; box-shadow: 0 0 10px 3px rgba(255,140,40,0.8); }
     #lt-kabus {
       position: absolute; inset: 0;
-      background: linear-gradient(180deg, rgba(190,175,160,0.55) 0%, rgba(205,170,130,0.25) 45%, rgba(120,80,60,0.15) 100%);
+      background: linear-gradient(180deg, rgba(205,190,160,0.45) 0%, rgba(200,180,140,0.18) 45%, rgba(90,70,50,0.25) 100%);
     }
     #lt-vignet {
       position: absolute; inset: 0;
@@ -39,66 +26,59 @@
   </style>
   <div id="root" data-composition-id="latar" data-width="1080" data-height="1920">
     <div id="lt-pentas" class="clip" data-start="0" data-duration="53.4" data-layout-ignore data-layout-allow-overflow>
-      <div id="lt-langit"></div>
-      <div id="lt-sinar"></div>
+      <img id="lt-foto" src="assets/jerebu-kl.jpg" alt="Jerebu di Kuala Lumpur" />
       <div id="lt-matahari"></div>
-      <svg id="lt-hutan" viewBox="0 0 1080 1920" preserveAspectRatio="none">
-        <path id="lt-far" d="M-40 1920 L-40 1180 L-11 1133 L19 1157 L42 1123 L65 1167 L93 1089 L121 1177 L150 1142 L180 1167 L193 1080 L207 1167 L225 1083 L243 1152 L258 1068 L272 1179 L303 1099 L334 1169 L356 1126 L377 1179 L399 1125 L421 1165 L439 1124 L457 1173 L476 1105 L495 1179 L519 1074 L543 1161 L576 1128 L608 1154 L628 1134 L647 1158 L678 1084 L709 1167 L736 1074 L762 1171 L792 1095 L822 1155 L846 1102 L871 1179 L900 1124 L928 1168 L952 1129 L976 1159 L997 1087 L1017 1167 L1045 1101 L1073 1164 L1096 1111 L1119 1179 L1146 1140 L1173 1151 L1120 1920 Z" fill="#9a7a63" opacity="0.55" />
-<path id="lt-mid" d="M-40 1920 L-40 1300 L1 1135 L41 1298 L80 1239 L118 1269 L143 1169 L168 1274 L200 1177 L232 1293 L260 1198 L287 1269 L328 1131 L369 1277 L393 1196 L418 1298 L447 1246 L476 1286 L515 1204 L555 1278 L578 1182 L602 1299 L623 1210 L645 1278 L679 1130 L713 1292 L750 1143 L787 1269 L824 1141 L860 1266 L901 1207 L943 1259 L979 1230 L1015 1270 L1046 1194 L1077 1279 L1107 1139 L1137 1265 L1120 1920 Z" fill="#6e5040" opacity="0.75" />
-<path id="lt-near" d="M-40 1920 L-40 1470 L1 1363 L43 1449 L87 1304 L131 1466 L182 1399 L232 1455 L288 1363 L344 1443 L383 1266 L423 1433 L467 1377 L511 1420 L559 1317 L607 1431 L655 1391 L703 1436 L728 1352 L753 1420 L800 1325 L847 1419 L901 1286 L954 1447 L992 1272 L1031 1416 L1058 1260 L1085 1462 L1140 1366 L1195 1445 L1120 1920 Z" fill="#3a2620" opacity="0.95" />
-      </svg>
-      <div id="lt-api"></div>
-      <div id="lt-asap0" class="lt-asap" style="left:467px;top:525px;width:610px;height:366px;opacity:0.31"></div>
-<div id="lt-asap1" class="lt-asap" style="left:512px;top:1392px;width:535px;height:321px;opacity:0.36"></div>
-<div id="lt-asap2" class="lt-asap" style="left:-38px;top:1005px;width:511px;height:306px;opacity:0.30"></div>
-<div id="lt-asap3" class="lt-asap" style="left:354px;top:720px;width:736px;height:441px;opacity:0.45"></div>
-<div id="lt-asap4" class="lt-asap" style="left:667px;top:1198px;width:636px;height:382px;opacity:0.29"></div>
-<div id="lt-asap5" class="lt-asap" style="left:104px;top:593px;width:539px;height:323px;opacity:0.46"></div>
-<div id="lt-asap6" class="lt-asap" style="left:669px;top:1230px;width:714px;height:429px;opacity:0.49"></div>
-<div id="lt-asap7" class="lt-asap" style="left:362px;top:1329px;width:747px;height:448px;opacity:0.47"></div>
-<div id="lt-asap8" class="lt-asap" style="left:545px;top:546px;width:591px;height:355px;opacity:0.32"></div>
+      <div id="lt-asap0" class="lt-asap" style="left:467px;top:525px;width:610px;height:366px;opacity:0.22"></div>
+<div id="lt-asap1" class="lt-asap" style="left:512px;top:1392px;width:535px;height:321px;opacity:0.26"></div>
+<div id="lt-asap2" class="lt-asap" style="left:-38px;top:1005px;width:511px;height:306px;opacity:0.22"></div>
+<div id="lt-asap3" class="lt-asap" style="left:354px;top:720px;width:736px;height:441px;opacity:0.34"></div>
+<div id="lt-asap4" class="lt-asap" style="left:667px;top:1198px;width:636px;height:382px;opacity:0.21"></div>
+<div id="lt-asap5" class="lt-asap" style="left:104px;top:593px;width:539px;height:323px;opacity:0.35"></div>
+<div id="lt-asap6" class="lt-asap" style="left:669px;top:1230px;width:714px;height:429px;opacity:0.37"></div>
+<div id="lt-asap7" class="lt-asap" style="left:362px;top:1329px;width:747px;height:448px;opacity:0.35"></div>
+<div id="lt-asap8" class="lt-asap" style="left:545px;top:546px;width:591px;height:355px;opacity:0.24"></div>
       <div id="lt-kabus"></div>
       <div id="lt-abu0" class="lt-abu lt-bara" style="left:251px;top:362px;width:5.9px;height:5.9px;opacity:0.54"></div>
 <div id="lt-abu1" class="lt-abu" style="left:226px;top:627px;width:10.6px;height:10.6px;opacity:0.44"></div>
 <div id="lt-abu2" class="lt-abu" style="left:787px;top:461px;width:6.7px;height:6.7px;opacity:0.63"></div>
 <div id="lt-abu3" class="lt-abu" style="left:739px;top:1549px;width:9.4px;height:9.4px;opacity:0.51"></div>
 <div id="lt-abu4" class="lt-abu" style="left:289px;top:538px;width:10.6px;height:10.6px;opacity:0.68"></div>
-<div id="lt-abu5" class="lt-abu lt-bara" style="left:427px;top:1663px;width:7.2px;height:7.2px;opacity:0.63"></div>
+<div id="lt-abu5" class="lt-abu" style="left:427px;top:1663px;width:7.2px;height:7.2px;opacity:0.63"></div>
 <div id="lt-abu6" class="lt-abu" style="left:284px;top:1135px;width:10.3px;height:10.3px;opacity:0.85"></div>
 <div id="lt-abu7" class="lt-abu" style="left:550px;top:345px;width:4.3px;height:4.3px;opacity:0.75"></div>
 <div id="lt-abu8" class="lt-abu" style="left:456px;top:302px;width:6.7px;height:6.7px;opacity:0.84"></div>
-<div id="lt-abu9" class="lt-abu" style="left:930px;top:218px;width:9.0px;height:9.0px;opacity:0.48"></div>
-<div id="lt-abu10" class="lt-abu lt-bara" style="left:692px;top:378px;width:7.0px;height:7.0px;opacity:0.79"></div>
+<div id="lt-abu9" class="lt-abu lt-bara" style="left:930px;top:218px;width:9.0px;height:9.0px;opacity:0.48"></div>
+<div id="lt-abu10" class="lt-abu" style="left:692px;top:378px;width:7.0px;height:7.0px;opacity:0.79"></div>
 <div id="lt-abu11" class="lt-abu" style="left:284px;top:1001px;width:5.3px;height:5.3px;opacity:0.50"></div>
 <div id="lt-abu12" class="lt-abu" style="left:690px;top:1174px;width:5.1px;height:5.1px;opacity:0.74"></div>
 <div id="lt-abu13" class="lt-abu" style="left:573px;top:201px;width:6.3px;height:6.3px;opacity:0.79"></div>
 <div id="lt-abu14" class="lt-abu" style="left:898px;top:692px;width:4.4px;height:4.4px;opacity:0.39"></div>
-<div id="lt-abu15" class="lt-abu lt-bara" style="left:525px;top:311px;width:9.3px;height:9.3px;opacity:0.59"></div>
+<div id="lt-abu15" class="lt-abu" style="left:525px;top:311px;width:9.3px;height:9.3px;opacity:0.59"></div>
 <div id="lt-abu16" class="lt-abu" style="left:594px;top:624px;width:10.1px;height:10.1px;opacity:0.62"></div>
 <div id="lt-abu17" class="lt-abu" style="left:788px;top:522px;width:6.2px;height:6.2px;opacity:0.57"></div>
-<div id="lt-abu18" class="lt-abu" style="left:559px;top:394px;width:5.6px;height:5.6px;opacity:0.47"></div>
+<div id="lt-abu18" class="lt-abu lt-bara" style="left:559px;top:394px;width:5.6px;height:5.6px;opacity:0.47"></div>
 <div id="lt-abu19" class="lt-abu" style="left:238px;top:314px;width:8.4px;height:8.4px;opacity:0.78"></div>
-<div id="lt-abu20" class="lt-abu lt-bara" style="left:77px;top:581px;width:8.7px;height:8.7px;opacity:0.82"></div>
+<div id="lt-abu20" class="lt-abu" style="left:77px;top:581px;width:8.7px;height:8.7px;opacity:0.82"></div>
 <div id="lt-abu21" class="lt-abu" style="left:617px;top:956px;width:9.5px;height:9.5px;opacity:0.40"></div>
 <div id="lt-abu22" class="lt-abu" style="left:466px;top:878px;width:7.3px;height:7.3px;opacity:0.84"></div>
 <div id="lt-abu23" class="lt-abu" style="left:106px;top:844px;width:6.4px;height:6.4px;opacity:0.45"></div>
 <div id="lt-abu24" class="lt-abu" style="left:485px;top:875px;width:5.9px;height:5.9px;opacity:0.57"></div>
-<div id="lt-abu25" class="lt-abu lt-bara" style="left:930px;top:1081px;width:4.4px;height:4.4px;opacity:0.83"></div>
+<div id="lt-abu25" class="lt-abu" style="left:930px;top:1081px;width:4.4px;height:4.4px;opacity:0.83"></div>
 <div id="lt-abu26" class="lt-abu" style="left:1000px;top:1558px;width:5.2px;height:5.2px;opacity:0.55"></div>
-<div id="lt-abu27" class="lt-abu" style="left:63px;top:806px;width:10.9px;height:10.9px;opacity:0.58"></div>
+<div id="lt-abu27" class="lt-abu lt-bara" style="left:63px;top:806px;width:10.9px;height:10.9px;opacity:0.58"></div>
 <div id="lt-abu28" class="lt-abu" style="left:457px;top:1732px;width:11.0px;height:11.0px;opacity:0.43"></div>
 <div id="lt-abu29" class="lt-abu" style="left:320px;top:1750px;width:8.1px;height:8.1px;opacity:0.38"></div>
-<div id="lt-abu30" class="lt-abu lt-bara" style="left:631px;top:1005px;width:10.0px;height:10.0px;opacity:0.39"></div>
+<div id="lt-abu30" class="lt-abu" style="left:631px;top:1005px;width:10.0px;height:10.0px;opacity:0.39"></div>
 <div id="lt-abu31" class="lt-abu" style="left:201px;top:1152px;width:8.7px;height:8.7px;opacity:0.80"></div>
 <div id="lt-abu32" class="lt-abu" style="left:266px;top:1151px;width:8.3px;height:8.3px;opacity:0.61"></div>
 <div id="lt-abu33" class="lt-abu" style="left:1009px;top:527px;width:9.0px;height:9.0px;opacity:0.69"></div>
 <div id="lt-abu34" class="lt-abu" style="left:324px;top:706px;width:9.3px;height:9.3px;opacity:0.85"></div>
-<div id="lt-abu35" class="lt-abu lt-bara" style="left:1076px;top:317px;width:5.5px;height:5.5px;opacity:0.79"></div>
-<div id="lt-abu36" class="lt-abu" style="left:950px;top:791px;width:5.1px;height:5.1px;opacity:0.66"></div>
+<div id="lt-abu35" class="lt-abu" style="left:1076px;top:317px;width:5.5px;height:5.5px;opacity:0.79"></div>
+<div id="lt-abu36" class="lt-abu lt-bara" style="left:950px;top:791px;width:5.1px;height:5.1px;opacity:0.66"></div>
 <div id="lt-abu37" class="lt-abu" style="left:1066px;top:1246px;width:4.1px;height:4.1px;opacity:0.68"></div>
 <div id="lt-abu38" class="lt-abu" style="left:1014px;top:415px;width:4.8px;height:4.8px;opacity:0.49"></div>
 <div id="lt-abu39" class="lt-abu" style="left:653px;top:1348px;width:5.4px;height:5.4px;opacity:0.59"></div>
-<div id="lt-abu40" class="lt-abu lt-bara" style="left:978px;top:1554px;width:4.6px;height:4.6px;opacity:0.35"></div>
+<div id="lt-abu40" class="lt-abu" style="left:978px;top:1554px;width:4.6px;height:4.6px;opacity:0.35"></div>
 <div id="lt-abu41" class="lt-abu" style="left:833px;top:1219px;width:5.8px;height:5.8px;opacity:0.56"></div>
 <div id="lt-abu42" class="lt-abu" style="left:10px;top:320px;width:10.2px;height:10.2px;opacity:0.77"></div>
 <div id="lt-abu43" class="lt-abu" style="left:629px;top:437px;width:4.9px;height:4.9px;opacity:0.75"></div>
@@ -111,10 +91,8 @@
     const tl = gsap.timeline({ paused: true });
     const D = 53.4;
     tl.fromTo("#lt-pentas", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 0);
-    tl.fromTo("#lt-matahari", { y: 0 }, { y: 60, duration: D, ease: "none" }, 0);
-    tl.fromTo("#lt-far", { x: 0 }, { x: -20, duration: D, ease: "none" }, 0);
-    tl.fromTo("#lt-mid", { x: 0 }, { x: -40, duration: D, ease: "none" }, 0);
-    tl.fromTo("#lt-near", { x: 0 }, { x: -70, duration: D, ease: "none" }, 0);
+    tl.fromTo("#lt-foto", { x: -1500, scale: 1.04 }, { x: -2900, scale: 1.0, duration: D, ease: "none" }, 0);
+    tl.fromTo("#lt-matahari", { y: 0, opacity: 0.7 }, { y: 40, opacity: 0.9, duration: D, ease: "none" }, 0);
     tl.fromTo("#lt-kabus", { opacity: 0.85 }, { opacity: 1, duration: D, ease: "sine.inOut" }, 0);
     tl.fromTo("#lt-asap0", { x: 0, scale: 1 }, { x: 267, scale: 1.25, duration: D, ease: "none" }, 0);
 tl.fromTo("#lt-asap1", { x: 0, scale: 1 }, { x: 126, scale: 1.25, duration: D, ease: "none" }, 0);
@@ -171,124 +149,6 @@ tl.fromTo("#lt-abu42", { y: 0, x: 0 }, { y: -839, x: 33, duration: D, ease: "non
 tl.fromTo("#lt-abu43", { y: 0, x: 0 }, { y: -457, x: 132, duration: D, ease: "none" }, 0);
 tl.fromTo("#lt-abu44", { y: 0, x: 0 }, { y: -420, x: -91, duration: D, ease: "none" }, 0);
 tl.fromTo("#lt-abu45", { y: 0, x: 0 }, { y: -359, x: 140, duration: D, ease: "none" }, 0);
-    tl.to("#lt-api", { opacity: 0.72, duration: 0.44, ease: "sine.inOut" }, 0.00);
-tl.to("#lt-api", { opacity: 0.94, duration: 0.29, ease: "sine.inOut" }, 0.46);
-tl.to("#lt-api", { opacity: 0.78, duration: 0.23, ease: "sine.inOut" }, 0.77);
-tl.to("#lt-api", { opacity: 0.59, duration: 0.63, ease: "sine.inOut" }, 1.02);
-tl.to("#lt-api", { opacity: 0.83, duration: 0.48, ease: "sine.inOut" }, 1.68);
-tl.to("#lt-api", { opacity: 0.72, duration: 0.25, ease: "sine.inOut" }, 2.18);
-tl.to("#lt-api", { opacity: 0.75, duration: 0.55, ease: "sine.inOut" }, 2.45);
-tl.to("#lt-api", { opacity: 0.62, duration: 0.56, ease: "sine.inOut" }, 3.01);
-tl.to("#lt-api", { opacity: 0.60, duration: 0.34, ease: "sine.inOut" }, 3.59);
-tl.to("#lt-api", { opacity: 0.97, duration: 0.46, ease: "sine.inOut" }, 3.95);
-tl.to("#lt-api", { opacity: 0.90, duration: 0.50, ease: "sine.inOut" }, 4.42);
-tl.to("#lt-api", { opacity: 0.89, duration: 0.40, ease: "sine.inOut" }, 4.94);
-tl.to("#lt-api", { opacity: 0.68, duration: 0.28, ease: "sine.inOut" }, 5.36);
-tl.to("#lt-api", { opacity: 0.88, duration: 0.53, ease: "sine.inOut" }, 5.66);
-tl.to("#lt-api", { opacity: 0.59, duration: 0.42, ease: "sine.inOut" }, 6.21);
-tl.to("#lt-api", { opacity: 0.64, duration: 0.35, ease: "sine.inOut" }, 6.65);
-tl.to("#lt-api", { opacity: 0.91, duration: 0.36, ease: "sine.inOut" }, 7.02);
-tl.to("#lt-api", { opacity: 0.95, duration: 0.32, ease: "sine.inOut" }, 7.40);
-tl.to("#lt-api", { opacity: 0.57, duration: 0.63, ease: "sine.inOut" }, 7.74);
-tl.to("#lt-api", { opacity: 0.77, duration: 0.40, ease: "sine.inOut" }, 8.38);
-tl.to("#lt-api", { opacity: 0.74, duration: 0.24, ease: "sine.inOut" }, 8.80);
-tl.to("#lt-api", { opacity: 0.60, duration: 0.64, ease: "sine.inOut" }, 9.06);
-tl.to("#lt-api", { opacity: 0.60, duration: 0.50, ease: "sine.inOut" }, 9.72);
-tl.to("#lt-api", { opacity: 0.95, duration: 0.49, ease: "sine.inOut" }, 10.24);
-tl.to("#lt-api", { opacity: 0.55, duration: 0.32, ease: "sine.inOut" }, 10.75);
-tl.to("#lt-api", { opacity: 0.79, duration: 0.27, ease: "sine.inOut" }, 11.09);
-tl.to("#lt-api", { opacity: 0.59, duration: 0.24, ease: "sine.inOut" }, 11.38);
-tl.to("#lt-api", { opacity: 0.96, duration: 0.45, ease: "sine.inOut" }, 11.64);
-tl.to("#lt-api", { opacity: 0.73, duration: 0.42, ease: "sine.inOut" }, 12.11);
-tl.to("#lt-api", { opacity: 0.59, duration: 0.52, ease: "sine.inOut" }, 12.55);
-tl.to("#lt-api", { opacity: 0.63, duration: 0.49, ease: "sine.inOut" }, 13.09);
-tl.to("#lt-api", { opacity: 0.98, duration: 0.50, ease: "sine.inOut" }, 13.60);
-tl.to("#lt-api", { opacity: 0.80, duration: 0.25, ease: "sine.inOut" }, 14.12);
-tl.to("#lt-api", { opacity: 0.62, duration: 0.50, ease: "sine.inOut" }, 14.40);
-tl.to("#lt-api", { opacity: 1.00, duration: 0.35, ease: "sine.inOut" }, 14.92);
-tl.to("#lt-api", { opacity: 0.60, duration: 0.68, ease: "sine.inOut" }, 15.29);
-tl.to("#lt-api", { opacity: 0.98, duration: 0.55, ease: "sine.inOut" }, 15.99);
-tl.to("#lt-api", { opacity: 0.83, duration: 0.34, ease: "sine.inOut" }, 16.56);
-tl.to("#lt-api", { opacity: 0.71, duration: 0.25, ease: "sine.inOut" }, 16.91);
-tl.to("#lt-api", { opacity: 0.82, duration: 0.53, ease: "sine.inOut" }, 17.18);
-tl.to("#lt-api", { opacity: 0.59, duration: 0.58, ease: "sine.inOut" }, 17.74);
-tl.to("#lt-api", { opacity: 0.94, duration: 0.39, ease: "sine.inOut" }, 18.33);
-tl.to("#lt-api", { opacity: 0.75, duration: 0.49, ease: "sine.inOut" }, 18.74);
-tl.to("#lt-api", { opacity: 0.99, duration: 0.41, ease: "sine.inOut" }, 19.25);
-tl.to("#lt-api", { opacity: 0.56, duration: 0.49, ease: "sine.inOut" }, 19.68);
-tl.to("#lt-api", { opacity: 0.70, duration: 0.59, ease: "sine.inOut" }, 20.19);
-tl.to("#lt-api", { opacity: 0.65, duration: 0.43, ease: "sine.inOut" }, 20.80);
-tl.to("#lt-api", { opacity: 0.70, duration: 0.43, ease: "sine.inOut" }, 21.25);
-tl.to("#lt-api", { opacity: 0.83, duration: 0.27, ease: "sine.inOut" }, 21.70);
-tl.to("#lt-api", { opacity: 0.90, duration: 0.28, ease: "sine.inOut" }, 21.99);
-tl.to("#lt-api", { opacity: 0.90, duration: 0.24, ease: "sine.inOut" }, 22.28);
-tl.to("#lt-api", { opacity: 0.77, duration: 0.59, ease: "sine.inOut" }, 22.55);
-tl.to("#lt-api", { opacity: 0.66, duration: 0.55, ease: "sine.inOut" }, 23.16);
-tl.to("#lt-api", { opacity: 0.74, duration: 0.56, ease: "sine.inOut" }, 23.73);
-tl.to("#lt-api", { opacity: 0.98, duration: 0.33, ease: "sine.inOut" }, 24.31);
-tl.to("#lt-api", { opacity: 0.72, duration: 0.41, ease: "sine.inOut" }, 24.66);
-tl.to("#lt-api", { opacity: 0.72, duration: 0.62, ease: "sine.inOut" }, 25.09);
-tl.to("#lt-api", { opacity: 0.63, duration: 0.53, ease: "sine.inOut" }, 25.73);
-tl.to("#lt-api", { opacity: 0.67, duration: 0.61, ease: "sine.inOut" }, 26.28);
-tl.to("#lt-api", { opacity: 0.99, duration: 0.25, ease: "sine.inOut" }, 26.91);
-tl.to("#lt-api", { opacity: 0.98, duration: 0.31, ease: "sine.inOut" }, 27.18);
-tl.to("#lt-api", { opacity: 0.82, duration: 0.67, ease: "sine.inOut" }, 27.51);
-tl.to("#lt-api", { opacity: 0.58, duration: 0.24, ease: "sine.inOut" }, 28.21);
-tl.to("#lt-api", { opacity: 0.72, duration: 0.32, ease: "sine.inOut" }, 28.46);
-tl.to("#lt-api", { opacity: 0.98, duration: 0.51, ease: "sine.inOut" }, 28.80);
-tl.to("#lt-api", { opacity: 0.61, duration: 0.39, ease: "sine.inOut" }, 29.33);
-tl.to("#lt-api", { opacity: 0.61, duration: 0.48, ease: "sine.inOut" }, 29.74);
-tl.to("#lt-api", { opacity: 0.80, duration: 0.27, ease: "sine.inOut" }, 30.24);
-tl.to("#lt-api", { opacity: 0.58, duration: 0.54, ease: "sine.inOut" }, 30.53);
-tl.to("#lt-api", { opacity: 0.87, duration: 0.43, ease: "sine.inOut" }, 31.09);
-tl.to("#lt-api", { opacity: 0.72, duration: 0.57, ease: "sine.inOut" }, 31.55);
-tl.to("#lt-api", { opacity: 0.63, duration: 0.63, ease: "sine.inOut" }, 32.14);
-tl.to("#lt-api", { opacity: 0.90, duration: 0.55, ease: "sine.inOut" }, 32.79);
-tl.to("#lt-api", { opacity: 0.77, duration: 0.63, ease: "sine.inOut" }, 33.36);
-tl.to("#lt-api", { opacity: 0.57, duration: 0.27, ease: "sine.inOut" }, 34.01);
-tl.to("#lt-api", { opacity: 0.63, duration: 0.47, ease: "sine.inOut" }, 34.30);
-tl.to("#lt-api", { opacity: 0.59, duration: 0.51, ease: "sine.inOut" }, 34.79);
-tl.to("#lt-api", { opacity: 0.65, duration: 0.58, ease: "sine.inOut" }, 35.33);
-tl.to("#lt-api", { opacity: 0.63, duration: 0.24, ease: "sine.inOut" }, 35.93);
-tl.to("#lt-api", { opacity: 0.80, duration: 0.44, ease: "sine.inOut" }, 36.18);
-tl.to("#lt-api", { opacity: 0.63, duration: 0.40, ease: "sine.inOut" }, 36.64);
-tl.to("#lt-api", { opacity: 0.98, duration: 0.45, ease: "sine.inOut" }, 37.06);
-tl.to("#lt-api", { opacity: 0.97, duration: 0.47, ease: "sine.inOut" }, 37.53);
-tl.to("#lt-api", { opacity: 1.00, duration: 0.24, ease: "sine.inOut" }, 38.02);
-tl.to("#lt-api", { opacity: 0.79, duration: 0.63, ease: "sine.inOut" }, 38.28);
-tl.to("#lt-api", { opacity: 0.79, duration: 0.47, ease: "sine.inOut" }, 38.93);
-tl.to("#lt-api", { opacity: 0.58, duration: 0.64, ease: "sine.inOut" }, 39.42);
-tl.to("#lt-api", { opacity: 0.79, duration: 0.52, ease: "sine.inOut" }, 40.08);
-tl.to("#lt-api", { opacity: 0.88, duration: 0.37, ease: "sine.inOut" }, 40.62);
-tl.to("#lt-api", { opacity: 0.60, duration: 0.55, ease: "sine.inOut" }, 41.00);
-tl.to("#lt-api", { opacity: 0.75, duration: 0.54, ease: "sine.inOut" }, 41.58);
-tl.to("#lt-api", { opacity: 0.84, duration: 0.45, ease: "sine.inOut" }, 42.14);
-tl.to("#lt-api", { opacity: 0.82, duration: 0.25, ease: "sine.inOut" }, 42.61);
-tl.to("#lt-api", { opacity: 0.95, duration: 0.40, ease: "sine.inOut" }, 42.89);
-tl.to("#lt-api", { opacity: 0.92, duration: 0.33, ease: "sine.inOut" }, 43.30);
-tl.to("#lt-api", { opacity: 0.83, duration: 0.56, ease: "sine.inOut" }, 43.66);
-tl.to("#lt-api", { opacity: 0.57, duration: 0.62, ease: "sine.inOut" }, 44.24);
-tl.to("#lt-api", { opacity: 0.83, duration: 0.50, ease: "sine.inOut" }, 44.88);
-tl.to("#lt-api", { opacity: 0.73, duration: 0.54, ease: "sine.inOut" }, 45.40);
-tl.to("#lt-api", { opacity: 0.64, duration: 0.26, ease: "sine.inOut" }, 45.95);
-tl.to("#lt-api", { opacity: 0.63, duration: 0.50, ease: "sine.inOut" }, 46.23);
-tl.to("#lt-api", { opacity: 0.71, duration: 0.26, ease: "sine.inOut" }, 46.76);
-tl.to("#lt-api", { opacity: 0.79, duration: 0.44, ease: "sine.inOut" }, 47.04);
-tl.to("#lt-api", { opacity: 0.90, duration: 0.24, ease: "sine.inOut" }, 47.50);
-tl.to("#lt-api", { opacity: 0.90, duration: 0.38, ease: "sine.inOut" }, 47.76);
-tl.to("#lt-api", { opacity: 0.98, duration: 0.23, ease: "sine.inOut" }, 48.16);
-tl.to("#lt-api", { opacity: 0.99, duration: 0.50, ease: "sine.inOut" }, 48.42);
-tl.to("#lt-api", { opacity: 0.92, duration: 0.67, ease: "sine.inOut" }, 48.93);
-tl.to("#lt-api", { opacity: 0.71, duration: 0.28, ease: "sine.inOut" }, 49.62);
-tl.to("#lt-api", { opacity: 0.90, duration: 0.33, ease: "sine.inOut" }, 49.92);
-tl.to("#lt-api", { opacity: 0.65, duration: 0.32, ease: "sine.inOut" }, 50.28);
-tl.to("#lt-api", { opacity: 0.60, duration: 0.28, ease: "sine.inOut" }, 50.61);
-tl.to("#lt-api", { opacity: 0.99, duration: 0.65, ease: "sine.inOut" }, 50.91);
-tl.to("#lt-api", { opacity: 0.88, duration: 0.40, ease: "sine.inOut" }, 51.58);
-tl.to("#lt-api", { opacity: 0.78, duration: 0.44, ease: "sine.inOut" }, 52.00);
-tl.to("#lt-api", { opacity: 0.84, duration: 0.40, ease: "sine.inOut" }, 52.46);
-tl.to("#lt-api", { opacity: 0.67, duration: 0.34, ease: "sine.inOut" }, 52.88);
-tl.to("#lt-api", { opacity: 0.64, duration: 0.46, ease: "sine.inOut" }, 53.24);
     window.__timelines["latar"] = tl;
   </script>
 </template>
