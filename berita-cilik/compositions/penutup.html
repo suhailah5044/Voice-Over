@@ -87,6 +87,17 @@
       font-size: 34px;
       letter-spacing: 0.1em;
     }
+    #pt-kredit {
+      position: absolute;
+      left: 60px;
+      right: 60px;
+      top: 1700px;
+      text-align: center;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      font-size: 22px;
+      color: rgba(220, 230, 255, 0.7);
+    }
   </style>
   <div id="root" data-composition-id="penutup" data-width="1080" data-height="1920">
     <div id="pt-pentas" class="clip" data-start="0" data-duration="4.8" data-layout-allow-overflow data-layout-allow-overlap>
@@ -97,6 +108,7 @@
       <div id="pt-garis"></div>
       <div id="pt-terima">TERIMA KASIH KERANA MENONTON</div>
       <div id="pt-nama">MUHAMAD RIFHAAN DEENIY BIN MUHAMAD FIRDAUS<br /><span>WARTAWAN CILIK · 3 KASIH</span></div>
+      <div id="pt-kredit">Foto latar: "Kuala Lumpur hazy skyline 2019" oleh Benjy8769, Wikimedia Commons (CC BY-SA)</div>
       <div id="pt-tirai"></div>
     </div>
   </div>
@@ -104,7 +116,7 @@
     const tl = gsap.timeline({ paused: true });
     // red curtain wipes up from the report, then lifts to reveal the end card
     tl.fromTo("#pt-tirai", { y: 1920 }, { y: 0, duration: 0.35, ease: "power3.in" }, 0);
-    tl.fromTo(["#pt-bg", "#pt-rays", "#pt-logo", "#pt-judul", "#pt-garis", "#pt-terima", "#pt-nama"], { opacity: 0 }, { opacity: 1, duration: 0.01 }, 0.36);
+    tl.fromTo(["#pt-bg", "#pt-rays", "#pt-logo", "#pt-judul", "#pt-garis", "#pt-terima", "#pt-nama", "#pt-kredit"], { opacity: 0 }, { opacity: 1, duration: 0.01 }, 0.36);
     tl.to("#pt-tirai", { y: -1920, duration: 0.5, ease: "power3.inOut" }, 0.4);
     tl.fromTo("#pt-rays", { rotation: 0 }, { rotation: 30, duration: 4.8, ease: "none" }, 0);
     tl.fromTo("#pt-logo", { scale: 0.4, rotation: -30 }, { scale: 1, rotation: 0, duration: 0.6, ease: "back.out(2)" }, 0.6);
