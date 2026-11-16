@@ -125,11 +125,11 @@ const SPEC=[
  {th:'d',panic:.7,shake:[4],sub:'tak biasa dengan <i>format?</i>',groups:[['Budak@0 ~pandai@1 pun@2 boleh@3','!*gelabah@4'],['kalau@5 tak@6 biasa@7 dengan@8','~format@9 ~soalan@10']],
   inner:`<div style="position:absolute;inset:0;background:linear-gradient(160deg,#3a2a20,#1a100b)"></div><div class="big" data-w="1" data-a="pop">🧑‍🎓</div><div class="big" data-w="4" data-a="pop" style="position:absolute;font-size:80px;left:300px;top:60px">💦</div>
    <div data-w="9" data-a="pop" style="position:absolute;left:40px;top:40px;font-size:80px">❓</div><div data-w="10" data-a="pop" style="position:absolute;right:40px;top:150px;font-size:70px">❓</div><div data-w="10" data-a="pop" style="position:absolute;left:70px;bottom:90px;font-size:60px">❓</div>`},
- {th:'l',flash:1,sub:'',groups:[['Sebab@0 tu,@1'],['~FlyHigh@2 ~Education@4','buka@5 kelas@6 online@7'],['*Last_Minute@8','*UKKM!@10']],
+ {th:'l',flash:1,sub:'',over:`<div class="posterbig" data-w="2" data-a="poster" data-sfx="boom" style="position:absolute;left:60px;top:560px;width:960px;height:960px;z-index:21;border-radius:28px;overflow:hidden;box-shadow:0 0 0 6px #FFC814,0 0 120px rgba(255,200,20,.6),0 40px 100px rgba(0,0,0,.6)"><img src="poster_clean.jpg" style="width:100%;height:100%;object-fit:cover"></div>`,groups:[['Sebab@0 tu,@1'],['~FlyHigh@2 ~Education@4','buka@5 kelas@6 online@7'],['*Last_Minute@8','*UKKM!@10']],
   inner:`<div style="position:absolute;inset:0;background:linear-gradient(160deg,#1d3a8a,#0b1840)"></div>
    <div data-w="2" data-a="pop" data-sfx="boom" style="position:absolute;left:0;right:0;top:70px;display:flex;justify-content:center">${FLY(150)}</div>
    <div data-w="7" data-a="pop" style="position:absolute;left:0;right:0;top:330px;display:flex;justify-content:center"><div style="background:#fff;border-radius:999px;padding:6px 20px 6px 8px">${ZOOMW(48)}</div></div>
-   <img data-w="8" data-a="rise" data-sfx="boom" src="poster_clean.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top">
+   
    <div class="spark" data-w="9" data-a="pop" style="right:20px;top:14px;color:#FFC814">✦</div>`},
  {th:'l',sub:'',groups:[['Tarikh@0 boleh@1','*pilih!@2'],['~Satu_malam@3 je:@5','Selasa@6 ~17,@7 Rabu@9 ~18,@10','atau@12 Khamis@13 ~19@14'],['~November@16','melalui@17 *Zoom@18']],
   inner:`<div style="position:absolute;inset:0;background:#f4ece2"></div>
@@ -157,8 +157,8 @@ const SPEC=[
    <div data-w="1" data-a="pop" style="position:absolute;left:40px;top:60px;background:#fff;border-radius:24px;padding:20px 26px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.15)"><div style="font-weight:900;font-size:64px;color:var(--o3)">RM60</div><div style="font-weight:700;font-size:24px;color:#8a7766">/ malam</div></div>
    <div data-w="7" data-a="pop" style="position:absolute;right:30px;top:150px;background:var(--o3);border-radius:24px;padding:20px 26px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.2);color:#fff"><div style="font-weight:900;font-size:72px">RM199</div><div style="font-weight:700;font-size:24px">pakej penuh</div></div>`},
  {th:'l',full:1,sub:'',groups:[['Cara@0 beli','*senang_je!@2'],['Tekan@4 ~beg_kuning@5'],['dan@7 buat@8','*bayaran@9']],
-  inner:`<img src="poster_clean.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top">
-   <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1) 40%,rgba(0,0,0,.75))"></div>
+  inner:`<div style="position:absolute;inset:0;background:#0b1840"></div><img src="poster_clean.jpg" style="position:absolute;left:0;top:120px;width:100%;height:auto">
+   <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.75))"></div>
    <div data-w="4" data-a="pop" style="position:absolute;left:20px;bottom:150px;display:flex;align-items:center;gap:12px;background:rgba(0,0,0,.55);border-radius:14px;padding:10px 16px 10px 10px;color:#fff;font-weight:800;font-size:20px"><div style="width:48px;height:48px;border-radius:12px;background:#FFC814;display:flex;align-items:center;justify-content:center;font-size:28px">🛍️</div>LAST MINUTE UKKM FLYHIGH</div>
    <div class="tap" data-w="5" data-a="tap" data-sfx="tap" style="left:60px;top:780px"></div>
    <div data-w="7" data-a="rise" style="position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:30px 30px 0 0;padding:22px 22px 40px">
@@ -202,7 +202,7 @@ const SPEC=[
 const scenes=document.getElementById('scenes'),vid=document.getElementById('vid');
 const S=SPEC.map((sp,i)=>{
   const tl=TL.scenes[i], next=i<TL.scenes.length-1?TL.scenes[i+1].s:TL.dur; const W=k=>tl.w[k];
-  const el=document.createElement('div');el.className='scene';scenes.appendChild(el);
+  const el=document.createElement('div');el.className='scene';scenes.appendChild(el);if(sp.over){const ov=document.createElement('div');ov.innerHTML=sp.over;ov.querySelectorAll('[data-w]').forEach(n=>n.dataset.t=W(+n.dataset.w));ov.style.cssText='position:absolute;inset:0;z-index:20';document.getElementById('stage').insertBefore(ov,document.getElementById('flash'));sp.ovEl=ov;}
   const groups=sp.groups.map((g,gi)=>{
     const d=document.createElement('div');d.className='grp '+(sp.th=='l'?'lt':'');
     let lastK=0;d.innerHTML=g.map(l=>'<span class="line">'+l.split(' ').map(tok=>{let [w,k]=tok.split('@');if(k===undefined)k=lastK;else lastK=+k;let c='w';
@@ -217,7 +217,7 @@ const S=SPEC.map((sp,i)=>{
   v.querySelectorAll('[data-w]').forEach(n=>n.dataset.t=W(+n.dataset.w));
   v.querySelectorAll('[data-hl]').forEach(n=>n.dataset.ht=W(+n.dataset.hl));
   v.querySelectorAll('.drain').forEach(n=>{n.dataset.t0=W(+n.dataset.from);n.dataset.t1=tl.s+ (+n.dataset.to)});
-  const items=[...el.querySelectorAll('[data-t]'),...v.querySelectorAll('[data-t]')].map(n=>({n,t:+n.dataset.t,a:n.dataset.a}));
+  const items=[...el.querySelectorAll('[data-t]'),...v.querySelectorAll('[data-t]'),...(sp.ovEl?sp.ovEl.querySelectorAll('[data-t]'):[])].map(n=>({n,t:+n.dataset.t,a:n.dataset.a}));
   return {sp,s:tl.s,e:next,el,v,groups,items,shakes:(sp.shake||[]).map(W),hls:[...v.querySelectorAll('[data-ht]')],drains:[...v.querySelectorAll('.drain')]};
 });
 // timeline clips
@@ -234,6 +234,8 @@ function anim(n,t,ti,a){
     n.style.transform=`scale(${d<0?1.15:1-0.18*Math.sin(Math.PI*clamp(d/0.18))})`;n.style.boxShadow=d>=0?`0 0 0 ${k*46}px rgba(255,255,255,${0.6*(1-k)})`:'none';return}
   if(a=='type'){const p=clamp((t-ti)/0.7);n.style.opacity=t>=ti?1:0;n.style.clipPath=`inset(0 ${100-p*100}% 0 0)`;return}
   if(n.dataset.u&&t>=+n.dataset.u){n.style.opacity=0;return}
+  if(a=='fade'){n.style.opacity=clamp((t-ti)/0.3);return}
+  if(a=='poster'){const p=clamp((t-ti)/0.5);n.style.opacity=eo(p);n.style.transform=`scale(${(0.6+0.4*back(p))*(1+0.025*Math.max(0,t-ti-0.5))}) rotate(${(1-eo(p))*-6}deg)`;n.style.filter=p<1?`blur(${(1-p)*10}px)`:'';return}
   const p=clamp((t-ti)/(a=='blur'?0.28:0.4));let tr='',f='';
   if(a=='blur'){tr=`translateY(${(1-eo(p))*26}px)`;f=p<1?`blur(${(1-p)*14}px)`:''}
   else if(a=='pop'){tr=`scale(${0.3+0.7*back(p)})`;f=p<1?`blur(${(1-p)*8}px)`:''}
@@ -249,7 +251,7 @@ window.seek=function(t){
   S.forEach((s,i)=>{
     const a=clamp((t-s.s+0.15)/0.3), b=clamp((s.e-t)/0.15);
     const vis=(i==0?1:eo(a))*(i==S.length-1?1:b);
-    s.el.style.opacity=vis; s.v.style.opacity=t>=s.s-0.1&&t<s.e?1:0;
+    s.el.style.opacity=vis;if(s.sp.ovEl)s.sp.ovEl.style.opacity=vis; s.v.style.opacity=t>=s.s-0.1&&t<s.e?1:0;
     if(vis<=0)return;
     if(s.sp.th=='l')light=Math.max(light,vis);
     if(s.sp.panic)pan=Math.max(pan,vis*s.sp.panic*(0.75+0.25*Math.sin(t*9)));
