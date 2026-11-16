@@ -1,0 +1,248 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P;src:url(fonts/poppins-500.ttf);font-weight:500}
+@font-face{font-family:P;src:url(fonts/poppins-600.ttf);font-weight:600}
+@font-face{font-family:P;src:url(fonts/poppins-700.ttf);font-weight:700}
+@font-face{font-family:P;src:url(fonts/poppins-800.ttf);font-weight:800}
+@font-face{font-family:P;src:url(fonts/poppins-900.ttf);font-weight:900}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#0a0d18;font-family:P,'Noto Color Emoji',sans-serif}
+.scene{position:absolute;inset:0;overflow:hidden;opacity:0}
+.dark{background:#0a0d18}
+.dark .g{position:absolute;border-radius:50%;filter:blur(90px)}
+.cream{background:#fdf6e1}
+.arc{position:absolute;border-radius:50%;border:60px solid}
+.a{will-change:transform,opacity}
+.head{position:absolute;left:0;right:0;text-align:center}
+.s{font-weight:600;font-size:66px;color:#fff;letter-spacing:-.5px}
+.cream .s{color:#1a1a1a}
+.big{font-weight:900;font-size:128px;line-height:1.05;letter-spacing:-2px}
+.y{color:#ffc61a;text-shadow:0 0 50px rgba(255,190,20,.55)}
+.r{color:#e31b23}
+.card{background:#fff;border-radius:44px;box-shadow:0 30px 70px rgba(0,0,0,.18)}
+.dark .card{box-shadow:0 0 60px rgba(255,200,40,.25)}
+.emoji{font-family:'Noto Color Emoji'}
+.row{display:flex;align-items:center;gap:30px;padding:34px 40px;border-radius:30px;margin:10px}
+.ic{width:96px;height:96px;border-radius:24px;display:flex;align-items:center;justify-content:center;font-size:54px}
+.chk{margin-left:auto;width:62px;height:62px;border-radius:50%;background:#22b14c;color:#fff;font-weight:800;font-size:38px;display:flex;align-items:center;justify-content:center}
+.pill{display:inline-block;padding:26px 54px;border-radius:999px;font-weight:800;font-size:52px}
+</style></head>
+<body>
+
+<!-- S1 dark 0 - 3.14 -->
+<div class="scene dark" data-s="0" data-e="3.14">
+  <div class="g" style="width:700px;height:700px;left:-150px;top:150px;background:rgba(255,190,20,.35)"></div>
+  <div class="g" style="width:800px;height:800px;right:-250px;bottom:150px;background:rgba(200,20,30,.35)"></div>
+  <div class="g" style="width:600px;height:600px;left:250px;top:900px;background:rgba(70,50,160,.25)"></div>
+  <div class="head" style="top:300px">
+    <div class="a s" data-t="0.0" data-fx="up">Ibu Ayah tengah cari</div>
+    <div class="a s" data-t="0.7" data-fx="up">kelas persediaan</div>
+    <div class="a big y" data-t="1.98" data-fx="pop" style="font-size:180px;margin-top:10px">UKKM?</div>
+  </div>
+  <div class="a card" data-t="2.3" data-fx="pop" style="position:absolute;left:250px;top:1000px;width:580px;padding:56px 30px;text-align:center">
+    <div class="emoji" style="font-size:150px">🎓</div>
+    <div style="font-weight:900;font-size:76px;color:#111">UKKM <span class="r">2026</span></div>
+    <div style="font-weight:500;font-size:34px;color:#7a6b55;margin-top:8px">Ujian Khas Kemasukan MRSM</div>
+  </div>
+</div>
+
+<!-- S2 cream 3.14 - 5.78 -->
+<div class="scene cream" data-s="3.14" data-e="5.78">
+  <div class="arc" style="width:1500px;height:1500px;left:300px;top:-900px;border-color:#fde7a6"></div>
+  <div class="arc" style="width:1300px;height:1300px;left:-900px;top:1100px;border-color:#f9dccb"></div>
+  <div class="head" style="top:330px">
+    <div class="a big r" data-t="3.14" data-fx="pop">Berita baik!</div>
+  </div>
+  <div class="a card" data-t="3.9" data-fx="pop" style="position:absolute;left:190px;top:720px;width:700px;padding:60px 40px;text-align:center">
+    <div class="emoji" style="font-size:130px">🦅</div>
+    <div style="font-weight:900;font-size:96px;color:#123a8c;letter-spacing:-1px">FLY HIGH</div>
+    <div style="font-weight:600;font-size:36px;color:#7a6b55">Education Centre</div>
+  </div>
+  <div class="head" style="top:1330px">
+    <div class="a s" data-t="4.42" data-fx="up">dah buka kelas</div>
+    <div class="a big r" data-t="5.08" data-fx="pop" style="font-size:120px">ONLINE!</div>
+  </div>
+</div>
+
+<!-- S3 dark 5.78 - 8.78 -->
+<div class="scene dark" data-s="5.78" data-e="8.78">
+  <div class="g" style="width:700px;height:700px;left:-200px;top:50px;background:rgba(255,190,20,.35)"></div>
+  <div class="g" style="width:800px;height:800px;right:-250px;bottom:100px;background:rgba(200,20,30,.35)"></div>
+  <div class="head" style="top:280px">
+    <div class="a s" data-t="5.78" data-fx="up">Kelas melalui</div>
+    <div class="a big y" data-t="6.44" data-fx="pop" style="font-size:170px">Zoom</div>
+  </div>
+  <div class="a" data-t="6.44" data-fx="up" style="position:absolute;left:150px;top:760px;width:780px">
+    <div style="background:#2a2f3a;border-radius:36px;padding:26px;box-shadow:0 0 70px rgba(80,140,255,.35)">
+      <div style="background:#2d8cff;border-radius:18px;height:440px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:14px;padding:14px">
+        <div class="zb emoji">👩🏻‍🏫</div><div class="zb emoji">👦🏻</div><div class="zb emoji">👧🏽</div><div class="zb emoji">👦🏽</div>
+      </div>
+    </div>
+    <div style="margin:0 auto;width:880px;margin-left:-50px;height:34px;background:#3a404c;border-radius:0 0 30px 30px"></div>
+    <div class="a" data-t="6.8" data-fx="pop" style="position:absolute;right:-20px;top:-34px;background:#2d8cff;color:#fff;font-weight:800;font-size:34px;padding:12px 28px;border-radius:999px;border:4px solid #fff">● LIVE Zoom</div>
+  </div>
+  <div class="head" style="top:1420px">
+    <div class="a s" data-t="7.18" data-fx="up">persediaan</div>
+    <div class="a pill" data-t="8.18" data-fx="pop" style="background:#ffc61a;color:#111;margin-top:20px;font-size:62px">⏳ SAAT AKHIR</div>
+  </div>
+  <style>.zb{background:#4aa3ff;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:120px}</style>
+</div>
+
+<!-- S4 cream 8.78 - 10.70 -->
+<div class="scene cream" data-s="8.78" data-e="10.70">
+  <div class="arc" style="width:1500px;height:1500px;left:-700px;top:-1000px;border-color:#fde7a6"></div>
+  <div class="arc" style="width:1300px;height:1300px;left:500px;top:1200px;border-color:#f9dccb"></div>
+  <div class="head" style="top:380px">
+    <div class="a s" data-t="8.78" data-fx="up">Ibu Ayah boleh pilih</div>
+    <div class="a big r" data-t="9.98" data-fx="pop">ikut senang!</div>
+  </div>
+  <div style="position:absolute;left:110px;top:860px;display:flex;gap:60px">
+    <div class="a card" data-t="9.34" data-fx="pop" style="width:400px;height:440px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px">
+      <div class="emoji" style="font-size:150px">🌙</div><div style="font-weight:800;font-size:46px;color:#111">Ikut malam</div></div>
+    <div class="a card" data-t="9.58" data-fx="pop" style="width:400px;height:440px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px">
+      <div class="emoji" style="font-size:150px">📦</div><div style="font-weight:800;font-size:46px;color:#111">Full pakej</div></div>
+  </div>
+</div>
+
+<!-- S5 dark 10.70 - 18.92 -->
+<div class="scene dark" data-s="10.70" data-e="18.92">
+  <div class="g" style="width:700px;height:700px;left:-150px;top:0px;background:rgba(255,190,20,.33)"></div>
+  <div class="g" style="width:800px;height:800px;right:-250px;bottom:50px;background:rgba(200,20,30,.33)"></div>
+  <div class="head" style="top:260px">
+    <div class="a s" data-t="10.70" data-fx="up">Satu malam</div>
+    <div class="a big y" data-t="11.70" data-fx="pop">3 SUBJEK</div>
+  </div>
+  <div class="a card" data-t="11.9" data-fx="blur" style="position:absolute;left:90px;top:680px;width:900px;padding:20px">
+    <div class="row" data-hl="12.30"><div class="ic" style="background:#dff4ea">🔬</div>
+      <div><div style="font-weight:800;font-size:52px;color:#111">Sains</div><div style="font-weight:600;font-size:36px;color:#888">6.00 – 7.00 pm</div></div><div class="chk">✓</div></div>
+    <div class="row" data-hl="14.48"><div class="ic" style="background:#fff3c4">💡</div>
+      <div><div style="font-weight:800;font-size:52px;color:#111">Keperibadian</div><div style="font-weight:600;font-size:36px;color:#888">8.00 – 9.00 pm</div></div><div class="chk">✓</div></div>
+    <div class="row" data-hl="16.30"><div class="ic" style="background:#fde0e0">➗</div>
+      <div><div style="font-weight:800;font-size:52px;color:#111">Matematik</div><div style="font-weight:600;font-size:36px;color:#888">9.35 – 10.35 pm</div></div><div class="chk">✓</div></div>
+  </div>
+  <div class="head" style="top:1560px">
+    <div class="a" data-t="17.4" data-fx="up" style="font-weight:700;font-size:40px;color:#ffc61a;letter-spacing:6px">3 SUBJEK • SETIAP MALAM</div>
+  </div>
+</div>
+
+<!-- S6 cream 18.92 - 25.62 -->
+<div class="scene cream" data-s="18.92" data-e="25.62">
+  <div class="arc" style="width:1500px;height:1500px;left:300px;top:-950px;border-color:#fde7a6"></div>
+  <div class="arc" style="width:1300px;height:1300px;left:-850px;top:1150px;border-color:#f9dccb"></div>
+  <div class="head" style="top:300px">
+    <div class="a s" data-t="18.92" data-fx="up">Dapat tawaran</div>
+    <div class="a big r" data-t="20.16" data-fx="pop">MRSM?</div>
+  </div>
+  <div style="position:absolute;left:0;right:0;top:700px;display:flex;flex-direction:column;align-items:center;gap:34px">
+    <div class="a card chipc" data-t="20.84" data-fx="pop"><span class="emoji">🧪</span> STEM</div>
+    <div class="a card chipc" data-t="21.22" data-fx="pop"><span class="emoji">⚙️</span> Teknikal</div>
+    <div class="a card chipc" data-t="21.98" data-fx="pop"><span class="emoji">🌍</span> IGCSE</div>
+  </div>
+  <div class="head" style="top:1330px">
+    <div class="a pill" data-t="23.02" data-fx="pop" style="background:#22b14c;color:#fff">✓ Semua boleh masuk!</div>
+    <div class="a s" data-t="23.98" data-fx="up" style="margin-top:50px">Janji anak</div>
+    <div class="a" data-t="24.68" data-fx="pop" style="font-weight:900;font-size:96px;color:#e31b23">ambil UKKM</div>
+  </div>
+  <style>.chipc{width:640px;padding:34px 0;text-align:center;font-weight:900;font-size:72px;color:#111;border-radius:36px}</style>
+</div>
+
+<!-- S7 dark 25.62 - 29.78 -->
+<div class="scene dark" data-s="25.62" data-e="29.78">
+  <div class="g" style="width:700px;height:700px;left:-150px;top:100px;background:rgba(255,190,20,.35)"></div>
+  <div class="g" style="width:800px;height:800px;right:-250px;bottom:100px;background:rgba(200,20,30,.38)"></div>
+  <div class="head" style="top:280px">
+    <div class="a s" data-t="25.62" data-fx="up">Bayaran</div>
+    <div class="a big y" data-t="26.10" data-fx="pop" style="font-size:100px">sangat rendah!</div>
+  </div>
+  <div class="a card" data-t="26.78" data-fx="pop" style="position:absolute;left:170px;top:720px;width:740px;padding:50px;text-align:center">
+    <div style="font-weight:900;font-size:150px;color:#111;line-height:1">RM60<span style="font-size:60px;color:#888"> / hari</span></div>
+  </div>
+  <div class="a" data-t="27.52" data-fx="pop" style="position:absolute;left:120px;top:1080px;width:840px;padding:50px;text-align:center;border-radius:44px;background:linear-gradient(160deg,#e31b23,#a50d14);box-shadow:0 0 80px rgba(255,40,40,.45)">
+    <div style="font-weight:800;font-size:56px;color:#ffc61a">Full Pakej</div>
+    <div style="font-weight:900;font-size:170px;color:#fff;line-height:1.05">RM199</div>
+    <div class="a" data-t="28.2" data-fx="stamp" style="position:absolute;right:-30px;top:-60px;background:#ffc61a;color:#111;font-weight:900;font-size:44px;padding:18px 34px;border-radius:999px;transform:rotate(8deg)">LAGI MURAH!</div>
+  </div>
+  <div class="head" style="top:1560px">
+    <div class="a s" data-t="28.90" data-fx="up" style="font-size:54px">Jom daftar sekarang 👇</div>
+  </div>
+</div>
+
+<!-- S8 cream 29.78 - end -->
+<div class="scene cream" data-s="29.78" data-e="99">
+  <div class="arc" style="width:1500px;height:1500px;left:350px;top:-950px;border-color:#fde7a6"></div>
+  <div class="arc" style="width:1300px;height:1300px;left:-850px;top:1150px;border-color:#f9dccb"></div>
+  <div class="head" style="top:200px">
+    <div class="a s" data-t="29.78" data-fx="up">Cara nak daftar</div>
+    <div class="a big r" data-t="30.02" data-fx="pop">cepat-cepat!</div>
+  </div>
+  <div class="a" data-t="29.9" data-fx="up" style="position:absolute;left:255px;top:560px;width:570px;height:1080px;background:#111;border-radius:90px;padding:22px;box-shadow:0 40px 90px rgba(0,0,0,.25)">
+    <div style="position:relative;width:100%;height:100%;background:#faf6ee;border-radius:70px;overflow:hidden">
+      <div style="position:absolute;left:50%;top:18px;width:170px;height:44px;margin-left:-85px;background:#111;border-radius:30px"></div>
+      <div style="position:absolute;left:30px;right:30px;top:130px;display:flex;flex-direction:column;gap:26px">
+        <div class="a st" data-t="30.24" data-fx="up" data-hl2="30.24"><div class="n">1</div>Tekan beg kuning</div>
+        <div class="a st" data-t="30.88" data-fx="up" data-hl2="30.88"><div class="n">2</div>Selesaikan payment</div>
+        <div class="a st" data-t="32.94" data-fx="up" data-hl2="32.94"><div class="n">3</div>PM admin kami</div>
+        <div class="a st" data-t="35.18" data-fx="up" data-hl2="35.18" style="background:#dff4ea"><div class="n" style="background:#22b14c">✓</div>Dapat link kelas 🔗</div>
+      </div>
+      <div class="a" data-t="30.54" data-fx="pop" style="position:absolute;left:40px;bottom:50px;display:flex;align-items:center;gap:20px">
+        <div style="width:100px;height:100px;background:#ffc61a;border-radius:24px;display:flex;align-items:center;justify-content:center;font-size:58px" class="emoji bag">🛍️</div>
+        <div style="font-weight:800;font-size:36px;color:#111">← beg kuning</div>
+      </div>
+    </div>
+  </div>
+  <div class="head" style="top:1715px">
+    <div class="a pill" data-t="31.60" data-fx="pop" style="background:#e31b23;color:#fff;font-size:48px;box-shadow:0 14px 40px rgba(227,27,35,.4)">⏰ Tempat terhad!</div>
+  </div>
+  <style>
+  .st{display:flex;align-items:center;gap:22px;background:#fff;border-radius:28px;padding:28px 24px;font-weight:800;font-size:36px;color:#111;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+  .st .n{flex:none;width:62px;height:62px;border-radius:50%;background:#e31b23;color:#fff;display:flex;align-items:center;justify-content:center;font-size:34px}
+  </style>
+</div>
+
+<script>
+const ease=x=>1-Math.pow(1-x,3);
+const back=x=>{const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const cl=x=>Math.max(0,Math.min(1,x));
+const scenes=[...document.querySelectorAll('.scene')];
+const els=[...document.querySelectorAll('.a')];
+// stash base transform
+els.forEach(e=>e._base=e.dataset.fx==='stamp'?'':(e.style.transform||''));
+function render(t){
+  scenes.forEach((s,i)=>{
+    const a=+s.dataset.s,b=+s.dataset.e;
+    let o=0,sc=1;
+    if(t>=a&&t<b){o=1; const p=cl((t-a)/0.28); if(i>0){o=ease(p); sc=1.06-0.06*ease(p);} }
+    s.style.opacity=o; s.style.transform=`scale(${sc})`;
+    s.style.display=o>0?'block':'none';
+    // drift glows / arcs
+    s.querySelectorAll('.g').forEach((g,k)=>{g.style.transform=`translate(${Math.sin(t*0.6+k*2)*40}px,${Math.cos(t*0.5+k)*40}px)`});
+    s.querySelectorAll('.arc').forEach((g,k)=>{g.style.transform=`rotate(${(t-a)*(k?-3:3)}deg)`});
+  });
+  els.forEach(e=>{
+    const p=cl((t-(+e.dataset.t))/0.45), fx=e.dataset.fx;
+    let tr='',op=1,fl='none';
+    if(fx==='up'){op=ease(p);tr=`translateY(${(1-ease(p))*50}px)`}
+    else if(fx==='pop'){op=cl(p*3);tr=`scale(${p<=0?0.6:0.6+0.4*back(p)})`}
+    else if(fx==='blur'){op=ease(cl(p*2));fl=`blur(${(1-ease(p))*24}px)`;tr=`translateY(${(1-ease(p))*40}px)`}
+    else if(fx==='stamp'){op=cl(p*4);tr=`rotate(8deg) scale(${p<=0?2:1+1*(1-ease(p))})`}
+    e.style.opacity=op;e.style.transform=tr+' '+e._base;e.style.filter=fl;
+  });
+  document.querySelectorAll('[data-hl]').forEach((r,i,all)=>{
+    const h=+r.dataset.hl,nxt=all[i+1]?+all[i+1].dataset.hl:999;
+    const on=t>=h, cur=on&&t<nxt;
+    r.style.background=cur?'#fff3c4':'transparent';
+    r.style.transform=cur?'scale(1.04)':'scale(1)';
+    r.style.boxShadow=cur?'0 10px 30px rgba(255,190,20,.35)':'none';
+    const c=r.querySelector('.chk'); const p=cl((t-h)/0.3);
+    c.style.opacity=on?p:0; c.style.transform=`scale(${on?0.5+0.5*back(p):0.5})`;
+  });
+  document.querySelectorAll('[data-hl2]').forEach((r,i,all)=>{
+    const h=+r.dataset.hl2,nxt=all[i+1]?+all[i+1].dataset.hl2:999;
+    if(i<3) r.style.background=(t>=h&&t<nxt)?'#fff3c4':'#fff';
+  });
+  const bag=document.querySelector('.bag'); if(bag) bag.style.transform=`scale(${1+0.08*Math.max(0,Math.sin(t*8))})`;
+}
+window.render=render; render(0);
+</script>
+</body></html>
