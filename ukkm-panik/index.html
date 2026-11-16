@@ -1,0 +1,204 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P;font-weight:500;src:url(poppins-500.woff2)}
+@font-face{font-family:P;font-weight:600;src:url(poppins-600.woff2)}
+@font-face{font-family:P;font-weight:800;src:url(poppins-800.woff2)}
+@font-face{font-family:P;font-weight:900;src:url(poppins-900.woff2)}
+:root{--o1:#FFC29A;--o2:#F08A4B;--o3:#D4602A;--brown:#1c0f09;--cream:#FFF6EC;--ink:#2a1a12}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000;font-family:P,sans-serif}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden}
+.bg{position:absolute;inset:0}
+#bgd{background:
+  linear-gradient(rgba(255,255,255,.035) 2px,transparent 2px) 0 0/90px 90px,
+  linear-gradient(90deg,rgba(255,255,255,.035) 2px,transparent 2px) 0 0/90px 90px,
+  radial-gradient(700px 600px at 50% 46%,rgba(240,138,75,.42),transparent 70%),
+  radial-gradient(500px 500px at 15% 10%,rgba(212,96,42,.25),transparent 70%),
+  radial-gradient(1200px 1100px at 50% 50%,#3a1d10,#140a06 80%)}
+#bgl{background:var(--cream);opacity:0;overflow:hidden}
+#bgl::before,#bgl::after{content:"";position:absolute;border-radius:50%;border:130px solid rgba(240,138,75,.10)}
+#bgl::before{width:1600px;height:1600px;left:-1000px;top:-500px}
+#bgl::after{width:1300px;height:1300px;right:-900px;bottom:-300px}
+#panic{position:absolute;inset:0;background:radial-gradient(closest-side,transparent 55%,rgba(220,30,30,.55));opacity:0}
+.scene{position:absolute;inset:0;opacity:0}
+.grp{position:absolute;left:50px;right:50px;top:200px;height:420px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.line{display:block;white-space:nowrap;line-height:1.02}
+.w{display:inline-block;margin:0 .12em;font-weight:800;font-size:66px;color:#fff;will-change:transform,filter,opacity}
+.lt .w{color:var(--ink)}
+.w.b{font-weight:900;font-size:132px;letter-spacing:-3px;background:linear-gradient(180deg,var(--o1),var(--o2) 60%,var(--o3));-webkit-background-clip:text;color:transparent!important}
+.w.m{font-weight:800;font-size:96px;letter-spacing:-1px;background:linear-gradient(180deg,var(--o1),var(--o2) 70%);-webkit-background-clip:text;color:transparent!important}
+.lt .w.b,.lt .w.m{background:linear-gradient(180deg,#F59A5E,var(--o3));-webkit-background-clip:text}
+.w.red{background:linear-gradient(180deg,#ff8a7a,#e8322a)!important;-webkit-background-clip:text!important}
+.glow{position:absolute;inset:0;pointer-events:none}
+/* phone */
+.phone{position:absolute;left:265px;top:690px;width:550px;height:1000px;border-radius:86px;background:#16161a;padding:20px;
+  box-shadow:0 0 0 5px #3a3a40,0 0 0 16px rgba(240,138,75,.35),0 0 140px 30px rgba(240,138,75,.55),0 40px 90px rgba(0,0,0,.5)}
+.lt-on .phone{box-shadow:0 0 0 5px #3a3a40,0 0 0 16px rgba(240,138,75,.25),0 0 90px 10px rgba(240,138,75,.35),0 30px 70px rgba(80,40,10,.3)}
+.scr{position:relative;width:100%;height:100%;border-radius:68px;background:#1e1e22;overflow:hidden;color:#fff}
+.sb{display:flex;justify-content:space-between;align-items:center;padding:30px 50px 0;font-weight:600;font-size:28px}
+.isl{position:absolute;top:24px;left:50%;width:160px;height:44px;margin-left:-80px;background:#000;border-radius:24px}
+.hdr{display:flex;justify-content:center;position:relative;margin-top:30px;font-weight:600;font-size:30px}
+.hdr span{position:absolute;right:40px;color:var(--o2);font-size:24px;top:4px}
+.vid{position:relative;margin:26px 26px 0;height:420px;border-radius:26px;overflow:hidden;background:#2b2b31}
+.vs{position:absolute;inset:0;opacity:0;display:flex;align-items:center;justify-content:center}
+.sub{position:absolute;left:0;right:0;bottom:26px;text-align:center;font-family:'DejaVu Serif',serif;font-weight:700;font-size:34px;color:#fff;text-shadow:0 2px 10px #000}
+.sub i{font-style:normal;color:#ff7b6b}
+.tc{text-align:center;font-size:24px;font-weight:600;margin-top:22px;color:#ddd}
+.tl{position:relative;margin:12px 26px 0;height:200px}
+.clip{position:absolute;top:0;height:62px;border-radius:12px}
+.pur{position:absolute;top:82px;height:34px;border-radius:10px;background:#8b7cf6}
+.wave{position:absolute;top:136px;left:0;right:0;height:44px;display:flex;align-items:center;gap:4px}
+.wave i{flex:1;background:#3fcf8e;border-radius:2px}
+.ph{position:absolute;top:-14px;width:4px;height:210px;background:#fff;border-radius:2px}
+.ph::before{content:"";position:absolute;top:-6px;left:-8px;width:20px;height:20px;border-radius:50%;background:#fff}
+.tb{position:absolute;bottom:34px;left:0;right:0;display:flex;justify-content:space-around;padding:0 30px}
+.tb div{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:20px;font-weight:600;color:#ccc}
+.tb b{width:62px;height:62px;border-radius:50%;background:#34343a;display:flex;align-items:center;justify-content:center;font-size:28px;color:#fff}
+.tb .ai b{background:var(--o2)}
+.name{position:absolute;bottom:120px;left:0;right:0;text-align:center;font-weight:600;font-size:40px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.lt-on .name{color:var(--ink);text-shadow:none}
+/* inner content helpers */
+.chip{position:absolute;display:flex;align-items:center;gap:12px;padding:12px 22px;border-radius:999px;background:#fff;color:var(--ink);font-weight:800;font-size:28px;box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.mini{position:absolute;left:30px;right:30px;display:flex;align-items:center;gap:18px;background:#fff;color:var(--ink);border-radius:20px;padding:14px 20px;font-weight:800;font-size:28px}
+.mini small{display:block;font-weight:600;font-size:20px;color:#8a7766}
+.num{width:64px;height:64px;border-radius:16px;background:var(--o2);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:30px;flex:none}
+.tk{margin-left:auto;width:44px;height:44px;border-radius:50%;background:#22b35e;color:#fff;display:flex;align-items:center;justify-content:center;font-size:26px}
+.big{font-size:170px;line-height:1}
+.spark{position:absolute;color:var(--o2);font-size:64px;font-weight:900}
+</style></head>
+<body><div id="stage">
+<div class="bg" id="bgd"></div><div class="bg" id="bgl"></div><div id="panic"></div>
+<div id="scenes"></div>
+<div class="phone" id="phone"><div class="scr">
+  <div class="isl"></div><div class="sb"><span>9:41</span><span>▮▮▮ ▬</span></div>
+  <div class="hdr">Kelas UKKM<span>LIVE</span></div>
+  <div class="vid" id="vid"></div>
+  <div class="tc" id="tc">00:00</div>
+  <div class="tl" id="tl"></div>
+  <div class="tb"><div><b>✕</b>Potong</div><div><b>T</b>Teks</div><div><b>♪</b>Audio</div><div class="ai"><b>✳</b>AI</div></div>
+</div></div>
+<div class="name" id="name">Kelas Online UKKM</div>
+<div id="flash" style="position:absolute;inset:0;background:#fff;opacity:0"></div>
+</div>
+<script>
+const TL=__TIMELINE__;
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const eo=x=>1-Math.pow(1-x,3);
+const back=x=>{const c=1.9,c3=c+1;return 1+c3*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+
+// Scene specs. caption groups: array of lines; token "text@wordIndex" ; * big, ~ medium, ! red ; _ = space
+// inner: html for phone video area; elements with data-w="idx" animate in at that word.
+const SPEC=[
+ {th:'d',panic:1,shake:[2,9],sub:'anak dah <i>ready?</i>',groups:[['Ibu@0 ayah...@1'],['*UKKM@2','dah@3 dekat@4 ~sangat!@5'],['Anak@6 betul-betul@7 dah@8','*ready@9 ~ke?@10']],
+  inner:`<div style="position:absolute;inset:0;background:linear-gradient(160deg,#5a2a1a,#1d0f0a)"></div><div class="big" data-w="0" data-a="pop">😰</div><div class="big tick" data-w="2" data-a="pop" style="position:absolute;right:40px;top:30px;font-size:90px">⏰</div><div class="chip" data-w="2" data-a="pop" style="left:28px;top:30px;background:#e8322a;color:#fff">UKKM 2026</div>`},
+ {th:'d',panic:.6,shake:[9],sub:'sebenarnya, <i>tak.</i>',groups:[['Ramai@0 ingat@1 UKKM@2 ni@3','macam@4 ~exam@5 ~sekolah@6 ~biasa@7'],['~Sebenarnya,@8','!*TAK.@9']],
+  inner:`<div style="position:absolute;inset:0;background:linear-gradient(160deg,#f4e7d3,#d9c3a5)"></div><div class="big" data-w="4" data-a="pop">📝</div><div class="chip" data-w="6" data-a="pop" style="left:30px;top:30px">Exam sekolah</div><div data-w="9" data-a="stamp" style="position:absolute;font-weight:900;font-size:110px;color:#e8322a;border:12px solid #e8322a;border-radius:24px;padding:0 30px;transform:rotate(-12deg)">✕ TAK</div>`},
+ {th:'d',panic:.8,shake:[11],sub:'masa dia <i>singkat!</i>',groups:[['Anak@0 kena@1 jawab@2'],['~Matematik@3','~Sains@4 ~Keperibadian@7'],['Dan@8 masa@9 dia...@10','!*singkat!@11']],
+  inner:`<div style="position:absolute;inset:0;background:linear-gradient(160deg,#2c1a3a,#120a18)"></div>
+   <div class="chip" data-w="3" data-a="pop" style="left:30px;top:40px">🧮 Matematik</div><div class="chip" data-w="4" data-a="pop" style="right:30px;top:130px">🔬 Sains</div><div class="chip" data-w="7" data-a="pop" style="left:60px;top:220px">🧠 Keperibadian</div>
+   <div data-w="9" data-a="rise" style="position:absolute;left:30px;right:30px;bottom:90px;height:26px;border-radius:13px;background:#ffffff30;overflow:hidden"><div class="drain" data-from="9" data-to="11.9" style="height:100%;background:linear-gradient(90deg,#e8322a,#ff8a5a)"></div></div>`},
+ {th:'d',panic:.7,shake:[4],sub:'tak biasa dengan <i>format?</i>',groups:[['Budak@0 ~pandai@1 pun@2 boleh@3','!*gelabah@4'],['kalau@5 tak@6 biasa@7 dengan@8','~format@9 ~soalan@10']],
+  inner:`<div style="position:absolute;inset:0;background:linear-gradient(160deg,#3a2a20,#1a100b)"></div><div class="big" data-w="1" data-a="pop">🧑‍🎓</div><div class="big" data-w="4" data-a="pop" style="position:absolute;font-size:80px;left:300px;top:60px">💦</div>
+   <div data-w="9" data-a="pop" style="position:absolute;left:40px;top:40px;font-size:80px">❓</div><div data-w="10" data-a="pop" style="position:absolute;right:40px;top:150px;font-size:70px">❓</div><div data-w="10" data-a="pop" style="position:absolute;left:70px;bottom:90px;font-size:60px">❓</div>`},
+ {th:'l',flash:1,sub:'',groups:[['Sebab@0 tu,@1 ada@2'],['kelas@3 online@4','*Last@5 *Minute@6','~UKKM@7']],
+  inner:`<div style="position:absolute;inset:0;background:linear-gradient(160deg,#F59A5E,#C9541F)"></div>
+   <div data-w="3" data-a="pop" style="text-align:center;color:#fff"><div style="display:inline-block;background:#fff;color:#2D8CFF;font-weight:800;font-size:26px;border-radius:999px;padding:6px 20px">● ZOOM ONLINE</div>
+   <div style="font-weight:900;font-size:76px;line-height:1;margin-top:14px">LAST<br>MINUTE</div><div style="font-weight:900;font-size:90px;line-height:1;color:#FFE3B3">UKKM</div></div>
+   <div class="spark" data-w="5" data-a="pop" style="left:30px;top:30px;color:#fff">✦</div><div class="spark" data-w="7" data-a="pop" style="right:40px;bottom:80px;color:#fff;font-size:44px">✦</div>`},
+ {th:'l',sub:'',groups:[['*3_malam@0','je!@2'],['Selasa@3 ~17@4','Rabu@6 ~18@7','Khamis@9 ~19@10'],['~November@12','melalui@13 *Zoom@14']],
+  inner:`<div style="position:absolute;inset:0;background:#f4ece2"></div>
+   <div class="mini" data-w="3" data-a="slide" style="top:24px"><div class="num">17</div><div>Selasa<small>17 November</small></div></div>
+   <div class="mini" data-w="6" data-a="slide" style="top:130px"><div class="num">18</div><div>Rabu<small>18 November</small></div></div>
+   <div class="mini" data-w="9" data-a="slide" style="top:236px"><div class="num">19</div><div>Khamis<small>19 November</small></div></div>
+   <div class="chip" data-w="14" data-a="pop" style="right:20px;top:330px;background:#2D8CFF;color:#fff">🎥 Zoom</div>`},
+ {th:'d',sub:'',groups:[['Pukul@0 ~6@1','*Sains@2'],['Pukul@3 ~8@4','*Keperibadian@5'],['Pukul@6 ~9.35@7','*Matematik@10']],
+  inner:`<div style="position:absolute;inset:0;background:#f4ece2"></div>
+   <div class="mini hl" data-w="1" data-hl="2" data-a="slide" style="top:24px"><div class="num" style="background:#3fb37f">🔬</div><div>Sains<small>6.00 – 7.00 pm</small></div><div class="tk" data-w="2" data-a="pop">✓</div></div>
+   <div class="mini hl" data-w="4" data-hl="5" data-a="slide" style="top:130px"><div class="num" style="background:#F0A030">🧠</div><div>Keperibadian<small>8.00 – 9.00 pm</small></div><div class="tk" data-w="5" data-a="pop">✓</div></div>
+   <div class="mini hl" data-w="7" data-hl="10" data-a="slide" style="top:236px"><div class="num" style="background:#8b7cf6">🧮</div><div>Matematik<small>9.35 – 10.35 pm</small></div><div class="tk" data-w="10" data-a="pop">✓</div></div>`},
+ {th:'l',sub:'',groups:[['Cikgu@0 ajar@1','*cara@2 *jawab@3'],['bincang@5 soalan@6','~berpotensi@8','*keluar@9']],
+  inner:`<div style="position:absolute;inset:0;background:linear-gradient(160deg,#ffe2c8,#f6b98c)"></div><div class="big" data-w="0" data-a="pop" style="position:absolute;top:30px;font-size:130px">👩🏻‍🏫</div>
+   <div class="mini" data-w="2" data-a="slide" style="top:200px">✍️ Cara jawab betul<div class="tk" data-w="3" data-a="pop">✓</div></div>
+   <div class="mini" data-w="6" data-a="slide" style="top:290px">🎯 Soalan berpotensi<div class="tk" data-w="9" data-a="pop">✓</div></div>`},
+ {th:'d',sub:'',groups:[['Tak@0 sempat@1 join@2','*live?@3'],['~Rakaman@4 dan@5 ~modul@6','pun@7 *dapat!@8']],
+  inner:`<div style="position:absolute;inset:0;background:linear-gradient(160deg,#2a2a36,#15151c)"></div>
+   <div data-w="4" data-a="pop" style="position:absolute;left:50px;top:70px;width:200px;height:220px;background:#fff;border-radius:26px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ink);font-weight:800;font-size:26px"><div style="font-size:100px">🎥</div>Rakaman</div>
+   <div data-w="6" data-a="pop" style="position:absolute;right:50px;top:70px;width:200px;height:220px;background:#fff;border-radius:26px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ink);font-weight:800;font-size:26px"><div style="font-size:100px">📚</div>Modul</div>`},
+ {th:'l',sub:'',groups:[['Hanya@0','*RM60@1','satu@4 malam@5'],['atau@6','*RM199@7','untuk@12 ~pakej_penuh@13']],
+  inner:`<div style="position:absolute;inset:0;background:linear-gradient(160deg,#fff1e2,#f7c9a0)"></div>
+   <div data-w="1" data-a="pop" style="position:absolute;left:40px;top:60px;background:#fff;border-radius:24px;padding:20px 26px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.15)"><div style="font-weight:900;font-size:64px;color:var(--o3)">RM60</div><div style="font-weight:700;font-size:24px;color:#8a7766">/ malam</div></div>
+   <div data-w="7" data-a="pop" style="position:absolute;right:30px;top:150px;background:var(--o3);border-radius:24px;padding:20px 26px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.2);color:#fff"><div style="font-weight:900;font-size:72px">RM199</div><div style="font-weight:700;font-size:24px">pakej penuh</div></div>`},
+ {th:'d',panic:.5,shake:[1,15],sub:'jangan tunggu <i>esok</i>',groups:[['Tempat@0','!*terhad!@1'],['Tekan@2 ~beg_kuning@3','*sekarang!@5'],['Jangan@6 tunggu@7 masuk@10 dewan@11','baru@13 nak@14 !*menyesal@15']],
+  inner:`<div style="position:absolute;inset:0;background:linear-gradient(160deg,#4a1d10,#1d0b06)"></div>
+   <div class="pulse" data-w="2" data-a="pop" style="width:200px;height:200px;border-radius:50px;background:#FFC814;display:flex;align-items:center;justify-content:center;font-size:120px;box-shadow:0 0 70px rgba(255,200,20,.9)">🛍️</div>
+   <div data-w="3" data-a="pop" style="position:absolute;left:30px;top:24px;font-weight:900;font-size:36px;color:#FFC814">👇 TEKAN SINI</div>`},
+];
+
+const scenes=document.getElementById('scenes'),vid=document.getElementById('vid');
+const S=SPEC.map((sp,i)=>{
+  const tl=TL.scenes[i], next=i<10?TL.scenes[i+1].s:TL.dur; const W=k=>tl.w[k];
+  const el=document.createElement('div');el.className='scene';scenes.appendChild(el);
+  const groups=sp.groups.map((g,gi)=>{
+    const d=document.createElement('div');d.className='grp '+(sp.th=='l'?'lt':'');
+    d.innerHTML=g.map(l=>'<span class="line">'+l.split(' ').map(tok=>{let [w,k]=tok.split('@');let c='w';
+      while('*~!'.includes(w[0])){if(w[0]=='*')c+=' b';if(w[0]=='~')c+=' m';if(w[0]=='!')c+=' red';w=w.slice(1)}
+      return `<span class="${c}" data-t="${W(+k)}" data-a="${/ b| m/.test(c)?'pop':'blur'}">${w.replace(/_/g,' ')}</span>`}).join('')+'</span>').join('');
+    el.appendChild(d);
+    const first=Math.min(...[...d.querySelectorAll('[data-t]')].map(n=>+n.dataset.t));
+    return {d,s:first-0.12};
+  });
+  groups.forEach((g,gi)=>{g.e=gi<groups.length-1?groups[gi+1].s:next;});
+  const v=document.createElement('div');v.className='vs';v.innerHTML=sp.inner+`<div class="sub">${sp.sub}</div>`;vid.appendChild(v);
+  v.querySelectorAll('[data-w]').forEach(n=>n.dataset.t=W(+n.dataset.w));
+  v.querySelectorAll('[data-hl]').forEach(n=>n.dataset.ht=W(+n.dataset.hl));
+  v.querySelectorAll('.drain').forEach(n=>{n.dataset.t0=W(+n.dataset.from);n.dataset.t1=tl.s+ (+n.dataset.to)});
+  const items=[...el.querySelectorAll('[data-t]'),...v.querySelectorAll('[data-t]')].map(n=>({n,t:+n.dataset.t,a:n.dataset.a}));
+  return {sp,s:tl.s,e:next,el,v,groups,items,shakes:(sp.shake||[]).map(W),hls:[...v.querySelectorAll('[data-ht]')],drains:[...v.querySelectorAll('.drain')]};
+});
+// timeline clips
+const tlEl=document.getElementById('tl');const total=TL.dur;
+const cols=['#E8743B','#F09A5F','#D4602A','#F4B07E'];
+S.forEach((s,i)=>{const c=document.createElement('div');c.className='clip';c.style.cssText+=`left:${s.s/total*100}%;width:calc(${(s.e-s.s)/total*100}% - 6px);background:${cols[i%4]}`;tlEl.appendChild(c)});
+[[.04,.35],[.42,.62],[.7,.95]].forEach(p=>{const c=document.createElement('div');c.className='pur';c.style.left=p[0]*100+'%';c.style.width=(p[1]-p[0])*100+'%';tlEl.appendChild(c)});
+const wv=document.createElement('div');wv.className='wave';for(let i=0;i<60;i++){const b=document.createElement('i');b.style.height=(20+Math.abs(Math.sin(i*1.7))*80)+'%';wv.appendChild(b)}tlEl.appendChild(wv);
+const ph=document.createElement('div');ph.className='ph';tlEl.appendChild(ph);
+const stage=document.getElementById('stage'),bgl=document.getElementById('bgl'),panic=document.getElementById('panic'),flash=document.getElementById('flash'),phone=document.getElementById('phone'),tc=document.getElementById('tc');
+
+function anim(n,t,ti,a){
+  const p=clamp((t-ti)/(a=='blur'?0.28:0.4));let tr='',f='';
+  if(a=='blur'){tr=`translateY(${(1-eo(p))*26}px)`;f=p<1?`blur(${(1-p)*14}px)`:''}
+  else if(a=='pop'){tr=`scale(${0.3+0.7*back(p)})`;f=p<1?`blur(${(1-p)*8}px)`:''}
+  else if(a=='stamp'){const k=clamp((t-ti)/0.22);tr=`rotate(-12deg) scale(${2.4-1.4*eo(k)})`;n.style.opacity=k;n.style.transform=tr;return}
+  else if(a=='rise'){tr=`translateY(${(1-eo(p))*80}px)`}
+  else if(a=='slide'){tr=`translateX(${(1-back(p))*-300}px)`}
+  if(n.classList.contains('pulse')&&p>=1)tr=`scale(${1+0.06*Math.sin((t-ti)*8)})`;
+  if(n.classList.contains('tick')&&p>=1)tr=`rotate(${Math.sin(t*30)*12}deg)`;
+  n.style.opacity=eo(p);n.style.transform=tr;n.style.filter=f;
+}
+window.seek=function(t){
+  let light=0,pan=0,shake=0,fl=0;
+  S.forEach((s,i)=>{
+    const a=clamp((t-s.s+0.15)/0.3), b=clamp((s.e-t)/0.15);
+    const vis=(i==0?1:eo(a))*(i==S.length-1?1:b);
+    s.el.style.opacity=vis; s.v.style.opacity=t>=s.s-0.1&&t<s.e?1:0;
+    if(vis<=0)return;
+    if(s.sp.th=='l')light=Math.max(light,vis);
+    if(s.sp.panic)pan=Math.max(pan,vis*s.sp.panic*(0.75+0.25*Math.sin(t*9)));
+    s.shakes.forEach(st=>{const d=t-st;if(d>=0&&d<0.35)shake=Math.max(shake,(1-d/0.35))});
+    if(s.sp.flash){const d=t-s.s;if(d>=-0.05&&d<0.25)fl=Math.max(fl,1-clamp(d/0.25))}
+    s.groups.forEach(g=>{const ga=clamp((t-g.s)/0.15),gb=clamp((g.e-t)/0.15);g.d.style.opacity=ga*gb;g.d.style.transform=`translateY(${(1-gb)*-30}px)`});
+    s.items.forEach(({n,t:ti,a})=>anim(n,t,ti,a));
+    s.hls.forEach(n=>{const on=t>=+n.dataset.ht&&t<s.e;n.style.boxShadow=on?'0 0 0 4px #F08A4B':'none'});
+    s.drains.forEach(n=>{n.style.width=(100*(1-clamp((t-n.dataset.t0)/(n.dataset.t1-n.dataset.t0))))+'%'});
+  });
+  bgl.style.opacity=light;stage.classList.toggle('lt-on',light>0.5);
+  panic.style.opacity=0.6*pan*(1-light);flash.style.opacity=fl*0.85;
+  const sx=shake?Math.sin(t*90)*18*shake:0, sy=shake?Math.cos(t*77)*12*shake:0;
+  stage.style.transform=`translate(${sx}px,${sy}px)`;
+  phone.style.transform=`translateY(${Math.sin(t*1.3)*8}px) rotate(${Math.sin(t*0.9)*0.8}deg)`;
+  ph.style.left=(t/total*100)+'%';
+  const ss=Math.floor(t);tc.textContent=`00:${String(Math.floor(ss/60)).padStart(2,'0')}:${String(ss%60).padStart(2,'0')}`.slice(3);
+};
+seek(0);
+</script></body></html>
