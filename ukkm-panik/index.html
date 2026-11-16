@@ -63,8 +63,29 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000;font-family
 .mini{position:absolute;left:30px;right:30px;display:flex;align-items:center;gap:18px;background:#fff;color:var(--ink);border-radius:20px;padding:14px 20px;font-weight:800;font-size:28px}
 .mini small{display:block;font-weight:600;font-size:20px;color:#8a7766}
 .num{width:64px;height:64px;border-radius:16px;background:var(--o2);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:30px;flex:none}
+.mini.sel{box-shadow:0 0 0 5px #F08A4B,0 10px 24px rgba(240,138,75,.4)}
 .tk{margin-left:auto;width:44px;height:44px;border-radius:50%;background:#22b35e;color:#fff;display:flex;align-items:center;justify-content:center;font-size:26px}
 .big{font-size:170px;line-height:1}
+.full{position:absolute;inset:0;z-index:4;pointer-events:none}
+.full .vs{background:#fff;color:#161823;font-family:P}
+.isl{z-index:9}
+.app{position:absolute;inset:0;background:#fff;color:#161823;padding-top:76px}
+.abar{display:flex;align-items:center;gap:14px;padding:6px 24px 14px;font-weight:700;font-size:24px}
+.srch{flex:1;height:54px;border-radius:12px;background:#f1f1f2;display:flex;align-items:center;gap:10px;padding:0 16px;font-weight:600;font-size:24px;color:#161823;overflow:hidden;white-space:nowrap}
+.mall{margin:0 18px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#2a1d14,#4a3422);color:#f5d29a;display:flex;justify-content:space-between;padding:12px 18px;font-weight:700;font-size:20px}
+.shop{margin:0 18px;border:2px solid #eee;border-top:0;border-radius:0 0 20px 20px;padding:18px;display:flex;gap:16px;align-items:center}
+.shop img{width:84px;height:84px;object-fit:contain;border-radius:50%;background:#0f1a4a;border:2px solid #eee}
+.sbtn{border:2px solid #ddd;border-radius:999px;padding:8px 18px;font-weight:700;font-size:20px;text-align:center;background:#fff}
+.pc{display:flex;gap:16px;margin:20px 18px;align-items:flex-start}
+.pc img{width:170px;height:170px;object-fit:cover;object-position:top;border-radius:12px}
+.buy{background:#FE2C55;color:#fff;border-radius:12px;font-weight:800;font-size:26px;text-align:center;padding:16px}
+.chathd{display:flex;align-items:center;gap:14px;padding:6px 22px 16px;border-bottom:2px solid #f0f0f0;font-weight:800;font-size:26px}
+.chathd img{width:62px;height:62px;border-radius:50%;object-fit:contain;background:#0f1a4a}
+.bub{position:absolute;max-width:380px;padding:16px 20px;border-radius:24px;font-weight:600;font-size:23px;line-height:1.35}
+.bub.me{right:20px;background:#FE2C55;color:#fff;border-bottom-right-radius:6px}
+.bub.ad{left:20px;background:#f1f1f2;color:#161823;border-bottom-left-radius:6px}
+.inp{position:absolute;left:20px;right:20px;bottom:30px;height:66px;border-radius:999px;background:#f1f1f2;display:flex;align-items:center;padding:0 24px;color:#999;font-weight:600;font-size:22px}
+.tap{position:absolute;width:70px;height:70px;margin:-35px 0 0 -35px;border-radius:50%;background:rgba(255,255,255,.85);border:4px solid rgba(0,0,0,.25);z-index:8;opacity:0}
 .spark{position:absolute;color:var(--o2);font-size:64px;font-weight:900}
 </style></head>
 <body><div id="stage">
@@ -76,7 +97,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000;font-family
   <div class="vid" id="vid"></div>
   <div class="tc" id="tc">00:00</div>
   <div class="tl" id="tl"></div>
-  <div class="tb"><div><b>✕</b>Potong</div><div><b>T</b>Teks</div><div><b>♪</b>Audio</div><div class="ai"><b>✳</b>AI</div></div>
+  <div class="tb"><div><b>✕</b>Potong</div><div><b>T</b>Teks</div><div><b>♪</b>Audio</div><div class="ai"><b>✳</b>AI</div></div><div class="full" id="full"></div>
 </div></div>
 <div class="name" id="name">Kelas Online UKKM</div>
 <div id="flash" style="position:absolute;inset:0;background:#fff;opacity:0"></div>
@@ -104,27 +125,29 @@ const SPEC=[
  {th:'d',panic:.7,shake:[4],sub:'tak biasa dengan <i>format?</i>',groups:[['Budak@0 ~pandai@1 pun@2 boleh@3','!*gelabah@4'],['kalau@5 tak@6 biasa@7 dengan@8','~format@9 ~soalan@10']],
   inner:`<div style="position:absolute;inset:0;background:linear-gradient(160deg,#3a2a20,#1a100b)"></div><div class="big" data-w="1" data-a="pop">🧑‍🎓</div><div class="big" data-w="4" data-a="pop" style="position:absolute;font-size:80px;left:300px;top:60px">💦</div>
    <div data-w="9" data-a="pop" style="position:absolute;left:40px;top:40px;font-size:80px">❓</div><div data-w="10" data-a="pop" style="position:absolute;right:40px;top:150px;font-size:70px">❓</div><div data-w="10" data-a="pop" style="position:absolute;left:70px;bottom:90px;font-size:60px">❓</div>`},
- {th:'l',flash:1,sub:'',groups:[['Sebab@0 tu,@1 ada@2'],['kelas@3 online@4','*Last@5 *Minute@6','~UKKM@7']],
-  inner:`<div style="position:absolute;inset:0;background:linear-gradient(160deg,#F59A5E,#C9541F)"></div>
-   <div data-w="4" data-a="pop" style="text-align:center;color:#fff"><div style="display:inline-block;background:#fff;border-radius:999px;padding:8px 22px 8px 10px">${ZOOMW(46)}</div>
-   <div style="font-weight:900;font-size:76px;line-height:1;margin-top:14px">LAST<br>MINUTE</div><div style="font-weight:900;font-size:90px;line-height:1;color:#FFE3B3">UKKM</div></div>
-   <div class="spark" data-w="5" data-a="pop" style="left:30px;top:30px;color:#fff">✦</div><div class="spark" data-w="7" data-a="pop" style="right:40px;bottom:80px;color:#fff;font-size:44px">✦</div>`},
- {th:'l',sub:'',groups:[['*3_malam@0','je!@2'],['~17_–_19@3','*November@8'],['melalui@9','*Zoom@10']],
+ {th:'l',flash:1,sub:'',groups:[['Sebab@0 tu,@1'],['~FlyHigh@2 ~Education@4','buka@5 kelas@6 online@7'],['*Last_Minute@8','*UKKM!@10']],
+  inner:`<div style="position:absolute;inset:0;background:linear-gradient(160deg,#1d3a8a,#0b1840)"></div>
+   <div data-w="2" data-a="pop" data-sfx="boom" style="position:absolute;left:0;right:0;top:70px;display:flex;justify-content:center">${FLY(150)}</div>
+   <div data-w="7" data-a="pop" style="position:absolute;left:0;right:0;top:330px;display:flex;justify-content:center"><div style="background:#fff;border-radius:999px;padding:6px 20px 6px 8px">${ZOOMW(48)}</div></div>
+   <img data-w="8" data-a="rise" data-sfx="boom" src="poster_clean.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top">
+   <div class="spark" data-w="9" data-a="pop" style="right:20px;top:14px;color:#FFC814">✦</div>`},
+ {th:'l',sub:'',groups:[['Tarikh@0 boleh@1','*pilih!@2'],['~Satu_malam@3 je:@5','Selasa@6 ~17,@7 Rabu@9 ~18,@10','atau@12 Khamis@13 ~19@14'],['~November@16','melalui@17 *Zoom@18']],
   inner:`<div style="position:absolute;inset:0;background:#f4ece2"></div>
-   <div data-w="0" data-a="pop" style="position:absolute;left:40px;right:40px;top:28px;height:250px;background:#fff;border-radius:28px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.12);text-align:center">
-     <div style="background:var(--o3);color:#fff;font-weight:800;font-size:28px;padding:10px 0">📅 NOVEMBER 2026</div>
-     <div style="font-weight:900;font-size:96px;line-height:1.1;color:var(--ink)">17–19</div>
-     <div style="font-weight:700;font-size:26px;color:#8a7766">Selasa – Khamis • 3 malam</div></div>
-   <div data-w="10" data-a="pop" style="position:absolute;left:0;right:0;top:300px;display:flex;justify-content:center"><div style="background:#fff;border-radius:999px;padding:10px 30px 10px 12px;box-shadow:0 10px 30px rgba(11,92,255,.3)">${ZOOMW(70)}</div></div>`},
+   <div style="position:absolute;left:30px;right:30px;top:20px;text-align:center;font-weight:800;font-size:26px;color:var(--o3)" data-w="0" data-a="pop">📅 PILIH 1 TARIKH • NOV 2026</div>
+   <div class="mini dt" data-w="6" data-a="slide" style="top:68px"><div class="num">17</div><div>Selasa<small>17 November</small></div><div class="tk" data-w="7" data-a="pop" style="background:#ccc">○</div></div>
+   <div class="mini dt sel" data-w="9" data-a="slide" style="top:160px"><div class="num">18</div><div>Rabu<small>18 November</small></div><div class="tk" data-w="10" data-a="pop">✓</div></div>
+   <div class="mini dt" data-w="13" data-a="slide" style="top:252px"><div class="num">19</div><div>Khamis<small>19 November</small></div><div class="tk" data-w="14" data-a="pop" style="background:#ccc">○</div></div>
+   <div data-w="18" data-a="pop" style="position:absolute;right:20px;top:330px"><div style="background:#fff;border-radius:999px;padding:8px 24px 8px 10px;box-shadow:0 10px 30px rgba(11,92,255,.3)">${ZOOMW(56)}</div></div>`},
  {th:'d',sub:'',groups:[['Pukul@0 ~6@1','*Sains@2'],['Pukul@3 ~8@4','*Keperibadian@5'],['Pukul@6 ~9.35@7','*Matematik@10']],
   inner:`<div style="position:absolute;inset:0;background:#f4ece2"></div>
    <div class="mini hl" data-w="1" data-hl="2" data-a="slide" style="top:24px"><div class="num" style="background:#3fb37f">🔬</div><div>Sains<small>6.00 – 7.00 pm</small></div><div class="tk" data-w="2" data-a="pop">✓</div></div>
    <div class="mini hl" data-w="4" data-hl="5" data-a="slide" style="top:130px"><div class="num" style="background:#F0A030">🧠</div><div>Keperibadian<small>8.00 – 9.00 pm</small></div><div class="tk" data-w="5" data-a="pop">✓</div></div>
    <div class="mini hl" data-w="7" data-hl="10" data-a="slide" style="top:236px"><div class="num" style="background:#8b7cf6">🧮</div><div>Matematik<small>9.35 – 10.35 pm</small></div><div class="tk" data-w="10" data-a="pop">✓</div></div>`},
- {th:'l',sub:'',groups:[['Cikgu@0 ajar@1','*cara@2 *jawab@3'],['bincang@5 soalan@6','~berpotensi@8','*keluar@9']],
-  inner:`<div style="position:absolute;inset:0;background:linear-gradient(160deg,#ffe2c8,#f6b98c)"></div><div class="big" data-w="0" data-a="pop" style="position:absolute;top:30px;font-size:130px">👩🏻‍🏫</div>
-   <div class="mini" data-w="2" data-a="slide" style="top:200px">✍️ Cara jawab betul<div class="tk" data-w="3" data-a="pop">✓</div></div>
-   <div class="mini" data-w="6" data-a="slide" style="top:290px">🎯 Soalan berpotensi<div class="tk" data-w="9" data-a="pop">✓</div></div>`},
+ {th:'l',sub:'',groups:[['Cikgu@0','*berpengalaman@1'],['ajar@2 ~teknik@3 ~menjawab@4'],['bincang@5 set@6 soalan@7','~analisis@8 *UKKM@9','~terkini@10'],['dan@11 ada@12 sesi@13','*soal_jawab@14']],
+  inner:`<div style="position:absolute;inset:0;background:linear-gradient(160deg,#ffe2c8,#f6b98c)"></div><div class="big" data-w="0" data-a="pop" style="position:absolute;top:20px;font-size:110px">👩🏻‍🏫</div>
+   <div class="mini" data-w="2" data-a="slide" style="font-size:23px;white-space:nowrap;top:160px">✍️ Teknik menjawab<div class="tk" data-w="4" data-a="pop">✓</div></div>
+   <div class="mini" data-w="6" data-a="slide" style="font-size:23px;white-space:nowrap;top:246px">📊 Soalan UKKM terkini<div class="tk" data-w="10" data-a="pop">✓</div></div>
+   <div class="mini" data-w="13" data-a="slide" style="font-size:23px;white-space:nowrap;top:332px">🙋 Sesi Q&amp;A<div class="tk" data-w="15" data-a="pop">✓</div></div>`},
  {th:'d',sub:'',groups:[['Tak@0 sempat@1 join@2','*live?@3'],['~Rakaman@4 dan@5 ~modul@6','pun@7 *dapat!@8']],
   inner:`<div style="position:absolute;inset:0;background:linear-gradient(160deg,#2a2a36,#15151c)"></div>
    <div data-w="4" data-a="pop" style="position:absolute;left:50px;top:70px;width:200px;height:220px;background:#fff;border-radius:26px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ink);font-weight:800;font-size:26px"><div style="font-size:100px">🎥</div>Rakaman</div>
@@ -133,12 +156,43 @@ const SPEC=[
   inner:`<div style="position:absolute;inset:0;background:linear-gradient(160deg,#fff1e2,#f7c9a0)"></div>
    <div data-w="1" data-a="pop" style="position:absolute;left:40px;top:60px;background:#fff;border-radius:24px;padding:20px 26px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.15)"><div style="font-weight:900;font-size:64px;color:var(--o3)">RM60</div><div style="font-weight:700;font-size:24px;color:#8a7766">/ malam</div></div>
    <div data-w="7" data-a="pop" style="position:absolute;right:30px;top:150px;background:var(--o3);border-radius:24px;padding:20px 26px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.2);color:#fff"><div style="font-weight:900;font-size:72px">RM199</div><div style="font-weight:700;font-size:24px">pakej penuh</div></div>`},
- {th:'l',sub:'',groups:[['Cara@0 join','*senang_je!@2'],['Tekan@4 ~beg_kuning@5','buat@7 ~bayaran@8'],['lepas@9 tu@10 *PM_admin@11','~Fly@13 ~High@14'],['untuk@15 dapatkan@16','*link_kelas@17']],
-  inner:`<div style="position:absolute;inset:0;background:#f4ece2"></div>
-   <div class="mini hl" data-w="4" data-hl="4" data-a="slide" style="top:24px"><div class="num" style="background:#FFC814">🛍️</div><div>Tekan beg kuning</div></div>
-   <div class="mini hl" data-w="7" data-hl="7" data-a="slide" style="top:124px"><div class="num">💳</div><div>Buat bayaran</div></div>
-   <div class="mini hl" data-w="11" data-hl="11" data-a="slide" style="top:224px;background:#0f1a4a;color:#fff"><div class="num" style="background:#FFC814">💬</div><div>PM admin<small style="color:#FFC814">dapat link kelas</small></div></div>
-   <div data-w="13" data-a="pop" style="position:absolute;left:0;right:0;top:312px;display:flex;justify-content:center">${FLY(64)}</div>`},
+ {th:'l',full:1,sub:'',groups:[['Cara@0 beli','*senang_je!@2'],['Tekan@4 ~beg_kuning@5'],['dan@7 buat@8','*bayaran@9']],
+  inner:`<img src="poster_clean.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top">
+   <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1) 40%,rgba(0,0,0,.75))"></div>
+   <div data-w="4" data-a="pop" style="position:absolute;left:20px;bottom:150px;display:flex;align-items:center;gap:12px;background:rgba(0,0,0,.55);border-radius:14px;padding:10px 16px 10px 10px;color:#fff;font-weight:800;font-size:20px"><div style="width:48px;height:48px;border-radius:12px;background:#FFC814;display:flex;align-items:center;justify-content:center;font-size:28px">🛍️</div>LAST MINUTE UKKM FLYHIGH</div>
+   <div class="tap" data-w="5" data-a="tap" data-sfx="tap" style="left:60px;top:780px"></div>
+   <div data-w="7" data-a="rise" style="position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:30px 30px 0 0;padding:22px 22px 40px">
+     <div style="display:flex;gap:16px;align-items:center"><img src="poster_clean.jpg" style="width:120px;height:120px;object-fit:cover;object-position:top;border-radius:12px"><div><div style="font-weight:700;font-size:21px">LAST MINUTE UKKM FLYHIGH 2026</div><div style="color:#FE2C55;font-weight:800;font-size:32px">RM60.00</div></div></div>
+     <div class="buy" style="margin-top:20px">Buy now</div></div>
+   <div class="tap" data-w="9" data-a="tap" data-sfx="cash" style="left:255px;top:880px"></div>`},
+ {th:'l',full:1,sub:'',groups:[['Lepas@0 tu,@1 untuk@2 dapatkan@3','*link_kelas@4'],['pergi@6 ke@7 kedai','~FlyHigh_Education@9','dekat@12 *TikTok@13']],
+  inner:`<div class="app"><div class="abar"><span style="font-size:30px">‹</span><div class="srch">🔍 <span data-w="8" data-a="type">FlyHigh Education</span></div></div>
+   <div style="position:absolute;left:0;right:0;top:300px;text-align:center;color:#bbb;font-weight:800;font-size:30px"><div style="font-size:110px">🔍</div>Cari kedai di TikTok</div><div data-w="11" data-a="rise" data-sfx="whoosh" style="position:relative;background:#fff;padding-bottom:600px"><div class="mall"><span>🛍 Mall</span><span>100% Authentic</span></div>
+   <div class="shop"><img src="flyhigh.png"><div style="flex:1"><div style="font-weight:800;font-size:26px">FlyHigh Education ›</div><div style="font-weight:600;font-size:20px;color:#666"><span style="color:#1aa260">★ 4.5</span> · 54.1K sold</div></div>
+     <div style="display:flex;flex-direction:column;gap:8px"><div class="sbtn">Following</div><div class="sbtn MSG">Message</div></div></div>
+   <div class="pc"><img src="poster_clean.jpg"><div><div style="font-weight:700;font-size:22px;line-height:1.3">LAST MINUTE UKKM FLYHIGH 2026</div><div style="color:#FE2C55;font-weight:800;font-size:34px;margin-top:10px">RM60.00</div><div style="color:#888;font-size:18px;font-weight:600">Kelas Zoom • 123 sold</div></div></div></div></div>
+   <div class="tap" data-w="9" data-a="tap" data-sfx="tap" style="left:250px;top:115px"></div>`},
+ {th:'l',full:1,sub:'',groups:[['Tekan@0 butang','*Message@2'],['untuk@3 ~chat@4','dengan@5 *admin@6']],
+  inner:`<div class="app"><div class="abar"><span style="font-size:30px">‹</span><div class="srch">🔍 FlyHigh Education</div></div><div class="mall"><span>🛍 Mall</span><span>100% Authentic</span></div>
+   <div class="shop"><img src="flyhigh.png"><div style="flex:1"><div style="font-weight:800;font-size:26px">FlyHigh Education ›</div><div style="font-weight:600;font-size:20px;color:#666"><span style="color:#1aa260">★ 4.5</span> · 54.1K sold</div></div>
+     <div style="display:flex;flex-direction:column;gap:8px"><div class="sbtn">Following</div><div class="sbtn MSG">Message</div></div></div>
+   <div class="pc"><img src="poster_clean.jpg"><div><div style="font-weight:700;font-size:22px;line-height:1.3">LAST MINUTE UKKM FLYHIGH 2026</div><div style="color:#FE2C55;font-weight:800;font-size:34px;margin-top:10px">RM60.00</div><div style="color:#888;font-size:18px;font-weight:600">Kelas Zoom • 123 sold</div></div></div></div>
+   <div class="tap" data-w="2" data-a="tap" data-sfx="tap" style="left:420px;top:316px"></div>
+   <div data-w="4" data-a="slide" data-sfx="whoosh" style="position:absolute;inset:0"><div class="app"><div class="chathd"><span style="font-size:30px">‹</span><img src="flyhigh.png"><div>FlyHigh Education<div style="font-weight:600;font-size:17px;color:#1aa260">● Admin online</div></div></div><div class="inp">Hantar mesej...</div><div class="bub ad" data-w="6" data-a="pop" data-sfx="ding" style="top:150px">Hai! Ada apa boleh kami bantu? 😊</div></div></div>`},
+ {th:'l',full:1,sub:'',groups:[['Hantar@0 nombor','*Order_ID@2'],['boleh@4 ~salin@5 dekat','~halaman_pesanan@7']],
+  inner:`<div class="app"><div class="chathd"><span style="font-size:30px">‹</span><img src="flyhigh.png"><div>FlyHigh Education<div style="font-weight:600;font-size:17px;color:#1aa260">● Admin online</div></div></div><div class="inp">Hantar mesej...</div><div class="bub ad" style="top:150px">Hai! Ada apa boleh kami bantu? 😊</div></div>
+   <div class="bub me" data-w="2" data-a="pop" data-sfx="ding" style="top:250px">Salam admin, saya dah bayar 😊<br><b>Order ID: 5781 2398 4410 2236</b><div style="font-size:16px;opacity:.8">(contoh)</div></div>
+   <div data-w="4" data-a="rise" style="position:absolute;left:24px;right:24px;top:470px;background:#fff;border-radius:22px;box-shadow:0 12px 40px rgba(0,0,0,.25);padding:20px">
+     <div style="font-weight:800;font-size:22px;color:#888">📦 Pesanan saya › Butiran</div>
+     <div style="display:flex;align-items:center;justify-content:space-between;margin-top:12px"><div><div style="font-weight:600;font-size:19px;color:#888">Order ID</div><div style="font-weight:800;font-size:24px">5781 2398 4410 2236</div></div><div class="sbtn" style="background:#FE2C55;color:#fff;border-color:#FE2C55">Salin</div></div></div>
+   <div class="tap" data-w="5" data-a="tap" data-sfx="tap" style="left:420px;top:580px"></div>`},
+ {th:'l',full:1,sub:'',groups:[['Nanti@0 ~admin@1','akan@2 *balas@3'],['bagi@5 ~link_kelas@6','*Zoom@8'],['*Senang_je!@9']],
+  inner:`<div class="app"><div class="chathd"><span style="font-size:30px">‹</span><img src="flyhigh.png"><div>FlyHigh Education<div style="font-weight:600;font-size:17px;color:#1aa260">● Admin online</div></div></div><div class="inp">Hantar mesej...</div><div class="bub ad" style="top:150px">Hai! Ada apa boleh kami bantu? 😊</div></div>
+   <div class="bub me" style="top:250px">Salam admin, saya dah bayar 😊<br><b>Order ID: 5781 2398 4410 2236</b><div style="font-size:16px;opacity:.8">(contoh)</div></div>
+   <div class="bub ad" data-w="0" data-until="3" data-a="pop" style="top:450px;font-size:36px;padding:8px 22px">•••</div>
+   <div class="bub ad" data-w="3" data-a="pop" data-sfx="ding" style="top:450px">Terima kasih! Ini link kelas Zoom 👇</div>
+   <div data-w="6" data-a="pop" data-sfx="ding" style="position:absolute;left:20px;top:540px;width:400px;background:#f1f1f2;border-radius:22px;padding:16px;display:flex;gap:14px;align-items:center">${ZOOM(64)}<div><div style="font-weight:800;font-size:22px">Kelas Last Minute UKKM</div><div style="font-weight:600;font-size:19px;color:#0B5CFF">zoom.us/j/•••• •••• ••••</div></div></div>
+   <div data-w="9" data-a="pop" data-sfx="boom" style="position:absolute;left:0;right:0;top:700px;text-align:center"><span style="display:inline-block;background:#22b35e;color:#fff;font-weight:900;font-size:40px;border-radius:999px;padding:14px 36px">✓ Siap!</span></div>`},
  {th:'d',panic:.5,shake:[1,11],sub:'jangan tunggu <i>esok</i>',groups:[['Tempat@0','!*terhad!@1'],['Jangan@2 tunggu@3 anak@4','masuk@6 dewan@7 exam...@8'],['baru@9 nak','!*menyesal@11']],
   inner:`<div style="position:absolute;inset:0;background:linear-gradient(160deg,#4a1d10,#1d0b06)"></div>
    <div data-w="0" data-a="pop" style="position:absolute;left:0;right:0;top:16px;display:flex;justify-content:center">${FLY(82)}</div>
@@ -159,7 +213,7 @@ const S=SPEC.map((sp,i)=>{
     return {d,s:first-0.12};
   });
   groups.forEach((g,gi)=>{g.e=gi<groups.length-1?groups[gi+1].s:next;});
-  const v=document.createElement('div');v.className='vs';v.innerHTML=sp.inner+`<div class="sub">${sp.sub}</div>`;vid.appendChild(v);
+  const v=document.createElement('div');v.className='vs';v.innerHTML=sp.inner+(sp.sub?`<div class="sub">${sp.sub}</div>`:'');(sp.full?document.getElementById('full'):vid).appendChild(v);v.querySelectorAll('[data-until]').forEach(n=>n.dataset.u=W(+n.dataset.until));
   v.querySelectorAll('[data-w]').forEach(n=>n.dataset.t=W(+n.dataset.w));
   v.querySelectorAll('[data-hl]').forEach(n=>n.dataset.ht=W(+n.dataset.hl));
   v.querySelectorAll('.drain').forEach(n=>{n.dataset.t0=W(+n.dataset.from);n.dataset.t1=tl.s+ (+n.dataset.to)});
@@ -176,6 +230,10 @@ const ph=document.createElement('div');ph.className='ph';tlEl.appendChild(ph);
 const stage=document.getElementById('stage'),bgl=document.getElementById('bgl'),panic=document.getElementById('panic'),flash=document.getElementById('flash'),phone=document.getElementById('phone'),tc=document.getElementById('tc');
 
 function anim(n,t,ti,a){
+  if(a=='tap'){const d=t-ti;const on=d>-0.35&&d<0.55;const k=clamp(d/0.5);n.style.opacity=on?(d<0?clamp((d+0.35)/0.2):1-clamp((d-0.35)/0.2)):0;
+    n.style.transform=`scale(${d<0?1.15:1-0.18*Math.sin(Math.PI*clamp(d/0.18))})`;n.style.boxShadow=d>=0?`0 0 0 ${k*46}px rgba(255,255,255,${0.6*(1-k)})`:'none';return}
+  if(a=='type'){const p=clamp((t-ti)/0.7);n.style.opacity=t>=ti?1:0;n.style.clipPath=`inset(0 ${100-p*100}% 0 0)`;return}
+  if(n.dataset.u&&t>=+n.dataset.u){n.style.opacity=0;return}
   const p=clamp((t-ti)/(a=='blur'?0.28:0.4));let tr='',f='';
   if(a=='blur'){tr=`translateY(${(1-eo(p))*26}px)`;f=p<1?`blur(${(1-p)*14}px)`:''}
   else if(a=='pop'){tr=`scale(${0.3+0.7*back(p)})`;f=p<1?`blur(${(1-p)*8}px)`:''}
@@ -206,7 +264,8 @@ window.seek=function(t){
   panic.style.opacity=0.6*pan*(1-light);flash.style.opacity=fl*0.85;
   const sx=shake?Math.sin(t*90)*18*shake:0, sy=shake?Math.cos(t*77)*12*shake:0;
   stage.style.transform=`translate(${sx}px,${sy}px)`;
-  phone.style.transform=`translateY(${Math.sin(t*1.3)*8}px) rotate(${Math.sin(t*0.9)*0.8}deg)`;
+  let fz=0;S.forEach(s=>{if(s.sp.full){fz=Math.max(fz,Math.min(clamp((t-s.s+0.3)/0.4),clamp((s.e-t+0.0)/0.4)))}});fz=eo(fz);
+  phone.style.transformOrigin='50% 0';phone.style.transform=`translateY(${Math.sin(t*1.3)*8-70*fz}px) scale(${1+0.24*fz}) rotate(${Math.sin(t*0.9)*0.8*(1-fz)}deg)`;document.getElementById('name').style.opacity=1-fz;
   ph.style.left=(t/total*100)+'%';
   const ss=Math.floor(t);tc.textContent=`00:${String(Math.floor(ss/60)).padStart(2,'0')}:${String(ss%60).padStart(2,'0')}`.slice(3);
 };
