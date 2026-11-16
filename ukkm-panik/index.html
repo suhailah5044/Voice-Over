@@ -91,7 +91,7 @@ const back=x=>{const c=1.9,c3=c+1;return 1+c3*Math.pow(x-1,3)+c*Math.pow(x-1,2)}
 // inner: html for phone video area; elements with data-w="idx" animate in at that word.
 const ZOOM=(px)=>`<div style="width:${px}px;height:${px}px;border-radius:${px*.26}px;background:linear-gradient(180deg,#4A8CFF,#0B5CFF);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(11,92,255,.45)"><svg width="${px*.62}" height="${px*.4}" viewBox="0 0 62 40"><rect x="0" y="2" width="42" height="36" rx="9" fill="#fff"/><path d="M45 14 L62 4 V36 L45 26 Z" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg></div>`;
 const ZOOMW=(px)=>`<div style="display:flex;align-items:center;gap:${px*.18}px">${ZOOM(px)}<span style="font-weight:900;font-size:${px*.62}px;color:#0B5CFF;letter-spacing:-1px">zoom</span></div>`;
-const FLY=(px)=>`<div style="display:flex;align-items:center;gap:${px*.16}px"><div style="width:${px}px;height:${px}px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#2b3f8f,#0f1a4a);border:${px*.05}px solid #FFC814;display:flex;align-items:center;justify-content:center;box-shadow:0 0 ${px*.4}px rgba(255,200,20,.6)"><svg width="${px*.68}" height="${px*.5}" viewBox="0 0 68 50"><path d="M4 30 C20 28 30 18 40 4 C40 18 46 24 64 22 C50 30 40 30 34 46 C30 36 20 32 4 30 Z" fill="#FFC814"/><path d="M14 31 C24 30 31 25 37 15" stroke="#0f1a4a" stroke-width="3" fill="none"/></svg></div><div style="line-height:.95;text-align:left"><div style="font-weight:900;font-size:${px*.46}px;color:#FFC814;letter-spacing:1px">FLYHIGH</div><div style="font-weight:700;font-size:${px*.2}px;color:#fff;letter-spacing:2px">LAST MINUTE UKKM</div></div></div>`;
+const FLY=(px)=>`<img src="flyhigh.png" style="height:${px*1.5}px;border-radius:${px*.16}px;box-shadow:0 0 ${px*.5}px rgba(255,200,20,.55),0 8px 24px rgba(0,0,0,.4);display:block">`;
 const SPEC=[
  {th:'d',panic:1,shake:[2,9],sub:'anak dah <i>ready?</i>',groups:[['Ibu@0 ayah...@1'],['*UKKM@2','dah@3 dekat@4 ~sangat!@5'],['Anak@6 betul-betul@7 dah@8','*ready@9 ~ke?@10']],
   inner:`<div style="position:absolute;inset:0;background:linear-gradient(160deg,#5a2a1a,#1d0f0a)"></div><div class="big" data-w="0" data-a="pop">😰</div><div class="big tick" data-w="2" data-a="pop" style="position:absolute;right:40px;top:30px;font-size:90px">⏰</div><div class="chip" data-w="2" data-a="pop" style="left:28px;top:30px;background:#e8322a;color:#fff">UKKM 2026</div>`},
@@ -138,11 +138,11 @@ const SPEC=[
    <div class="mini hl" data-w="4" data-hl="4" data-a="slide" style="top:24px"><div class="num" style="background:#FFC814">🛍️</div><div>Tekan beg kuning</div></div>
    <div class="mini hl" data-w="7" data-hl="7" data-a="slide" style="top:124px"><div class="num">💳</div><div>Buat bayaran</div></div>
    <div class="mini hl" data-w="11" data-hl="11" data-a="slide" style="top:224px;background:#0f1a4a;color:#fff"><div class="num" style="background:#FFC814">💬</div><div>PM admin<small style="color:#FFC814">dapat link kelas</small></div></div>
-   <div data-w="13" data-a="pop" style="position:absolute;left:0;right:0;top:322px;display:flex;justify-content:center"><div style="background:#0f1a4a;border-radius:999px;padding:8px 26px 8px 8px">${FLY(70)}</div></div>`},
+   <div data-w="13" data-a="pop" style="position:absolute;left:0;right:0;top:312px;display:flex;justify-content:center">${FLY(64)}</div>`},
  {th:'d',panic:.5,shake:[1,11],sub:'jangan tunggu <i>esok</i>',groups:[['Tempat@0','!*terhad!@1'],['Jangan@2 tunggu@3 anak@4','masuk@6 dewan@7 exam...@8'],['baru@9 nak','!*menyesal@11']],
   inner:`<div style="position:absolute;inset:0;background:linear-gradient(160deg,#4a1d10,#1d0b06)"></div>
-   <div data-w="0" data-a="pop" style="position:absolute;left:0;right:0;top:22px;display:flex;justify-content:center">${FLY(64)}</div>
-   <div class="pulse" data-w="2" data-a="pop" style="width:170px;height:170px;border-radius:44px;background:#FFC814;display:flex;align-items:center;justify-content:center;font-size:100px;box-shadow:0 0 70px rgba(255,200,20,.9);margin-top:40px">🛍️</div>`},
+   <div data-w="0" data-a="pop" style="position:absolute;left:0;right:0;top:16px;display:flex;justify-content:center">${FLY(82)}</div>
+   <div class="pulse" data-w="2" data-a="pop" style="width:170px;height:170px;border-radius:44px;background:#FFC814;display:flex;align-items:center;justify-content:center;font-size:100px;box-shadow:0 0 70px rgba(255,200,20,.9);margin-top:120px">🛍️</div>`},
 ];
 
 const scenes=document.getElementById('scenes'),vid=document.getElementById('vid');
