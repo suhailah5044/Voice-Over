@@ -1,0 +1,90 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P;src:url(fonts/poppins-500.ttf);font-weight:500}
+@font-face{font-family:P;src:url(fonts/poppins-600.ttf);font-weight:600}
+@font-face{font-family:P;src:url(fonts/poppins-700.ttf);font-weight:700}
+@font-face{font-family:P;src:url(fonts/poppins-800.ttf);font-weight:800}
+@font-face{font-family:P;src:url(fonts/poppins-900.ttf);font-weight:900}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#0a0d18;font-family:P,'Noto Color Emoji',sans-serif}
+.scene{position:absolute;inset:0;overflow:hidden;opacity:0}
+.dark{background:#0a0d18}
+.dark .g{position:absolute;border-radius:50%;filter:blur(90px)}
+.cream{background:#fdf6e1}
+.arc{position:absolute;border-radius:50%;border:60px solid}
+.a{will-change:transform,opacity}
+.head{position:absolute;left:0;right:0;text-align:center}
+.s{font-weight:600;font-size:66px;color:#fff;letter-spacing:-.5px}
+.cream .s{color:#1a1a1a}
+.big{font-weight:900;font-size:128px;line-height:1.05;letter-spacing:-2px}
+.y{color:#ffc61a;text-shadow:0 0 50px rgba(255,190,20,.55)}
+.r{color:#e31b23}
+.card{background:#fff;border-radius:44px;box-shadow:0 30px 70px rgba(0,0,0,.18)}
+.dark .card{box-shadow:0 0 60px rgba(255,200,40,.25)}
+.emoji{font-family:'Noto Color Emoji'}
+.row{display:flex;align-items:center;gap:30px;padding:34px 40px;border-radius:30px;margin:10px}
+.ic{width:96px;height:96px;border-radius:24px;display:flex;align-items:center;justify-content:center;font-size:54px}
+.chk{margin-left:auto;width:62px;height:62px;border-radius:50%;background:#22b14c;color:#fff;font-weight:800;font-size:38px;display:flex;align-items:center;justify-content:center}
+.pill{display:inline-block;padding:26px 54px;border-radius:999px;font-weight:800;font-size:52px}
+</style></head>
+<body>
+<div class="scene dark" data-s="0" data-e="99">
+  <div class="g" style="width:750px;height:750px;left:-180px;top:80px;background:rgba(255,190,20,.38)"></div>
+  <div class="g" style="width:850px;height:850px;right:-260px;bottom:120px;background:rgba(200,20,30,.38)"></div>
+  <div class="g" style="width:600px;height:600px;left:250px;top:900px;background:rgba(70,50,160,.25)"></div>
+  <div class="head" style="top:260px">
+    <div class="a s" data-t="0.0" data-fx="up" style="font-size:76px">Kalau anak Ibu Ayah</div>
+    <div class="a s" data-t="0.74" data-fx="up" style="font-size:76px">dapat tawaran</div>
+    <div class="a big y" data-t="1.24" data-fx="pop" style="font-size:230px;margin-top:6px">MRSM?</div>
+  </div>
+  <div class="a card" data-t="-0.4" data-fx="pop" style="position:absolute;left:290px;top:1020px;width:500px;height:470px;display:flex;align-items:center;justify-content:center">
+    <img src="mrsm.jpg" style="width:420px;clip-path:inset(3% 2.5% 2% 2.5% round 20px);mix-blend-mode:multiply;filter:contrast(1.08) brightness(1.05)">
+  </div>
+</div>
+<script>
+const ease=x=>1-Math.pow(1-x,3);
+const back=x=>{const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const cl=x=>Math.max(0,Math.min(1,x));
+const scenes=[...document.querySelectorAll('.scene')];
+const els=[...document.querySelectorAll('.a')];
+// stash base transform
+els.forEach(e=>e._base=e.dataset.fx==='stamp'?'':(e.style.transform||''));
+function render(t){
+  scenes.forEach((s,i)=>{
+    const a=+s.dataset.s,b=+s.dataset.e;
+    let o=0,sc=1;
+    if(t>=a&&t<b){o=1; const p=cl((t-a)/0.28); if(i>0){o=ease(p); sc=1.06-0.06*ease(p);} }
+    s.style.opacity=o; s.style.transform=`scale(${sc})`;
+    s.style.display=o>0?'block':'none';
+    // drift glows / arcs
+    s.querySelectorAll('.g').forEach((g,k)=>{g.style.transform=`translate(${Math.sin(t*0.6+k*2)*40}px,${Math.cos(t*0.5+k)*40}px)`});
+    s.querySelectorAll('.arc').forEach((g,k)=>{g.style.transform=`rotate(${(t-a)*(k?-3:3)}deg)`});
+  });
+  els.forEach(e=>{
+    const p=cl((t-(+e.dataset.t))/0.45), fx=e.dataset.fx;
+    let tr='',op=1,fl='none';
+    if(fx==='up'){op=ease(p);tr=`translateY(${(1-ease(p))*50}px)`}
+    else if(fx==='pop'){op=cl(p*3);tr=`scale(${p<=0?0.6:0.6+0.4*back(p)})`}
+    else if(fx==='blur'){op=ease(cl(p*2));fl=`blur(${(1-ease(p))*24}px)`;tr=`translateY(${(1-ease(p))*40}px)`}
+    else if(fx==='stamp'){op=cl(p*4);tr=`rotate(8deg) scale(${p<=0?2:1+1*(1-ease(p))})`}
+    e.style.opacity=op;e.style.transform=tr+' '+e._base;e.style.filter=fl;
+  });
+  document.querySelectorAll('[data-hl]').forEach((r,i,all)=>{
+    const h=+r.dataset.hl,nxt=all[i+1]?+all[i+1].dataset.hl:999;
+    const on=t>=h, cur=on&&t<nxt;
+    r.style.background=cur?'#fff3c4':'transparent';
+    r.style.transform=cur?'scale(1.04)':'scale(1)';
+    r.style.boxShadow=cur?'0 10px 30px rgba(255,190,20,.35)':'none';
+    const c=r.querySelector('.chk'); const p=cl((t-h)/0.3);
+    c.style.opacity=on?p:0; c.style.transform=`scale(${on?0.5+0.5*back(p):0.5})`;
+  });
+  document.querySelectorAll('[data-hl2]').forEach((r,i,all)=>{
+    const h=+r.dataset.hl2,nxt=all[i+1]?+all[i+1].dataset.hl2:999;
+    if(i<3) r.style.background=(t>=h&&t<nxt)?'#fff3c4':'#fff';
+  });
+  const bag=document.querySelector('.bag'); if(bag) bag.style.transform=`scale(${1+0.08*Math.max(0,Math.sin(t*8))})`;
+}
+window.render=render; render(0);
+</script>
+</body></html>
